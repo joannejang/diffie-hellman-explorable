@@ -1,0 +1,36 @@
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+</head>
+
+<script src="js/jscolor/jscolor.js"></script>
+
+<body>
+
+	<div id="intro_container">
+		<div id="title">
+			<p>
+				Diffie-Hellman Key Exchange
+			</p>
+		</div>
+		<div id="subtitle">
+			An Explorable Explanation by Joanne Jang, Clay Jones, Jessica Ouyang
+		</div>
+	</div>
+
+	<div class="chapter">
+		<b> You </b>
+		<p>Pick a color:
+			<input class="jscolor {onFineChange:'update(this)'}" value="cc66ff">
+		</p>
+
+		<p id="rect" style="border:1px solid gray; width:200px; height:200px;"/>
+
+		<script>
+		function update(jscolor) {
+		    // 'jscolor' instance can be used as a string
+		    document.getElementById('rect').style.backgroundColor = '#' + jscolor
+		}
+		</script>
+	</div>
+</body>
