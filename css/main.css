@@ -56,3 +56,30 @@ a:hover{
 	margin: 50px auto;
 	width:800px;
 }
+
+#circ1, #circ2 {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px; 
+	/* width and height can be anything, as long as they're equal */
+}
+
+#goal_color, #mixed_color{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px; 
+}
+
+#color1{
+	width: 300px;
+	float: left;
+}
+
+#color2{
+	margin-left: 300px;
+}
+
+<div style="width: 100%; overflow: hidden;">
+    <div style="width: 600px; float: left;"> Left </div>
+    <div style="margin-left: 620px;"> Right </div>
+</div>
