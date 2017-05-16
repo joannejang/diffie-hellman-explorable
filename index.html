@@ -44,12 +44,11 @@
 
 				<div id="color1">
 					<button
-					    class="jscolor {valueElement:null,value:'D3D3D3', onFineChange: 'updateCirc1(this)'}"
-					    style="border:1px solid gray; font-family: 'Source Sans Pro', sans-serif; text-align: center;"> <!--  -->
+					    style="border:1px solid gray; font-family: 'Source Sans Pro', sans-serif; text-align: center; background-color: #3dc6a0;"> <!--  -->
 					    Color 1
 					</button>
 
-					<p id="circ1" style="border:1px solid gray; width:100px; height:100px;"/>
+					<p id="circ1" style="border:1px solid gray; width:100px; height:100px; background-color: #3dc6a0;"/>
 				</div>
 
 				<div id="color2">
@@ -101,8 +100,8 @@
 		function updateCirc1(jscolor) {
 			// console.log(jscolor);
 		    // 'jscolor' instance can be used as a string
-		    document.getElementById('circ1').style.backgroundColor = '#' + jscolor;
-		    updateMixedColor(jscolor);
+		    // document.getElementById('circ1').style.backgroundColor = '#' + jscolor;
+		    // updateMixedColor(jscolor);
 		}
 		function updateCirc2(jscolor) {
 			// console.log(jscolor);
