@@ -96,12 +96,18 @@ a:hover{
 	/* width and height can be anything, as long as they're equal */
 }
 
-#goal_color, #mixed_color{
+#goal_color{
 	border-radius: 50%;
 	width: 50px;
 	height: 50px; 
 	margin: auto;
 
+}
+#mixed_color {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px; 
+	margin: auto;
 }
 
 #goal {
@@ -111,9 +117,12 @@ a:hover{
 }
 
 #mixed {
-	padding-top: 150px;
+	/*padding-top: 150px;*/
 	margin: auto;
 	text-align: center;
+	/*width: 100px;*/
+	float: right;
+	display: inline-block;
 
 }
 
@@ -122,16 +131,21 @@ a:hover{
 	float: left;
 	text-align: center;
 
+	display: inline-block;
+
 }
 
 #color2{
 	width: 100px;
-	float: right;
+	float: left;
+	margin-left: 10px;
 	text-align: center;
+
+	display: inline-block;
 }
 
 #color-wrapper {
-    width: 50%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -141,7 +155,9 @@ a:hover{
 	text-align: center;
 	color: white;
 	background-color: gray;
-	margin-top: 30px;
+	margin-top: 200px;
+/*	float: center;*/
+	display: block;
 }
 
 .circle {
@@ -151,4 +167,21 @@ a:hover{
 	border-radius: 50%;
 	margin: 30px;
 	display: inline-block;
+}
+
+.crop {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	float: left;
+	margin-left: 10px;
+	margin-top: 40px;
+
+	display: inline-block;
+}
+
+.crop img {
+	width: 100px;
+	height: 100px;
+	margin: 15px 0px 0px 0px;
 }
