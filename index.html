@@ -7,9 +7,9 @@
 </head>
 
 <script src="js/jscolor/jscolor.js"></script>
-<script src="js/color-mixing.js"></script>
+<!-- <script src="js/color-mixing.js"></script> -->
 
-<body>
+<body onload=showPicker();>
 
 	<div id="intro_container">
 		<div id="title">
@@ -37,7 +37,7 @@
 		<div class="interactive">
 			<div id="goal">
 				Goal Color:
-				<p id="goal_color" style="border:1px solid gray; width:100px; height:100px; background-color: #d1adc2; margin-top: 20px;"/>
+				<p id="goal_color" style="border:1px solid gray; width:100px; height:100px; background-color: #d1adc2; margin-top: 20px;">
 
 				</p>
 			</div>
@@ -58,13 +58,15 @@
 				</div>
 
 				<div id="color2">
-					<button
-					    class="jscolor {valueElement:null,value:'D3D3D3', onFineChange: 'updateCirc2(this)'}"
-					    style="border:1px solid gray; font-family: 'Source Sans Pro', sans-serif; text-align: center;"><!--   -->
-					    Color 2
-					</button>
 
-					<p id="circ2" style="border:1px solid gray; width:100px; height:100px;"/>
+					<input id="color_input" class="jscolor {position: 'bottom', shadow: 'false', shadowBlur: '0'}" onchange="updateCirc2(this.jscolor)" style="font-size:0px;"/>
+<!-- 					<p style="margin-top:90px">
+    and also above the input field
+    <input class="jscolor {position:'top'}"> -->
+<!--     <input class="jscolor {position:'left'}"
+    style="position:absolute; left:300px;"> -->
+<!-- 
+					<p id="circ2" style="border:1px solid gray; width:100px; height:100px;"/> -->
 				</div>
 
 				<div class="crop">
@@ -73,22 +75,19 @@
 
 				<div id="mixed">
 				Mixed Color:
-				<p id="mixed_color" style="border:1px solid gray; width:100px; height:100px; margin-top: 10px; margin-bottom: 20px;"/>
+				<p id="mixed_color" style="border:1px solid gray; width:100px; height:100px; margin-top: 10px; margin-bottom: 20px;">
 
 				</p>
 			</div>
 			</div>
 
-
-<!-- 			<div id="mixed">
-				Mixed Color:
-				<p id="mixed_color" style="border:1px solid gray; width:100px; height:100px; margin-top: 20px; margin-bottom: 20px;"/>
-
-				</p>
-			</div> -->
 			<div id="match">
 				NOT A MATCH
+	
 			</div>
+				<div id="attempts">
+				# of Attempt(s): 0
+				</div>
 		</div>
 		<p>
 			... but if you knew the two colors, mixing them isn't hard.
@@ -120,22 +119,40 @@
 </body>
 
 <script>
+
+		function showPicker() {
+			document.getElementById('color_input').jscolor.show();
+		}
+		
+
 		function updateCirc1(jscolor) {
 			// console.log(jscolor);
 		    // 'jscolor' instance can be used as a string
 		    // document.getElementById('circ1').style.backgroundColor = '#' + jscolor;
 		    // updateMixedColor(jscolor);
 		}
+
+		var attempts = 0;
+		var color1 = "rgb(61, 198, 160)";
+		var color2;
 		function updateCirc2(jscolor) {
-			// console.log(jscolor);
+
+
+			console.log(jscolor);
+			color2 = jscolor.toRGBString();
 		    // 'jscolor' instance can be used as a string
-		    document.getElementById('circ2').style.backgroundColor = '#' + jscolor
+		    // document.getElementById('circ2').style.backgroundColor = '#' + jscolor;
+
 		    updateMixedColor(jscolor);
+		    attempts += 1;
+		    document.getElementById('attempts').innerHTML = "# of Attempt(s): " + attempts;
 		}
 
 		function updateMixedColor(jscolor) {
-			color1 = document.getElementById('circ1').style.backgroundColor;
-			color2 = document.getElementById('circ2').style.backgroundColor;
+			// color1 = document.getElementById('circ1').style.backgroundColor;
+			// console.log(color1);
+			// color2 = document.getElementById('circ2').style.backgroundColor;
+			console.log(color2);
 
 			cmyk_color1 = RGBtoCMYK(color1);
 			cmyk_color2 = RGBtoCMYK(color2);
@@ -144,6 +161,7 @@
 			console.log(rgb_mixed_color);
 
 			document.getElementById('mixed_color').style.backgroundColor = rgb_mixed_color;	
+			// document.getElementById('color_input').jscolor.show();
 		}
 
 		function RGBtoCMYK(color) {
