@@ -206,7 +206,7 @@ a:hover{
 }
 
 #drag-1, #drag-2 {
-  width: 25%;
+  width: 200px; /*25%;*/
   height: 100%;
   min-height: 6.5em;
   margin: 0%;

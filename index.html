@@ -150,14 +150,14 @@ interact('.draggable')
     }
   });
 
-  var blue_x1 = 155;
-  var blue_x2 = 305;
+  var blue_x1 = 205;
+  var blue_x2 = 405;
   var yellow_x1 = 0;
-  var yellow_x2 = 150;
+  var yellow_x2 = 200;
 
   var intersect_x1 = 0;
   var intersect_x2 = 0;
-  var old_intersect_x1 = 0;
+  var old_intersect_x1 = 410;
 
   function dragMoveListener (event) {
     var target = event.target,
@@ -170,26 +170,32 @@ interact('.draggable')
     target.style.transform =
       'translate(' + x + 'px, ' + y + 'px)';
 
-
+    // update the posiion attributes
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
 
 
     var intersection = document.getElementById('intersection');
     intersection.style.backgroundColor = "green";
 
+
     if (target.style.backgroundColor == "blue") {
  		blue_x1 = parseFloat(target.getAttribute('data-x'));
- 		blue_x2 = blue_x1 + target.style.width;
+ 		blue_x2 = blue_x1 + 200;
     	// intersection.style.width = "200px";
     } else { // yellow
     	yellow_x1 = parseFloat(target.getAttribute('data-x'));
- 		yellow_x2 = yellow_x1 + target.style.width; 	
+ 		yellow_x2 = yellow_x1 + 200;
     }
+   // console.log(parseFloat(target.style.width));
 
     console.log(blue_x1, blue_x2, yellow_x1, yellow_x2);
-    if (((blue_x1 > yellow_x1) && (blue_x2 > yellow_x2)) ||
-   		((yellow_x1 > blue_x1) && (yellow_x2 > blue_x2))) {
+    // if (((blue_x1 > yellow_x1) && (blue_x2 > yellow_x2)) ||
+   	// 	((yellow_x1 > blue_x1) && (yellow_x2 > blue_x2))) {
+	if (((yellow_x1 > blue_x2 && yellow_x2 > blue_x2)) ||
+		(blue_x1 > yellow_x2 && blue_x2 > yellow_x2)) {
     	// no intersection
-    	intersection.style.width = "0px";
+    	intersection.style.width = 0;
     	intersect_x2 = intersect_x1;
     	console.log("no intersection");
 
@@ -215,9 +221,7 @@ interact('.draggable')
     intersection.style.transform =
          'translate(' + intersect_px + 'px, ' + 0 + 'px)';
 
-    // update the posiion attributes
-    target.setAttribute('data-x', x);
-    target.setAttribute('data-y', y);
+
 
   }
 
