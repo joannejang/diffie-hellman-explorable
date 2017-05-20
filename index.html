@@ -7,6 +7,7 @@
 </head>
 
 <script src="js/jscolor/jscolor.js"></script>
+<script src="js/interact.min.js"></script>
 <!-- <script src="js/color-mixing.js"></script> -->
 
 <body onload=showPicker();>
@@ -94,15 +95,17 @@
 		</p>
 
 		<div class="visual">
-			<div class="circle" style="background-color: yellow;"> </div>
-			<div class="crop">
+			<div id="drag-1" class="draggable" style="background-color: yellow;"> </div>
+<!-- 			<div class="crop">
 				<img src="img/plus.svg"/>
-			</div>
-			<div class="circle" style="background-color: blue;"> </div>
-			<div class="crop">
+			</div> -->
+			<div id="drag-2" class="draggable" style="background-color: blue;"> </div>
+
+			<div id="intersection" stule="background-color: blue;"></div>
+<!-- 			<div class="crop">
 				<img src="img/equal.svg"/>
-			</div>
-			<div class="circle" style="background-color: green;"> </div>
+			</div> -->
+<!-- 			<div class="circle" style="background-color: green;"> </div> -->
 		</div>
 
 	</div>
@@ -120,16 +123,112 @@
 
 <script>
 
+	// target elements with the "draggable" class
+interact('.draggable')
+  .draggable({
+    // enable inertial throwing
+    inertia: true,
+    // keep the element within the area of it's parent
+    restrict: {
+      restriction: "parent",
+      endOnly: true,
+      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+    },
+    // enable autoScroll
+    autoScroll: true,
+
+    // call this function on every dragmove event
+    onmove: dragMoveListener,
+    // call this function on every dragend event
+    onend: function (event) {
+      var textEl = event.target.querySelector('p');
+
+      textEl && (textEl.textContent =
+        'moved a distance of '
+        + (Math.sqrt(event.dx * event.dx +
+                     event.dy * event.dy)|0) + 'px');
+    }
+  });
+
+  var blue_x1 = 155;
+  var blue_x2 = 305;
+  var yellow_x1 = 0;
+  var yellow_x2 = 150;
+
+  var intersect_x1 = 0;
+  var intersect_x2 = 0;
+  var old_intersect_x1 = 0;
+
+  function dragMoveListener (event) {
+    var target = event.target,
+        // keep the dragged position in the data-x/data-y attributes
+        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+    // translate the element
+    target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)';
+
+
+
+
+    var intersection = document.getElementById('intersection');
+    intersection.style.backgroundColor = "green";
+
+    if (target.style.backgroundColor == "blue") {
+ 		blue_x1 = parseFloat(target.getAttribute('data-x'));
+ 		blue_x2 = blue_x1 + target.style.width;
+    	// intersection.style.width = "200px";
+    } else { // yellow
+    	yellow_x1 = parseFloat(target.getAttribute('data-x'));
+ 		yellow_x2 = yellow_x1 + target.style.width; 	
+    }
+
+    console.log(blue_x1, blue_x2, yellow_x1, yellow_x2);
+    if (((blue_x1 > yellow_x1) && (blue_x2 > yellow_x2)) ||
+   		((yellow_x1 > blue_x1) && (yellow_x2 > blue_x2))) {
+    	// no intersection
+    	intersection.style.width = "0px";
+    	intersect_x2 = intersect_x1;
+    	console.log("no intersection");
+
+    } else {
+    	// intersection
+    	console.log("INTERSECTION");
+    	old_intersect_x1 = intersect_x1;
+    	if (yellow_x2 > blue_x2) {
+    		intersect_x1 = yellow_x1;
+    		intersect_x2 = blue_x2;
+    		intersection.style.width = intersect_x2 - intersect_x1;
+
+    	} else if (blue_x2 > yellow_x2) {
+    		intersect_x1 = blue_x1;
+    		intersect_x2 = yellow_x2;
+    		intersection.style.width = intersect_x2 - intersect_x1;
+    	}
+
+    }
+
+    var intersect_px = (old_intersect_x1 > intersect_x1) ? -(old_intersect_x1 - intersect_x1) : (old_intersect_x1 - intersect_x1);
+    intersection.style.webkitTransform =
+    intersection.style.transform =
+         'translate(' + intersect_px + 'px, ' + 0 + 'px)';
+
+    // update the posiion attributes
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+
+  }
+
+
 		function showPicker() {
 			document.getElementById('color_input').jscolor.show();
 		}
 		
 
 		function updateCirc1(jscolor) {
-			// console.log(jscolor);
-		    // 'jscolor' instance can be used as a string
-		    // document.getElementById('circ1').style.backgroundColor = '#' + jscolor;
-		    // updateMixedColor(jscolor);
+
 		}
 
 		var attempts = 0;

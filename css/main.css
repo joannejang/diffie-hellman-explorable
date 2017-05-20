@@ -84,11 +84,12 @@ a:hover{
 
 .visual{
 	background-color: #fff;
-	padding: 20px;
+	/*padding: 20px;*/
 	/*margin-top: 20px;*/
-	border:1px solid gray;
+	border: 1px solid gray;
 	margin: 0 auto;
-	height: 25%;
+	height: 200px; /* 30%; */
+	position: relative;
 }
 
 #circ1, #circ2 {
@@ -202,4 +203,30 @@ a:hover{
 #attempts {
 	font-size: 17px;
 	text-align: center;
+}
+
+#drag-1, #drag-2 {
+  width: 25%;
+  height: 100%;
+  min-height: 6.5em;
+  margin: 0%;
+  border: 1px solid gray;
+
+  background-color: #29e;
+  color: white;
+/*
+  border-radius: 0.75em;*/
+  padding: 0%;
+  display: inline-block;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+#intersection {
+	width: 0%;
+	height: 100%;
+	display: inline-block;
+	padding: 0%;
+
 }
