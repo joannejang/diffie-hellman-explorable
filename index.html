@@ -82,8 +82,10 @@
 				<p id="mixed_color" style="border:1px solid gray; width:100px; height:100px; margin-top: 10px; margin-bottom: 20px;">
 
 				</p>
+				</div>
 			</div>
-			</div>
+	
+
 
 			<div id="match">
 				NOT A MATCH
@@ -93,12 +95,48 @@
 				# of Attempt(s): 0
 				</div>
 		</div>
+
 		<p>
 			... but if you knew the two colors, mixing them isn't hard.
 		</p>
 
+<div class="interactive">
+		<div id="goal_mystery">
+				Goal Color: #FF4545
+				<p id="goal_color_mystery" style="border:1px solid gray; width:100px; height:100px; background-color: #FF4545; margin-top: 20px;">
+
+				</p>
+			</div>
+
+		<div id="visual_box-2">
+			<div id="drag-3" class="draggable-2" style="background-color: pink;"> </div>
+
+			<div id="drag-4" class="draggable-2" style="background-color: white; font-size: 100px; text-align: center;"> ?
+						<input id="color_input_mystery" class="jscolor {position: 'bottom', shadow: 'false', shadowBlur: '0', smartPosition: 'false'}" onchange="updateIntersection(this.jscolor)" style="font-size:0px;"/>
+				</div>
+
+
+			<div id="intersection_mystery" style="background-color: pink;"> </div>
+						</div>
+
+		
+
+		<div id="mystery_result">
+		Mixed Color: N/A
+
+		</div>
+
+			<div id="match_mystery">
+		NOT A MATCH
 
 	</div>
+		<div id="attempts_mystery">
+		# of Attempt(s): 0
+		</div>
+
+
+	</div>
+</div>
 	<br/>
 
 	<div class="chapter">
@@ -129,6 +167,28 @@ interact('.draggable')
 
     // call this function on every dragmove event
     onmove: dragMoveListener,
+    // call this function on every dragend event
+    onend: function (event) {
+    	// leaving this be for later
+    }
+  });
+
+  	// target elements with the "draggable" class
+interact('.draggable-2')
+  .draggable({
+    // enable inertial throwing
+    inertia: true,
+    // keep the element within the area of it's parent
+    restrict: {
+      restriction: "parent",
+      endOnly: true, //false,
+      elementRect: { top: 0, left: 0, bottom: 1, right: 1}
+    },
+    // enable autoScroll
+    autoScroll: true,
+
+    // call this function on every dragmove event
+    onmove: dragMoveListenerMystery,
     // call this function on every dragend event
     onend: function (event) {
     	// leaving this be for later
@@ -216,6 +276,97 @@ interact('.draggable')
   }
 
 
+
+  var mystery_x1 = 200; //205;
+  var mystery_x2 = 500; // 405;
+  var pink_x1 = 0;
+  var pink_x2 = 200;
+
+  var intersect_x1_mystery = 0;
+  var intersect_x2_mystery = 0;
+  var old_intersect_x1_mystery = 0;
+
+  var mystery_initial_color = "pink";
+
+
+  function dragMoveListenerMystery (event) {
+
+    var target = event.target,
+        // keep the dragged position in the data-x/data-y attributes
+        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+        y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+
+
+    // translate the element
+    target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)';
+
+    // update the posiion attributes
+    target.setAttribute('data-x', x);
+
+    target.setAttribute('data-y', y);
+
+
+    var intersection_mystery = document.getElementById('intersection_mystery');
+    // if ()
+    // intersection_mystery.style.backgroundColor = mystery_mixed_color;
+    console.log(x);
+
+
+
+    if (target.style.backgroundColor != "pink") {
+ 		mystery_x1 = x + 200; // initial x offset
+ 		mystery_x2 = mystery_x1 + 300; // width offset
+    } else { // pink
+    	pink_x1 = x;
+ 		pink_x2 = pink_x1 + 200; // width offset
+    }
+
+    console.log(mystery_x1, mystery_x2, pink_x1, pink_x2);
+
+	if (((pink_x1 > mystery_x2 && pink_x2 > mystery_x2)) ||
+		(mystery_x1 > pink_x2 && mystery_x2 > pink_x2)) {
+    	// no intersection_mystery
+    	intersection_mystery.style.width = 0;
+    	intersect_x2_mystery = intersect_x1_mystery;
+    	console.log("no intersection_mystery");
+
+    } else {
+    	// intersection_mystery
+    	old_intersect_x1_mystery = intersect_x1_mystery;
+    	console.log("intersection_mystery");
+    	if (pink_x1 > mystery_x1 && pink_x2 < mystery_x2) {
+    		intersect_x1_mystery = pink_x1;
+    		intersect_x2_mystery = pink_x2;
+    	} else if (pink_x2 > mystery_x2) {
+    		intersect_x1_mystery = pink_x1;
+    		intersect_x2_mystery = mystery_x2;
+    		intersection_mystery.style.width = intersect_x2_mystery - intersect_x1_mystery;
+
+    	} else if (mystery_x2 > pink_x2) {
+    		intersect_x1_mystery = mystery_x1;
+    		intersect_x2_mystery = pink_x2;
+    		intersection_mystery.style.width = intersect_x2_mystery - intersect_x1_mystery;
+    	}
+
+    }
+
+    intersection_mystery.style.position = "absolute";
+    intersection_mystery.style.left = intersect_x1_mystery;
+
+
+
+  }
+
+
+
+
+
+
+
+
 		function showPicker() {
 			document.getElementById('color_input').jscolor.show();
 		}
@@ -226,8 +377,11 @@ interact('.draggable')
 		}
 
 		var attempts = 0;
+		var mystery_attempts = 0;
 		var color1 = "rgb(61, 198, 160)";
 		var color2;
+
+		var intersection_color = "rgb(255, 192, 203)";
 		function updateCirc2(jscolor) {
 
 
@@ -236,25 +390,46 @@ interact('.draggable')
 		    // // 'jscolor' instance can be used as a string
 		    // document.getElementById('circ2').style.backgroundColor = '#' + jscolor;
 
-		    updateMixedColor(jscolor);
+		    updateMixedColor(jscolor, intersection=false);
 		    attempts += 1;
 		    document.getElementById('attempts').innerHTML = "# of Attempt(s): " + attempts;
 		    document.getElementById('match').style.backgroundColor = (attempts % 2 == 0) ? '#808080' : '#787878';
 		}
 
-		function updateMixedColor(jscolor) {
-			// color1 = document.getElementById('circ1').style.backgroundColor;
-			// console.log(color1);
-			// color2 = document.getElementById('circ2').style.backgroundColor;
+		function updateIntersection(jscolor) { // mixing with pink
+
+
+			console.log(jscolor);
+			color2 = jscolor.toRGBString();
+		    // // 'jscolor' instance can be used as a string
+		    document.getElementById('drag-4').style.backgroundColor = '#' + jscolor;
+
+		    updateMixedColor(jscolor, intersection=true);
+
+		    mystery_attempts += 1;
+		    document.getElementById('attempts_mystery').innerHTML = "# of Attempt(s): " + mystery_attempts;
+		    document.getElementById('match_mystery').style.backgroundColor = (mystery_attempts % 2 == 0) ? '#808080' : '#787878';
+		    
+		    // document.getElementById('match').style.backgroundColor = (attempts % 2 == 0) ? '#808080' : '#787878';
+		}
+
+		function updateMixedColor(jscolor, intersection) {
 			console.log(color2);
 
-			cmyk_color1 = RGBtoCMYK(color1);
+			cmyk_color1 = intersection ? RGBtoCMYK(intersection_color) : RGBtoCMYK(color1);
 			cmyk_color2 = RGBtoCMYK(color2);
 
 			rgb_mixed_color = mixColors(cmyk_color1, cmyk_color2);
 			console.log(rgb_mixed_color);
 
-			document.getElementById('mixed_color').style.backgroundColor = rgb_mixed_color;	
+			if (intersection) {
+				document.getElementById('intersection_mystery').style.backgroundColor = rgb_mixed_color;
+				document.getElementById('drag-4').style.backgroundColor = '+' + jscolor;	
+				document.getElementById('mystery_result').innerHTML = 'Mixed Color: ' + rgbToHex(rgb_mixed_color);
+			} else {
+				document.getElementById('mixed_color').style.backgroundColor = rgb_mixed_color;	
+			}
+
 			// document.getElementById('color_input').jscolor.show();
 		}
 
@@ -313,4 +488,22 @@ interact('.draggable')
 		  color = CMYKtoRGB(color);
 		  return color;
 		}
+
+		function componentToHex(c) {
+    		var hex = c.toString(16);
+
+    		return hex.length == 1 ? "0" + hex : hex;
+		}
+
+		function rgbToHex(color) {
+			rgb = color.substring(4, color.length-1)
+         			.replace(/ /g, '')
+         			.split(',');
+         	console.log(rgb)
+         	hex_string = "#" + (parseInt(rgb[0])).toString(16) + parseInt(rgb[1]).toString(16) + parseInt(rgb[2]).toString(16);
+         	console.log("hex_string: " + hex_string)
+
+    		return hex_string.toUpperCase();
+		}
+
 </script>

@@ -206,38 +206,37 @@ a:hover{
 }
 
 #drag-1 {
-  width: 200px; /*25%;*/
+  width: 200px;
   height: 100%;
   margin: 0%;
 
   background-color: #29e;
   color: white;
-/*
-  border-radius: 0.75em;*/
+
   padding: 0%;
   display: inline-block;
   float: left;
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
+  border-radius: 25px;
 
 }
 
 #drag-2 {
-  width: 300px; /*25%;*/
+  width: 300px;
   height: 100%;
   margin: 0%;
 
   background-color: #29e;
   color: white;
-/*
-  border-radius: 0.75em;*/
   padding: 0%;
   display: inline-block;
   float: left;
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
+   border-radius: 25px;
 
 }
 
@@ -245,5 +244,122 @@ a:hover{
 	width: 0%;
 	height: 100%;
 	display: inline-block;
+	border-radius: 25px;
 
 }
+
+
+
+#visual_box-2 {
+	background-color: #fff;
+	/*padding: 20px;*/
+	/*margin-top: 20px;*/
+	border: 1px solid gray;
+	margin: 0 auto;
+	height: 200px; /* 30%; */
+	position: relative;
+}
+
+
+
+#drag-3 {
+  width: 200px;
+  height: 100%;
+  margin: 0%;
+
+  background-color: #29e;
+  color: white;
+
+  padding: 0%;
+  display: inline-block;
+  float: left;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  border-radius: 25px;
+
+}
+
+#drag-4 {
+  width: 300px;
+  height: 100%;
+  margin: 0%;
+  border: 1px dotted gray;
+
+  background-color: #29e;
+  color: black;
+  padding: 0%;
+  display: inline-block;
+  float: left;
+
+  text-align: center;
+  line-height: 200%;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+   border-radius: 25px;
+   position: relative;
+
+}
+
+#intersection_mystery {
+	width: 0%;
+	height: 200px;
+	display: inline-block;
+	border-radius: 25px;
+	z-index: 2;
+	float: left;
+	position: absolute;
+	left: 0px;
+
+}
+
+#color_input_mystery {
+	width: 100%;
+	height: 100%;
+/*	margin-top: 40px;*/
+	position: absolute;
+	z-index: 10;
+	left: 0px;
+	opacity: 0;
+}
+
+#goal_color_mystery{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px; 
+	margin: auto;
+
+}
+
+#goal_mystery {
+	padding-top: 20px;
+	margin: auto;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+#mystery_result {
+	padding-top: 150px;
+	margin: auto;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+
+#attempts_mystery {
+	font-size: 17px;
+	text-align: center;
+}
+#match_mystery {
+	width: 25%;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	background-color: gray;
+/*	float: center;*/
+	display: block;
+	font-size: 30px;
+}
+
+
