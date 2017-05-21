@@ -8,7 +8,6 @@
 
 <script src="js/jscolor/jscolor.js"></script>
 <script src="js/interact.min.js"></script>
-<!-- <script src="js/color-mixing.js"></script> -->
 
 <body onload=showPicker();>
 
@@ -61,13 +60,6 @@
 				<div id="color2">
 
 					<input id="color_input" class="jscolor {position: 'bottom', shadow: 'false', shadowBlur: '0', smartPosition: 'false'}" onchange="updateCirc2(this.jscolor)" style="font-size:0px;"/>
-<!-- 					<p style="margin-top:90px">
-    and also above the input field
-    <input class="jscolor {position:'top'}"> -->
-<!--     <input class="jscolor {position:'left'}"
-    style="position:absolute; left:300px;"> -->
-<!-- 
-					<p id="circ2" style="border:1px solid gray; width:100px; height:100px;"/> -->
 				</div>
 
 				<div class="crop">
@@ -96,16 +88,11 @@
 
 		<div class="visual">
 			<div id="drag-1" class="draggable" style="background-color: yellow;"> </div>
-<!-- 			<div class="crop">
-				<img src="img/plus.svg"/>
-			</div> -->
+
 			<div id="drag-2" class="draggable" style="background-color: blue;"> </div>
 
 			<div id="intersection" stule="background-color: blue;"></div>
-<!-- 			<div class="crop">
-				<img src="img/equal.svg"/>
-			</div> -->
-<!-- 			<div class="circle" style="background-color: green;"> </div> -->
+
 		</div>
 
 	</div>
@@ -155,11 +142,13 @@ interact('.draggable')
   var yellow_x1 = 0;
   var yellow_x2 = 200;
 
-  var intersect_x1 = 0;
-  var intersect_x2 = 0;
+  var intersect_x1 = 410;
+  var intersect_x2 = 410;
   var old_intersect_x1 = 410;
 
+
   function dragMoveListener (event) {
+
     var target = event.target,
         // keep the dragged position in the data-x/data-y attributes
         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
@@ -172,6 +161,7 @@ interact('.draggable')
 
     // update the posiion attributes
     target.setAttribute('data-x', x);
+
     target.setAttribute('data-y', y);
 
 
@@ -179,19 +169,19 @@ interact('.draggable')
     intersection.style.backgroundColor = "green";
 
 
+
     if (target.style.backgroundColor == "blue") {
- 		blue_x1 = parseFloat(target.getAttribute('data-x'));
+ 		blue_x1 = x + 200;
  		blue_x2 = blue_x1 + 200;
     	// intersection.style.width = "200px";
     } else { // yellow
-    	yellow_x1 = parseFloat(target.getAttribute('data-x'));
+    	yellow_x1 = x;
  		yellow_x2 = yellow_x1 + 200;
     }
    // console.log(parseFloat(target.style.width));
 
     console.log(blue_x1, blue_x2, yellow_x1, yellow_x2);
-    // if (((blue_x1 > yellow_x1) && (blue_x2 > yellow_x2)) ||
-   	// 	((yellow_x1 > blue_x1) && (yellow_x2 > blue_x2))) {
+
 	if (((yellow_x1 > blue_x2 && yellow_x2 > blue_x2)) ||
 		(blue_x1 > yellow_x2 && blue_x2 > yellow_x2)) {
     	// no intersection
@@ -201,8 +191,8 @@ interact('.draggable')
 
     } else {
     	// intersection
-    	console.log("INTERSECTION");
     	old_intersect_x1 = intersect_x1;
+    	console.log("INTERSECTION");
     	if (yellow_x2 > blue_x2) {
     		intersect_x1 = yellow_x1;
     		intersect_x2 = blue_x2;
@@ -216,10 +206,8 @@ interact('.draggable')
 
     }
 
-    var intersect_px = (old_intersect_x1 > intersect_x1) ? -(old_intersect_x1 - intersect_x1) : (old_intersect_x1 - intersect_x1);
-    intersection.style.webkitTransform =
-    intersection.style.transform =
-         'translate(' + intersect_px + 'px, ' + 0 + 'px)';
+    intersection.style.position = "absolute";
+    intersection.style.left = intersect_x1;
 
 
 
