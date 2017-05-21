@@ -9,7 +9,7 @@
 <script src="js/jscolor/jscolor.js"></script>
 <script src="js/interact.min.js"></script>
 
-<body onload=showPicker();>
+<body>
 
 	<div id="intro_container">
 		<div id="title">
@@ -233,12 +233,13 @@ interact('.draggable')
 
 			console.log(jscolor);
 			color2 = jscolor.toRGBString();
-		    // 'jscolor' instance can be used as a string
+		    // // 'jscolor' instance can be used as a string
 		    // document.getElementById('circ2').style.backgroundColor = '#' + jscolor;
 
 		    updateMixedColor(jscolor);
 		    attempts += 1;
 		    document.getElementById('attempts').innerHTML = "# of Attempt(s): " + attempts;
+		    document.getElementById('match').style.backgroundColor = (attempts % 2 == 0) ? '#808080' : '#787878';
 		}
 
 		function updateMixedColor(jscolor) {
