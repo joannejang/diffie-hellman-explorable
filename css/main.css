@@ -82,7 +82,7 @@ a:hover{
 	border:2px dotted gray;
 }
 
-.visual{
+#visual_box{
 	background-color: #fff;
 	/*padding: 20px;*/
 	/*margin-top: 20px;*/
@@ -208,9 +208,8 @@ a:hover{
 #drag-1, #drag-2 {
   width: 200px; /*25%;*/
   height: 100%;
-  min-height: 6.5em;
   margin: 0%;
-  border: 1px solid gray;
+/*  border: 1px solid gray;*/
 
   background-color: #29e;
   color: white;
@@ -218,9 +217,11 @@ a:hover{
   border-radius: 0.75em;*/
   padding: 0%;
   display: inline-block;
+  float: left;
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
+
 }
 
 #intersection {

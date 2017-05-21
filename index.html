@@ -86,7 +86,7 @@
 			... but if you knew the two colors, mixing them isn't hard.
 		</p>
 
-		<div class="visual">
+		<div id="visual_box">
 			<div id="drag-1" class="draggable" style="background-color: yellow;"> </div>
 
 			<div id="drag-2" class="draggable" style="background-color: blue;"> </div>
@@ -118,8 +118,8 @@ interact('.draggable')
     // keep the element within the area of it's parent
     restrict: {
       restriction: "parent",
-      endOnly: true,
-      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+      endOnly: true, //false,
+      elementRect: { top: 0, left: 0, bottom: 1, right: 1}
     },
     // enable autoScroll
     autoScroll: true,
@@ -128,23 +128,18 @@ interact('.draggable')
     onmove: dragMoveListener,
     // call this function on every dragend event
     onend: function (event) {
-      var textEl = event.target.querySelector('p');
-
-      textEl && (textEl.textContent =
-        'moved a distance of '
-        + (Math.sqrt(event.dx * event.dx +
-                     event.dy * event.dy)|0) + 'px');
+    	// leaving this be for later
     }
   });
 
-  var blue_x1 = 205;
-  var blue_x2 = 405;
+  var blue_x1 = 200; //205;
+  var blue_x2 = 400; // 405;
   var yellow_x1 = 0;
   var yellow_x2 = 200;
 
-  var intersect_x1 = 410;
-  var intersect_x2 = 410;
-  var old_intersect_x1 = 410;
+  var intersect_x1 = 0;
+  var intersect_x2 = 0;
+  var old_intersect_x1 = 0;
 
 
   function dragMoveListener (event) {
@@ -152,7 +147,9 @@ interact('.draggable')
     var target = event.target,
         // keep the dragged position in the data-x/data-y attributes
         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+        y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+
 
     // translate the element
     target.style.webkitTransform =
@@ -167,18 +164,17 @@ interact('.draggable')
 
     var intersection = document.getElementById('intersection');
     intersection.style.backgroundColor = "green";
+    console.log(x);
 
 
 
     if (target.style.backgroundColor == "blue") {
- 		blue_x1 = x + 200;
- 		blue_x2 = blue_x1 + 200;
-    	// intersection.style.width = "200px";
+ 		blue_x1 = x + 200; // initial x offset
+ 		blue_x2 = blue_x1 + 200; // width offset
     } else { // yellow
     	yellow_x1 = x;
- 		yellow_x2 = yellow_x1 + 200;
+ 		yellow_x2 = yellow_x1 + 200; // width offset
     }
-   // console.log(parseFloat(target.style.width));
 
     console.log(blue_x1, blue_x2, yellow_x1, yellow_x2);
 
