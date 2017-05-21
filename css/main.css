@@ -205,11 +205,28 @@ a:hover{
 	text-align: center;
 }
 
-#drag-1, #drag-2 {
+#drag-1 {
   width: 200px; /*25%;*/
   height: 100%;
   margin: 0%;
-/*  border: 1px solid gray;*/
+
+  background-color: #29e;
+  color: white;
+/*
+  border-radius: 0.75em;*/
+  padding: 0%;
+  display: inline-block;
+  float: left;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+
+}
+
+#drag-2 {
+  width: 300px; /*25%;*/
+  height: 100%;
+  margin: 0%;
 
   background-color: #29e;
   color: white;

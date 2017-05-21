@@ -29,6 +29,17 @@
 
 	<div class="chapter">
 		<h2> One-way Functions </h2>
+
+
+		<div id="visual_box">
+			<div id="drag-1" class="draggable" style="background-color: yellow;"> </div>
+
+			<div id="drag-2" class="draggable" style="background-color: blue;"> </div>
+
+			<div id="intersection" stule="background-color: blue;"></div>
+
+		</div>
+
 		<p>
 			<b> Unmixing paint is hard. </b>
 		</p>
@@ -86,14 +97,6 @@
 			... but if you knew the two colors, mixing them isn't hard.
 		</p>
 
-		<div id="visual_box">
-			<div id="drag-1" class="draggable" style="background-color: yellow;"> </div>
-
-			<div id="drag-2" class="draggable" style="background-color: blue;"> </div>
-
-			<div id="intersection" stule="background-color: blue;"></div>
-
-		</div>
 
 	</div>
 	<br/>
@@ -133,7 +136,7 @@ interact('.draggable')
   });
 
   var blue_x1 = 200; //205;
-  var blue_x2 = 400; // 405;
+  var blue_x2 = 500; // 405;
   var yellow_x1 = 0;
   var yellow_x2 = 200;
 
@@ -170,7 +173,7 @@ interact('.draggable')
 
     if (target.style.backgroundColor == "blue") {
  		blue_x1 = x + 200; // initial x offset
- 		blue_x2 = blue_x1 + 200; // width offset
+ 		blue_x2 = blue_x1 + 300; // width offset
     } else { // yellow
     	yellow_x1 = x;
  		yellow_x2 = yellow_x1 + 200; // width offset
@@ -189,7 +192,10 @@ interact('.draggable')
     	// intersection
     	old_intersect_x1 = intersect_x1;
     	console.log("INTERSECTION");
-    	if (yellow_x2 > blue_x2) {
+    	if (yellow_x1 > blue_x1 && yellow_x2 < blue_x2) {
+    		intersect_x1 = yellow_x1;
+    		intersect_x2 = yellow_x2;
+    	} else if (yellow_x2 > blue_x2) {
     		intersect_x1 = yellow_x1;
     		intersect_x2 = blue_x2;
     		intersection.style.width = intersect_x2 - intersect_x1;
