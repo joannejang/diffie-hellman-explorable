@@ -460,10 +460,22 @@ interact('.draggable-2')
          			.replace(/ /g, '')
          			.split(',');
          	console.log(rgb)
-         	hex_string = "#" + (parseInt(rgb[0])).toString(16) + parseInt(rgb[1]).toString(16) + parseInt(rgb[2]).toString(16);
+         	hex_string = "#" + decimalToHexString(parseInt(rgb[0])) + decimalToHexString(parseInt(rgb[1])) + decimalToHexString(parseInt(rgb[2]));
          	console.log("hex_string: " + hex_string)
 
     		return hex_string.toUpperCase();
+		}
+
+		function decimalToHexString(number)
+		{
+		    if (number < 0)
+		    {
+		        number = 0xFFFFFFFF + number + 1;
+		    } else if (number == 256) {
+		    	return "FF";
+		    }
+
+		    return number.toString(16).toUpperCase();
 		}
 
 </script>
