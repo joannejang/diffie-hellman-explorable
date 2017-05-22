@@ -94,6 +94,7 @@ a:hover{
 	padding: 20px;
 	margin-top: 20px;
 	border:2px dotted gray;
+	font-family: Cabin, sans-serif
 }
 
 #visual_box{
@@ -367,7 +368,7 @@ a:hover{
 	text-align: center;
 }
 #match_mystery {
-	width: 25%;
+	width: 30%;
 	margin: 0 auto;
 	text-align: center;
 	color: white;

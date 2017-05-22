@@ -33,7 +33,7 @@
 			<b> Mixing paint is easy. </b>
 		</p>
 		<p>
-			An important concept to understand when learning about the Diffie Hellman key exchange is to understand the concept of a one-way function. A one-way function is a mathematical function that is significantly easier to compute in one direction than in the opposite direction. One example of a one-way function is mixing colors. As you can see, we can use two colors to create a third color simply by mixing the two.
+			An important concept to understand when learning about the Diffie-Hellman key exchange is the nature of one-way functions. A one-way function is a mathematical function that is significantly easier to compute in one direction than in the opposite direction. One example of a one-way function is mixing colors. As you can see, we can use two colors to create a third color simply by mixing the two.
 		</p>
 
 
@@ -41,9 +41,9 @@
 
 
 		<div id="visual_box">
-			<div id="drag-1" class="draggable" style="background-color: yellow;"> </div>
+			<div id="drag-1" class="draggable" style="background-color: #66AB8C;"> </div>
 
-			<div id="drag-2" class="draggable" style="background-color: blue;"> </div>
+			<div id="drag-2" class="draggable" style="background-color: #F97C92;"> </div>
 
 			<div id="intersection" stule="background-color: blue;"></div>
 
@@ -60,21 +60,21 @@
 
 <div class="interactive">
 		<div id="goal_mystery">
-				Goal Color: #FF4545
-				<p id="goal_color_mystery" style="border:1px solid gray; width:100px; height:100px; background-color: #FF4545; margin-top: 20px;">
+				Goal Color: #66AB8C
+				<p id="goal_color_mystery" style="border:1px solid gray; width:100px; height:100px; background-color: #66AB8C; margin-top: 20px;">
 
 				</p>
 			</div>
 
 		<div id="visual_box-2">
-			<div id="drag-3" class="draggable-2" style="background-color: pink;"> </div>
+			<div id="drag-3" class="draggable-2" style="background-color: #FFF7C0;"> </div>
 
 			<div id="drag-4" class="draggable-2" style="background-color: white; font-size: 100px; text-align: center;"> ?
 						<input id="color_input_mystery" class="jscolor {position: 'bottom', shadow: 'false', shadowBlur: '0', smartPosition: 'false'}" onchange="updateIntersection(this.jscolor)" style="font-size:0px;"/>
 				</div>
 
 
-			<div id="intersection_mystery" style="background-color: pink;"> </div>
+			<div id="intersection_mystery" style="background-color: #FFF7C0;"> </div>
 						</div>
 
 		
@@ -184,12 +184,12 @@ interact('.draggable-2')
 
 
     var intersection = document.getElementById('intersection');
-    intersection.style.backgroundColor = "green";
+    intersection.style.backgroundColor = "#B0948F";
     console.log(x);
 
 
 
-    if (target.style.backgroundColor == "blue") {
+    if (target.getAttribute('id') == 'drag-2') {
  		blue_x1 = x + 200; // initial x offset
  		blue_x2 = blue_x1 + 300; // width offset
     } else { // yellow
