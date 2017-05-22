@@ -314,9 +314,9 @@ interact('.draggable-2')
     // intersection_mystery.style.backgroundColor = mystery_mixed_color;
     console.log(x);
 
-    console.log(target.style);
+    console.log(target.getAttribute('id'));
     console.log(target.style.zIndex);
-    if (target.style.backgroundColor !== "pink") {
+    if (target.getAttribute('id') === "drag-4") {
     	console.log("bigger");
  		mystery_x1 = x + 200; // initial x offset
  		mystery_x2 = mystery_x1 + 300; // width offset
