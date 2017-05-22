@@ -233,7 +233,7 @@ a:hover{
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-  border-radius: 25px;
+  border-radius: 10px;
 
 }
 
@@ -250,7 +250,7 @@ a:hover{
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-   border-radius: 25px;
+   border-radius: 10px;
 
 }
 
@@ -258,7 +258,7 @@ a:hover{
 	width: 0%;
 	height: 100%;
 	display: inline-block;
-	border-radius: 25px;
+	border-radius: 10px;
 
 }
 
@@ -290,7 +290,7 @@ a:hover{
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-  border-radius: 25px;
+  border-radius: 10px;
 
 }
 
@@ -311,7 +311,7 @@ a:hover{
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-   border-radius: 25px;
+   border-radius: 10px;
    position: relative;
    z-index: 4;
 
@@ -321,7 +321,7 @@ a:hover{
 	width: 0%;
 	height: 200px;
 	display: inline-block;
-	border-radius: 25px;
+	border-radius: 10px;
 	z-index: 5;
 	float: left;
 	position: absolute;
