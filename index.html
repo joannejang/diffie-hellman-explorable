@@ -314,12 +314,14 @@ interact('.draggable-2')
     // intersection_mystery.style.backgroundColor = mystery_mixed_color;
     console.log(x);
 
-
-
-    if (target.style.backgroundColor != "pink") {
+    console.log(target.style);
+    console.log(target.style.zIndex);
+    if (target.style.backgroundColor !== "pink") {
+    	console.log("bigger");
  		mystery_x1 = x + 200; // initial x offset
  		mystery_x2 = mystery_x1 + 300; // width offset
     } else { // pink
+    	console.log("smaller");
     	pink_x1 = x;
  		pink_x2 = pink_x1 + 200; // width offset
     }
