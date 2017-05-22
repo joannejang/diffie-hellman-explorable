@@ -1,10 +1,21 @@
+@font-face {
+    font-family: Cabin;
+    src: url(../fonts/Cabin-Regular.ttf);
+}
+
+@font-face {
+    font-family: OldStandard;
+    src: url(../fonts/OldStandard-Regular.ttf);
+}
+
 body{
 
 	margin:0;
 	background: #fff;
+	text-align: left;
 
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 22px;
+	font-family: OldStandard, sans-serif;
+	font-size: 18px;
 	font-weight: 100;
 	line-height: 30px;
 
@@ -20,14 +31,17 @@ p {
 }
 
 h1 {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: Cabin, sans-serif;
 	font-size: 50px;
 	font-weight: 100;
 	line-height: 50px;
+	color: #FFFFFF;
 }
 
 h2{
-	text-align: center;
+	text-align: left;
+	font-family: Cabin, sans-serif;
+	color: #F97C92;
 }
 
 
@@ -42,7 +56,7 @@ a:hover{
 	width:100%; height:200px;
 	overflow: hidden;
 	position: relative;
-	background: #B4B4BF;
+	background: #6EC4DB;
 }
 #title, #outro{
 	position: relative;
