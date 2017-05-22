@@ -185,7 +185,6 @@ interact('.draggable-2')
 
     var intersection = document.getElementById('intersection');
     intersection.style.backgroundColor = "#B0948F";
-    console.log(x);
 
 
 
@@ -197,19 +196,17 @@ interact('.draggable-2')
  		yellow_x2 = yellow_x1 + 200; // width offset
     }
 
-    console.log(blue_x1, blue_x2, yellow_x1, yellow_x2);
+    // console.log(blue_x1, blue_x2, yellow_x1, yellow_x2);
 
 	if (((yellow_x1 > blue_x2 && yellow_x2 > blue_x2)) ||
 		(blue_x1 > yellow_x2 && blue_x2 > yellow_x2)) {
     	// no intersection
     	intersection.style.width = 0;
     	intersect_x2 = intersect_x1;
-    	console.log("no intersection");
 
     } else {
     	// intersection
     	old_intersect_x1 = intersect_x1;
-    	console.log("INTERSECTION");
     	if (yellow_x1 > blue_x1 && yellow_x2 < blue_x2) {
     		intersect_x1 = yellow_x1;
     		intersect_x2 = yellow_x2;
@@ -268,35 +265,26 @@ interact('.draggable-2')
 
 
     var intersection_mystery = document.getElementById('intersection_mystery');
-    // if ()
-    // intersection_mystery.style.backgroundColor = mystery_mixed_color;
-    console.log(x);
 
-    console.log(target.getAttribute('id'));
-    console.log(target.style.zIndex);
     if (target.getAttribute('id') === "drag-4") {
-    	console.log("bigger");
  		mystery_x1 = x + 200; // initial x offset
  		mystery_x2 = mystery_x1 + 300; // width offset
     } else { // pink
-    	console.log("smaller");
     	pink_x1 = x;
  		pink_x2 = pink_x1 + 200; // width offset
     }
 
-    console.log(mystery_x1, mystery_x2, pink_x1, pink_x2);
+    // console.log(mystery_x1, mystery_x2, pink_x1, pink_x2);
 
 	if (((pink_x1 > mystery_x2 && pink_x2 > mystery_x2)) ||
 		(mystery_x1 > pink_x2 && mystery_x2 > pink_x2)) {
-    	// no intersection_mystery
+    	// no intersection
     	intersection_mystery.style.width = 0;
     	intersect_x2_mystery = intersect_x1_mystery;
-    	console.log("no intersection_mystery");
 
     } else {
-    	// intersection_mystery
+    	// intersection
     	old_intersect_x1_mystery = intersect_x1_mystery;
-    	console.log("intersection_mystery");
     	if (pink_x1 > mystery_x1 && pink_x2 < mystery_x2) {
     		intersect_x1_mystery = pink_x1;
     		intersect_x2_mystery = pink_x2;
@@ -344,11 +332,8 @@ interact('.draggable-2')
 		var intersection_color = "rgb(255, 192, 203)";
 		function updateCirc2(jscolor) {
 
-
-			console.log(jscolor);
 			color2 = jscolor.toRGBString();
 		    // // 'jscolor' instance can be used as a string
-		    // document.getElementById('circ2').style.backgroundColor = '#' + jscolor;
 
 		    updateMixedColor(jscolor, intersection=false);
 		    attempts += 1;
@@ -358,8 +343,6 @@ interact('.draggable-2')
 
 		function updateIntersection(jscolor) { // mixing with pink
 
-
-			console.log(jscolor);
 			color2 = jscolor.toRGBString();
 		    // // 'jscolor' instance can be used as a string
 		    document.getElementById('drag-4').style.backgroundColor = '#' + jscolor;
@@ -369,18 +352,14 @@ interact('.draggable-2')
 		    mystery_attempts += 1;
 		    document.getElementById('attempts_mystery').innerHTML = "# of Attempt(s): " + mystery_attempts;
 		    document.getElementById('match_mystery').style.backgroundColor = (mystery_attempts % 2 == 0) ? '#808080' : '#787878';
-		    
-		    // document.getElementById('match').style.backgroundColor = (attempts % 2 == 0) ? '#808080' : '#787878';
 		}
 
 		function updateMixedColor(jscolor, intersection) {
-			console.log(color2);
 
 			cmyk_color1 = intersection ? RGBtoCMYK(intersection_color) : RGBtoCMYK(color1);
 			cmyk_color2 = RGBtoCMYK(color2);
 
 			rgb_mixed_color = mixColors(cmyk_color1, cmyk_color2);
-			console.log(rgb_mixed_color);
 
 			if (intersection) {
 				document.getElementById('intersection_mystery').style.backgroundColor = rgb_mixed_color;
@@ -389,8 +368,6 @@ interact('.draggable-2')
 			} else {
 				document.getElementById('mixed_color').style.backgroundColor = rgb_mixed_color;	
 			}
-
-			// document.getElementById('color_input').jscolor.show();
 		}
 
 		function RGBtoCMYK(color) {
@@ -459,9 +436,8 @@ interact('.draggable-2')
 			rgb = color.substring(4, color.length-1)
          			.replace(/ /g, '')
          			.split(',');
-         	console.log(rgb)
+
          	hex_string = "#" + decimalToHexString(parseInt(rgb[0])) + decimalToHexString(parseInt(rgb[1])) + decimalToHexString(parseInt(rgb[2]));
-         	console.log("hex_string: " + hex_string)
 
     		return hex_string.toUpperCase();
 		}
