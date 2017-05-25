@@ -1,4 +1,21 @@
 
+.drop {
+  border-color: #fff;
+  border-style: solid;
+}
+
+.drag {
+  border-color: #fff;
+  border-style: solid;
+}
+
+.nondrop {
+  border-style: none;
+}
+
+.nondrag {
+  border-style: none;
+}
 
 .interaction_container{
 	text-align: center;

@@ -1,13 +1,66 @@
 var stage = 1;
 
 function checkStage(){
+
+  user_private_color = document.querySelector("#user_private_color");
+  bank_private_color = document.querySelector("#bank_private_color");
+  user_mix_color = document.querySelector("#user_mix_color");
+  bank_mix_color = document.querySelector("#bank_mix_color");
+  public_color = document.querySelector("#public_color");
+  public_color = document.querySelector("#public_color");
+  mixer1 = document.querySelector("#mixer1");
+  mixer2 = document.querySelector("#mixer2");
   //Start with public color and 2 private colors
   if (stage == 1) {
     /*
-    if both mixtures have colors then move to next step
+    Stage 1
+    -------
+    ACTION: user drags private into mix 1
+    -- RESPONSE: set private user non-drag
+                 set public as drag
+           set color mix 1 non-drop
+           set color mix 2 drop
+           stage++
     */
+
+    if (true) {
+      user_private_color.classList.remove('drag');
+      user_private_color.classList.add('nondrag');
+      public_color.classList.add('drag');
+      public_color.classList.remove('nondrag');
+      mixer1.classList.remove('drop');
+      mixer1.classList.add('nondrop');
+      mixer2.classList.add('drop');
+      mixer2.classList.remove('nondrop');
+      stage ++;
+    }
   } else if (stage == 2) {
-    
+    /*
+    Stage 2
+    -------
+    ACTION: user drags public into mix 2
+    -- RESPONSE: set color mix 2 non-drop
+           set user mix to new color
+           set public as non-drag
+           reset color mixes (non-drag)
+           set color mix 1 to drop
+           set bank private to drag
+    */
+    user_mix_color.style.backgroundColor = "#354354";
+    user_mix_color.classList.add('nondrag');
+    user_mix_color.classList.remove('drag');
+    public_color.classList.add('nondrag');
+    public_color.classList.remove('drag');
+    mixer2.classList.add('nondrop');
+    mixer2.classList.remove('drop');
+    mixer1.style.backgroundColor = "#ccc";
+    mixer2.style.backgroundColor = "#ccc";
+    mixer1.classList.add('drop');
+    mixer1.classList.remove('nondrop');
+    bank_private_color.classList.remove('nondrag');
+    bank_private_color.classList.add('drag');
+    stage++;
+
   } else if (stage == 3) {
     
   } else if (stage == 4) {
@@ -27,6 +80,10 @@ function checkStage(){
   }
 }
 
+function makeNondrag() {
+
+}
+
 function checkMixture() {
 
   if (stage == 1) {
@@ -37,8 +94,9 @@ function checkMixture() {
     else ERROR can't mix two colors that are both private
     check steps
     */
+    checkStage();
   } else if (stage == 2) {
-    
+    checkStage();
   } else if (stage == 3) {
     
   } else if (stage == 4) {
@@ -59,7 +117,7 @@ function checkMixture() {
 }
 
 // target elements with the "draggable" class
-interact('.has_color')
+interact('.drag')
   .draggable({
     // enable inertial throwing
     inertia: true,
@@ -102,9 +160,9 @@ interact('.has_color')
   window.dragMoveListener = dragMoveListener;
 
   // enable draggables to be dropped into this
-interact('.color_mixer').dropzone({
+interact('.drop').dropzone({
   // only accept elements matching this CSS selector
-  accept: '.has_color',
+  accept: '.drag',
   // Require a 75% element overlap for a drop to be possible
   overlap: 0.75,
 
@@ -129,9 +187,9 @@ interact('.color_mixer').dropzone({
     // remove the drop feedback style
     event.target.classList.remove('drop-target');
     event.relatedTarget.classList.remove('can-drop');
+    checkMixture();
   },
   ondrop: function (event) {
-
   },
   ondropdeactivate: function (event) {
     // remove active dropzone feedback
