@@ -1,0 +1,31 @@
+Initial State
+--------------
+* instruction = "mix your color with public", stage = 1, error=""
+* non-draggable: all colors except user
+* draggable: user private
+* droppable: color mix 1
+* non-droppable: everything else (color mix 2)
+
+Stage 1
+-------
+ACTION: user drags private into mix 1
+-- RESPONSE: set private user non-drag
+             set public as drag
+			 set color mix 1 non-drop
+			 set color mix 2 drop
+			 stage++
+			 
+Stage 2
+-------
+ACTION: user drags public into mix 2
+-- RESPONSE: set color mix 2 non-drop
+			 set user mix to new color
+			 set public as non-drag
+			 reset color mixes (non-drag)
+			 set color mix 1 to drop
+			 set bank private to drag
+
+Stage 3
+-------
+ACTION: drag bank private into mix 1
+-- RESPONSE: 
