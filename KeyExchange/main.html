@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src="js/interact.min.js"></script>
+
+<!--     <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js"></script> -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <div class="interaction_container">
+      <div>Instructions text</div>
+      <div class="row">
+      <!-- public color -->
+        <div class="col-md-5"></div>
+        <div class="col-md-2 character_color">
+          <div class="has_color" id="public_color">
+            <p>Public Color</p>
+          </div>
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+      <div class="row">
+        <!-- three people -->
+        <div class="col-md-4 character_container" id="user_container">
+          <!-- first character -->
+          <div class="row character_image_row" id="user_image">
+            <!-- image -->
+            <img src="img/user_image.png" alt="User" class="character_image">
+          </div>
+          <div class="row color_pallete" id="user_pallete">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 character_color">
+              <div class="has_color" id="user_private_color">
+                <!-- color 1 -->
+                <p>Private Color</p>
+              </div>
+            </div>
+            <div class="col-md-3 character_color" id="user_mix_color">
+              <!-- color 2 -->
+            </div>
+            <div class="col-md-3 character_color" id="user_shared_color">
+              <!-- color 3 -->
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 character_container" id="hacker_container">
+          <!-- first character -->
+          <div class="row character_image_row" id="hacker_image">
+            <!-- image -->
+            <img src="img/hacker_image.png" alt="hacker" class="character_image">
+          </div>
+          <div class="row color_pallete" id="user_pallete">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 character_color" id="hacker_mix1_color">
+              <!-- color 1 -->
+            </div>
+            <div class="col-md-3 character_color" id="hacker_mix2_color">
+              <!-- color 2 -->
+            </div>
+            <div class="col-md-3 character_color" id="hacker_mix3_color">
+              <!-- color 3 -->
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 character_container" id="bank_container">
+          <!-- first character -->
+          <div class="row character_image_row" id="user_image">
+            <!-- image -->
+            <img src="img/bank_image.png" alt="User" class="character_image">
+          </div>
+          <div class="row color_pallete" id="user_pallete">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 character_color">
+              <div class="has_color" id="bank_private_color">
+                <!-- color 1 -->
+                <p>Private Color</p>
+              </div>
+            </div>
+            <div class="col-md-3 character_color" id="bank_mix_color">
+              <!-- color 2 -->
+            </div>
+            <div class="col-md-3 character_color" id="bank_shared_color">
+              <!-- color 3 -->
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <!-- mixing tool -->
+          <div class="col-md-3"></div>
+          <div class="col-md-2 color_mixer">
+            <!-- <img src="img/empty_color.png" alt="color" class="color_mixer"> -->
+          </div>
+          <div class="col-md-2 color_mixer">
+            <!-- <img src="img/empty_color.png" alt="color" class="color_mixer"> -->
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
