@@ -1,0 +1,28 @@
+<html ng-app="diffieHellmanApp" ng-controller="ModuloController">
+	<head>
+		<title>Modulo</title>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    	<script src="modulo.js"></script>
+	</head>
+	<body>
+		<div id = "question1"> 
+			Solve the following equation:
+
+			3^2 mod 5 = 
+			<input type="text" ng-model="guess1" ng-change="checkAnswer1()"> 
+			{{answer1}}
+		</div>
+		<div id = "question2"> 
+			I used an exponent to get a specific answer. Can you guess what it was?
+
+			3^<input type="text" ng-model="guess2" ng-change="checkAnswer2()" ng-model-options="{debounce: 700}">  mod 5 = 4
+			{{answer2}}
+			{{attempts}} Attempts
+		</div>
+		<div id = "question3"> 
+			Here are some possible answers:
+			<span ng-repeat="num in possible">{{num}} </span>
+			<button ng-click="showMore()">Show More</button>
+		</div>
+	</body>
+</html>
