@@ -10,6 +10,7 @@ function checkStage(){
   public_color = document.querySelector("#public_color");
   mixer1 = document.querySelector("#mixer1");
   mixer2 = document.querySelector("#mixer2");
+  bank_mix_container = document.querySelector("#bank_mix_container");
   //Start with public color and 2 private colors
   if (stage == 1) {
     /*
@@ -62,8 +63,52 @@ function checkStage(){
     stage++;
 
   } else if (stage == 3) {
+    /*
+    Stage 3
+    -------
+    ACTION: drag bank private into mix 1
+    -- RESPONSE: set bank to nondrag
+           set public color to drag
+           set mixer 1 to nondrop
+           set mixer 2 to droppable
+           stage++
+    */
+    console.log("stage3");
+    bank_private_color.classList.remove('drag');
+    bank_private_color.classList.add('nondrag');
+    public_color.classList.add('drag');
+    public_color.classList.remove('nondrag');
+    mixer1.classList.remove('drop');
+    mixer1.classList.add('nondrop');
+    mixer2.classList.add('drop');
+    mixer2.classList.remove('nondrop');
+    stage ++;
     
   } else if (stage == 4) {
+    /*
+    Stage 4
+    -------
+    ACTION: user drags public into mix 2
+    -- RESPONSE: set color mix 2 non-drop
+           set user mix to new color
+           set public as non-drag
+           reset color mixes (non-drag)
+           set color mix 1 to drop
+           set bank private to drag
+    */
+    bank_mix_color.style.backgroundColor = "#f3d2f3";
+    bank_mix_color.classList.add('nondrag');
+    bank_mix_color.classList.remove('drag');
+    public_color.classList.add('nondrag');
+    public_color.classList.remove('drag');
+    mixer2.classList.add('nondrop');
+    mixer2.classList.remove('drop');
+    mixer1.style.backgroundColor = "#ccc";
+    mixer2.style.backgroundColor = "#ccc";
+    user_mix_color.classList.remove('nondrag');
+    user_mix_color.classList.add('drag');
+    bank_mix_container.classList.add('drop')
+    stage++;
     
   } else if (stage == 5) {
     
@@ -98,21 +143,21 @@ function checkMixture() {
   } else if (stage == 2) {
     checkStage();
   } else if (stage == 3) {
-    
+    checkStage();
   } else if (stage == 4) {
-    
+    checkStage();
   } else if (stage == 5) {
-    
+    checkStage();
   } else if (stage == 6) {
-    
+    checkStage();
   } else if (stage == 7) {
-    
+    checkStage();
   } else if (stage == 8) {
-    
+    checkStage();
   } else if (stage == 9) {
-    
+    checkStage();
   } else if (stage == 10) {
-    
+    checkStage();
   }
 }
 
@@ -176,12 +221,20 @@ interact('.drop').dropzone({
     var draggableElement = event.relatedTarget,
         dropzoneElement = event.target;
 
-    // feedback the possibility of a drop
-    dropzoneElement.classList.add('drop-target');
-    draggableElement.classList.add('can-drop');
-    var color = $(draggableElement).css("background-color");
-    console.log(hexc(color));
-    dropzoneElement.style.backgroundColor = hexc(color);
+    if (dropzoneElement.id == "bank_mix_container") {
+      dropzoneElement.classList.add('drop-target');
+      draggableElement.classList.add('can-drop');
+      bank_mix_color = document.querySelector("#bank_mix_color");
+      var color1 = $(bank_mix_color).css("background-color");
+      var color2 = $(draggableElement).css("background-color");
+      draggableElement.style.backgroundColor = hexc(color1);
+      bank_mix_color.style.backgroundColor = hexc(color2);
+    } else {
+      // feedback the possibility of a drop
+      var color = $(draggableElement).css("background-color");
+      console.log(hexc(color));
+      dropzoneElement.style.backgroundColor = hexc(color);
+    }
   },
   ondragleave: function (event) {
     // remove the drop feedback style

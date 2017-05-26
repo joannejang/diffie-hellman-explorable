@@ -28,4 +28,19 @@ ACTION: user drags public into mix 2
 Stage 3
 -------
 ACTION: drag bank private into mix 1
--- RESPONSE: 
+-- RESPONSE: set bank to nondrag
+			 set public color to drag
+			 set mixer 1 to nondrop
+			 set mixer 2 to droppable
+			 stage++
+
+Stage 4
+-------
+ACTION: user drags public into mix 2
+-- RESPONSE: set color mix 2 non-drop
+			 set bank mix to new color
+			 set public as non-drag
+			 reset color mix 2 to nondrop
+			 set color mix 1 to nondrop
+			 set user mix to drag
+			 set bank mix to drop
