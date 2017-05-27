@@ -195,6 +195,7 @@ function checkStage(){
           stage++
       */
     instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
+    // need to set delay here
     user_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
@@ -236,14 +237,19 @@ function checkStage(){
 
 */
     instructions.innerHTML = "You and the bank now have a shared secret color!"
+    bank_mix_color.classList.add('nondrag');
+    bank_mix_color.classList.remove('drag');
+
+    mixer2.classList.add('nondrop');
+    mixer2.classList.remove('drop');
+    stage++;
+
+
+  } else if (stage == 10) {
+    instructions.innerHTML = "You and the bank now have a shared secret color!"
     bank_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
     mixer1.style.backgroundColor = "#ccc";
     mixer2.style.backgroundColor = "#ccc";
-    mixer2.classList.add('nondrop');
-    mixer2.classList.remove('drop');
-    bank_mix_color.classList.add('nondrag');
-    bank_mix_color.classList.remove('drag');
-  } else if (stage == 10) {
 
   }
 }
