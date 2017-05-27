@@ -8,39 +8,109 @@ Initial State
 
 Stage 1
 -------
+INSTRUCTION: "Mix your private color with the public color."
+More granular instruction/error message: "Drop your private color into the color mixing palette."
 ACTION: user drags private into mix 1
--- RESPONSE: set private user non-drag
-             set public as drag
-			 set color mix 1 non-drop
-			 set color mix 2 drop
-			 stage++
+RESPONSE: nondrag: user private
+          drag: public
+		  nondrop: color mix 1
+		  drop: color mix 2
+		  stage++
 			 
 Stage 2
 -------
+INSTRUCTION: "Mix your private color with the public color."
+More granular instruction/error message: "Drop the public color into the color mixing palette."
 ACTION: user drags public into mix 2
--- RESPONSE: set color mix 2 non-drop
-			 set user mix to new color
-			 set public as non-drag
-			 reset color mixes (non-drag)
-			 set color mix 1 to drop
-			 set bank private to drag
+RESPONSE: set color mix 2 non-drop
+		  set user mix to new color
+		  set public as non-drag
+		  reset color mixes (non-drag)
+		  set color mix 1 to drop
+		  set bank private to drag
+		  stage++
 
 Stage 3
 -------
+INSTRUCTION: "Mix the bank's private color with the public color."
+More granular instruction/error message: "Drop the bank's private color into the color mixing palette."
 ACTION: drag bank private into mix 1
--- RESPONSE: set bank to nondrag
-			 set public color to drag
-			 set mixer 1 to nondrop
-			 set mixer 2 to droppable
-			 stage++
+RESPONSE: set bank to nondrag
+		  set public color to drag
+		  set mixer 1 to nondrop
+		  set mixer 2 to droppable
+		  stage++
 
 Stage 4
 -------
+INSTRUCTION: "Mix the bank's private color and the public color."
+More granular instruction/error message: "Drop the public color into the color mixing palette."
 ACTION: user drags public into mix 2
--- RESPONSE: set color mix 2 non-drop
-			 set bank mix to new color
-			 set public as non-drag
-			 reset color mix 2 to nondrop
-			 set color mix 1 to nondrop
-			 set user mix to drag
-			 set bank mix to drop
+RESPONSE: set color mix 2 non-drop
+		  set bank mix to new color
+		  set public as non-drag
+		  reset color mix 2 to nondrop
+		  set color mix 1 to nondrop
+		  set user mix to drag
+		  set bank mix to drop
+		  store bank mix (to swap in next stage)
+		  stage++
+			 
+Stage 5
+-------
+INSTRUCTION: "Exchange your mixed color with the bank's mixed color."
+More granular instruction/error message: "Drag your mixed color into the bank's mixed color to swap the two colors."
+ACTION: user drags user mix to bank mix
+RESPONSE: set user mix (base) to bank mix
+		  set hacker mix 1 to user mix
+		  set hacker mix 2 to bank mix
+		  nondrop: bank mix
+		  nondrag: user mix
+		  drop: color mix 1
+	      drag: private color
+		  stage++
+			 
+
+Stage 6
+-------
+INSTRUCTION: "Mix your private color with the color you just received from the bank."
+More granular instruction/error message: "Drag your private color into the color mixing palette."
+ACTION: user drags user private into mix 1
+RESPONSE: nondrop: color mix 1
+		  drop: color mix 2
+		  nondrag: user private
+		  drag: user-mix-color
+		  stage++
+
+Stage 7
+-------
+INSTRUCTION: "Mix your private color with the color you just received from the bank."
+More granular instruction/error message: "Drag your newly received mixed color into the color mixing palette."
+ACTION: user drags user-mix-color into mix 2
+RESPONSE: set user key to resulting color
+          nondrop: color mix 2
+		  nondrag: user-mix-color
+		  drag: bank private
+		  drop: color mix 1
+		  stage++
+
+Stage 8
+-------
+INSTRUCTION: "Mix the bank's private color with the color it just received from you."
+More granular instruction/error message: "Drag the bank's private color into the color mixing palette."
+ACTION: user drags bank private into mix 1
+RESPONSE: nondrop: color mix 1
+		  drop: color mix 2
+		  nondrag:  bank private
+		  drag: bank-mix-color
+		  stage++
+
+Stage 9
+-------
+INSTRUCTION: "Mix the bank's private color with the color it just received from you."
+More granular instruction/error message: "Drag the bank's mixed color that it received from you into the color mixing palette."
+ACTION: user drags bank-mix-color into mix 2
+RESPONSE: set bank key to resulting color
+          nondrop: color mix 2
+		  nondrag: bank-mix-color
+		  stage++
