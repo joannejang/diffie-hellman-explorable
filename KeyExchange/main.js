@@ -11,7 +11,15 @@ function checkStage(){
   mixer1 = document.querySelector("#mixer1");
   mixer2 = document.querySelector("#mixer2");
   bank_mix_container = document.querySelector("#bank_mix_container");
+  hacker_mix1_color = document.querySelector("#hacker_mix1_color");
+  hacker_mix2_color = document.querySelector("#hacker_mix2_color");
+  user_shared_color = document.querySelector("#user_shared_color");
+  bank_shared_color = document.querySelector("#bank_shared_color");
+  instructions =  document.querySelector("#instructions");
+
   //Start with public color and 2 private colors
+
+  console.log("STAGE: " + stage);
   if (stage == 1) {
     /*
     Stage 1
@@ -25,6 +33,7 @@ function checkStage(){
     */
 
     if (true) {
+      instructions.innerHTML = "Mix your private color with the public color."
       user_private_color.classList.remove('drag');
       user_private_color.classList.add('nondrag');
       public_color.classList.add('drag');
@@ -47,6 +56,7 @@ function checkStage(){
            set color mix 1 to drop
            set bank private to drag
     */
+    instructions.innerHTML = "Mix the bank's private color with the public color."
     user_mix_color.style.backgroundColor = "#354354";
     user_mix_color.classList.add('nondrag');
     user_mix_color.classList.remove('drag');
@@ -73,7 +83,7 @@ function checkStage(){
            set mixer 2 to droppable
            stage++
     */
-    console.log("stage3");
+    instructions.innerHTML = "Mix the bank's private color with the public color."
     bank_private_color.classList.remove('drag');
     bank_private_color.classList.add('nondrag');
     public_color.classList.add('drag');
@@ -96,6 +106,7 @@ function checkStage(){
            set color mix 1 to drop
            set bank private to drag
     */
+    instructions.innerHTML = "Exchange your mixed color with the bank's mixed color."
     bank_mix_color.style.backgroundColor = "#f3d2f3";
     bank_mix_color.classList.add('nondrag');
     bank_mix_color.classList.remove('drag');
@@ -111,17 +122,129 @@ function checkStage(){
     stage++;
     
   } else if (stage == 5) {
+    /*
+    Stage 5
+    -------
+    INSTRUCTION: "Exchange your mixed color with the bank's mixed color."
+    More granular instruction/error message: "Drag your mixed color into the bank's mixed color to swap the two colors."
+    ACTION: user drags user mix to bank mix
+    RESPONSE: set user mix (base) to bank mix <- NOT SURE WHERE THIS IS HAPPENING
+          set hacker mix 1 to user mix
+          set hacker mix 2 to bank mix
+          nondrop: bank mix
+          nondrag: user mix
+          drop: color mix 1
+            drag: private color
+          stage++
+    */
+    instructions.innerHTML = "Mix your private color with the color you just received from the bank."
+    hacker_mix1_color.style.backgroundColor = "#354354";
+    hacker_mix2_color.style.backgroundColor = "#f3d2f3";   
+    user_private_color.classList.add('drag');
+    user_private_color.classList.remove('nondrag');
+    public_color.classList.add('nondrag');
+    public_color.classList.remove('drag');
+    // user_mix_color.classList.remove('nondrag');
+    // user_mix_color.classList.add('drag');
+    mixer2.classList.remove('drop');
+    mixer2.classList.add('nondrop');
+    mixer1.classList.add('drop');
+    mixer1.classList.remove('nondrop');
+    stage ++;
+
+
     
   } else if (stage == 6) {
-    
+  /*
+    Stage 6
+    -------
+    INSTRUCTION: "Mix your private color with the color you just received from the bank."
+    More granular instruction/error message: "Drag your private color into the color mixing palette."
+    ACTION: user drags user private into mix 1
+    RESPONSE: nondrop: color mix 1
+          drop: color mix 2
+          nondrag: user private
+          drag: user-mix-color
+          stage++
+  */
+    instructions.innerHTML = "Mix your private color with the color you just received from the bank."
+    user_private_color.classList.add('drag');
+    user_private_color.classList.remove('nondrag');
+    public_color.classList.add('nondrag');
+    public_color.classList.remove('drag');
+    mixer2.classList.remove('nondrop');
+    mixer2.classList.add('drop');
+    mixer1.classList.add('nondrop');
+    mixer1.classList.remove('drop');
+    user_mix_color.classList.remove('nondrag');
+    user_mix_color.classList.add('drag');
+    stage ++;
+
   } else if (stage == 7) {
+    /*
+    Stage 7
+    -------
+    INSTRUCTION: "Mix your private color with the color you just received from the bank."
+    More granular instruction/error message: "Drag your newly received mixed color into the color mixing palette."
+    ACTION: user drags user-mix-color into mix 2
+    RESPONSE: set user key to resulting color
+              nondrop: color mix 2
+          nondrag: user-mix-color
+          drag: bank private
+          drop: color mix 1
+          stage++
+      */
+    instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
+    user_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
+    mixer2.classList.add('nondrop');
+    mixer2.classList.remove('drop');
+    user_mix_color.classList.add('nondrag');
+    user_mix_color.classList.remove('drag');
+    bank_private_color.classList.add('drag');
+    bank_private_color.classList.remove('nondrag');
+    mixer1.classList.add('drop');
+    mixer1.classList.remove('nondrop');
+    mixer1.style.backgroundColor = "#ccc";
+    mixer2.style.backgroundColor = "#ccc";
+
+    stage ++;
     
   } else if (stage == 8) {
-    
+    instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
+    mixer2.classList.add('drop');
+    mixer2.classList.remove('nondrop');
+    bank_mix_color.classList.add('drag');
+    bank_mix_color.classList.remove('nondrag');
+    bank_private_color.classList.add('nondrag');
+    bank_private_color.classList.remove('drag');
+    mixer1.classList.add('nondrop');
+    mixer1.classList.remove('drop');
+
+    stage ++;
+
   } else if (stage == 9) {
-    
+    /*
+    Stage 9
+    -------
+    INSTRUCTION: "Mix the bank's private color with the color it just received from you."
+    More granular instruction/error message: "Drag the bank's mixed color that it received from you into the color mixing palette."
+    ACTION: user drags bank-mix-color into mix 2
+    RESPONSE: set bank key to resulting color
+              nondrop: color mix 2
+          nondrag: bank-mix-color
+          stage++
+
+*/
+    instructions.innerHTML = "You and the bank now have a shared secret color!"
+    bank_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
+    mixer1.style.backgroundColor = "#ccc";
+    mixer2.style.backgroundColor = "#ccc";
+    mixer2.classList.add('nondrop');
+    mixer2.classList.remove('drop');
+    bank_mix_color.classList.add('nondrag');
+    bank_mix_color.classList.remove('drag');
   } else if (stage == 10) {
-    
+
   }
 }
 
