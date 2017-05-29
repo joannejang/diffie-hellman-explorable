@@ -28,6 +28,17 @@
 	border-style: dashed;
 	padding: 10px;
 	margin: 10px;
+  height: 80px;
+}
+
+p{
+  height: 80px;
+  vertical-align: middle;
+}
+
+.color_dragger {
+  width: 100%;
+  height: 100%;
 }
 
 #user_private_color {

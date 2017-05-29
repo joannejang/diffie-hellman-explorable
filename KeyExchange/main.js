@@ -254,39 +254,85 @@ function checkStage(){
   }
 }
 
-function makeNondrag() {
+var hasDropped = false;
 
-}
+function checkMixture(draggableElement) {
 
-function checkMixture() {
+  user_private_color = document.querySelector("#user_private_color");
+  bank_private_color = document.querySelector("#bank_private_color");
+  user_mix_color = document.querySelector("#user_mix_color");
+  bank_mix_color = document.querySelector("#bank_mix_color");
+  public_color = document.querySelector("#public_color");
+  public_color = document.querySelector("#public_color");
+  mixer1 = document.querySelector("#mixer1");
+  mixer2 = document.querySelector("#mixer2");
+  bank_mix_container = document.querySelector("#bank_mix_container");
+  hacker_mix1_color = document.querySelector("#hacker_mix1_color");
+  hacker_mix2_color = document.querySelector("#hacker_mix2_color");
+  user_shared_color = document.querySelector("#user_shared_color");
+  bank_shared_color = document.querySelector("#bank_shared_color");
+  instructions =  document.querySelector("#instructions");
 
   if (stage == 1) {
     /*
-    one color must be public and one color must be private
-    if private color is user then set user mixture to mix
-    if private color is bank then set bank mixture to mix
-    else ERROR can't mix two colors that are both private
-    check steps
+    Stage 1
+    -------
+    ACTION: user drags private into mix 1
+    -- RESPONSE: set private user non-drag
+                 set public as drag
+                 set color mix 1 non-drop
+                 set color mix 2 drop
+                 stage++
     */
-    checkStage();
+    if (draggableElement == user_private_color && !hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 2) {
-    checkStage();
+    if (draggableElement != user_private_color && !hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 3) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 4) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 5) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 6) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 7) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 8) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 9) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   } else if (stage == 10) {
-    checkStage();
+    if (!hasDropped) {
+      hasDropped = true;
+      checkStage();
+    }
   }
 }
 
@@ -308,7 +354,7 @@ interact('.drag')
     onmove: dragMoveListener,
     // call this function on every dragend event
     onend: function (event) {
-
+      hasDropped = false;
     }
   });
 
@@ -350,6 +396,7 @@ interact('.drop').dropzone({
     var draggableElement = event.relatedTarget,
         dropzoneElement = event.target;
 
+    if (hasDropped) {return;}
     if (dropzoneElement.id == "bank_mix_container") {
       dropzoneElement.classList.add('drop-target');
       draggableElement.classList.add('can-drop');
@@ -366,10 +413,12 @@ interact('.drop').dropzone({
     }
   },
   ondragleave: function (event) {
+    var draggableElement = event.relatedTarget,
+    dropzoneElement = event.target;
     // remove the drop feedback style
     event.target.classList.remove('drop-target');
     event.relatedTarget.classList.remove('can-drop');
-    checkMixture();
+    checkMixture(draggableElement);
   },
   ondrop: function (event) {
   },
