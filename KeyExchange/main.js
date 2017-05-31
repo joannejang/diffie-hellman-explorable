@@ -247,14 +247,16 @@ function checkStage(){
 
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
+
+    mixer1.style.backgroundColor = "#ccc";
+    mixer2.style.backgroundColor = "#ccc";
+    
     stage++;
 
 
   } else if (stage == 10) {
     instructions.innerHTML = "You and the bank now have a shared secret color!"
     bank_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
 
   }
 }
