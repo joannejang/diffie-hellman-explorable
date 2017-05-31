@@ -1,0 +1,40 @@
+input {
+	width: 60px;
+	font-size: 30px;
+}
+.math {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 40px;
+	color: #999;
+	text-align: center;
+}
+.possible {
+	width: 25%;
+	float: left;
+	display: inline-block;
+	padding: 20px 0;
+}
+body {
+	width: 60%;
+	margin: 0 auto;
+	font-family: 'Old Standard TT', sans-serif;
+	font-size: 18px;
+	font-weight: 100;
+	line-height: 30px;
+}
+.section {
+	padding-top: 40px;
+}
+h1 {
+	text-align: left;
+	font-family: 'Cabin', sans-serif;
+	color: #F97C92;
+} 
+button { 
+	font-size: 18px;
+}
+.response {
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	padding-top: 20px;
+}

@@ -3,26 +3,47 @@
 		<title>Modulo</title>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     	<script src="modulo.js"></script>
+    	<link rel="stylesheet" type="text/css" href="modulo.css">
+    	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css?family=Cabin|Old+Standard+TT" rel="stylesheet">
 	</head>
 	<body>
-		<div id = "question1"> 
-			Solve the following equation:
-
-			3^2 mod 5 = 
-			<input type="text" ng-model="guess1" ng-change="checkAnswer1()"> 
-			{{answer1}}
+		<div class="section">
+			<h1>Modulos</h1>
 		</div>
-		<div id = "question2"> 
-			I used an exponent to get a specific answer. Can you guess what it was?
+		<div class="section" id = "question1"> 
+			<h2>The modulo operator is also a one-way function.</h2>
+			<p>We can understand this the same way we understood paint as a one-way function.</p>
+			<p>Solve the following equation:</p>
 
-			3^<input type="text" ng-model="guess2" ng-change="checkAnswer2()" ng-model-options="{debounce: 700}">  mod 5 = 4
-			{{answer2}}
-			{{attempts}} Attempts
+			<h2>Solving an equation with a modulo is easy.</h2>
+			<p>Here, try this one out.</p>
+			<div class="math"> 
+				3<sup>2</sup> mod 5 = <input type="text" ng-model="guess1" ng-change="checkAnswer1()" ng-model-options="{debounce: 700}"> 
+			</div>
+			<div class="response">{{answer1}}</div>
 		</div>
-		<div id = "question3"> 
-			Here are some possible answers:
-			<span ng-repeat="num in possible">{{num}} </span>
-			<button ng-click="showMore()">Show More</button>
+		<div class="section" id = "question2"> 
+			<h2>However, reversing an equation with a modulo is really hard.</h2>
+			<p>No really, it is! Given the following equation, can you solve for the specific exponent that was used to create the end result?</p>
+
+			<div class = "math">3<sup><input type="text" ng-model="guess2" ng-change="checkAnswer2()" ng-model-options="{debounce: 700}"></sup>mod 5 = 4</div>
+			<div class="response">
+				{{answer2}}
+			</div> 
+			<div class="response">
+				{{attempts}} Attempts
+			</div>
+		</div>
+		<div class="section" id = "question3"> 
+			<h2>You might think the answer is {{guess2}} but it really could be any of these numbers:</h2>
+			<div class = "math nums">
+				<div class="possible" ng-repeat="num in possible">{{num}}</div>
+			</div>
+			<div class="response">
+				<button ng-click="showMore()">Show More</button>
+			</div>
+			<p>Without knowing which specific one I used, it would take a very long time to brute force through all of these possibilities and test if they were the right one.</p>
 		</div>
 	</body>
 </html>
