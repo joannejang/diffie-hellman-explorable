@@ -128,3 +128,21 @@ img.color_mixer{
   color: #000;
   background-color: #4e4;
 }
+
+#mixer1{
+  -webkit-transform: translate(40px, 60px) rotate(45deg);
+
+  border-radius: 20px;
+  height: 250px;
+
+}
+
+#mixer2 {
+  -webkit-transform: translate(-20px, 60px) rotate(45deg);
+
+  border-radius: 20px;
+  height: 250px;
+
+}
+
+ 
