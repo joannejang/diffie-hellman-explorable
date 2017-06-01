@@ -1,0 +1,45 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+h1 {
+	font-family: 'Lora', serif;
+	font-size: 48px;
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 20px;
+}
+h2 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 26px
+}
+h3 {
+	font-family: 'Lora', serif;
+}
+.header {
+	text-align: center;
+	background-color: #6EC4DB;
+	padding: 60px 0 80px 0;
+	color: white;
+}
+@media (min-width: 900px) {
+    .container{
+        max-width: 800px;
+    }
+}
+.chapter { 
+	padding: 40px 0;
+	margin: 30px 0;
+}
+.big {
+	font-size: 18px;
+}
+.question {
+	background-color: #F97C92;
+	font-size: 36px;
+	font-family: 'Lora', serif;
+	line-height: 50px;
+	color: white;
+	padding: 100px 0;
+	text-align: center;
+}
