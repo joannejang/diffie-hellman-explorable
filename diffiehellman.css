@@ -1,5 +1,6 @@
 body {
 	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
 }
 h1 {
 	font-family: 'Lora', serif;
@@ -31,9 +32,6 @@ h3 {
 	padding: 40px 0;
 	margin: 30px 0;
 }
-.big {
-	font-size: 18px;
-}
 .question {
 	background-color: #F97C92;
 	font-size: 36px;
@@ -42,4 +40,7 @@ h3 {
 	color: white;
 	padding: 100px 0;
 	text-align: center;
+} 
+img {
+	padding-top: 20px;
 }

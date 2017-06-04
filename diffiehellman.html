@@ -6,27 +6,35 @@
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 	    <!-- FONTS -->
 		<link href="https://fonts.googleapis.com/css?family=Lora:400,400i|Roboto:400,700" rel="stylesheet">
 		<!-- ANGULAR -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<!-- INTERACT -->
+		<script src="http://cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js"></script>
+		<!-- JSCOLOR -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.js"></script>
 		<!-- BOOTSTRAP -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
    		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 		<link rel="stylesheet" type="text/css" href="diffiehellman.css">
+		<script src="paintmix.js"></script>
 	</head>
 	<body>
 		<div class = "header">
 			<div class = "container">
 				<h1>Diffie Hellman Key Exchange</h1>
 				<h2>Creating A Secret Key Over an Insecure Line</h2>
+				<img src="pics/key.png" alt="Smiley face">
 			</div>
 			<!-- made by joanne jane, clay jones, and jessica ouyang -->
 		</div>
 		<div class = "container">
-			<div class = "chapter big">
+			<div class = "chapter">
 				<p>
 					This is a story of how 2 people can create a <b>secret key</b> (that only the two of them know) while being apart, even if their conversation is being peeked on.
 				</p>
@@ -41,12 +49,29 @@
 			</div>
 		</div>
 		<div class = "container">
-			<div class = "chapter big">
+			<div class = "chapter">
 				<h3>A one-way function might help.</h3>
 				<p>
-					This is a story of how 2 people can create a <b>secret key</b> (that only the two of them know) while being apart, even if their conversation is being peeked on.
+					A <b>one-way function</b> is a function that is significantly easier to compute in one direction than in the opposite direction.
 				</p>
 			</div>
+			<div class = "chapter">
+				<h3>Paint is a one-way function.</h3>
+				<p>
+					<b>Mixing paint is easy.</b> As you can see, we can use two colors to create a third color simply by mixing the two.
+				</p>
+
+				<div id="visual_box">
+					<div id="drag-1" class="draggable" style="background-color: #66AB8C;"> </div>
+
+					<div id="drag-2" class="draggable" style="background-color: #F97C92;"> </div>
+
+					<div id="intersection" style="background-color: #B0948F;"></div>
+
+				</div>
+			</div>
+
 		</div>
 	</body>
+	
 </html>
