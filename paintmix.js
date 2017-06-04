@@ -49,7 +49,6 @@ var yellow_x2 = 200;
 
 var intersect_x1 = 0;
 var intersect_x2 = 0;
-var old_intersect_x1 = 0;
 
 
 function dragMoveListener (event) {
@@ -67,9 +66,6 @@ function dragMoveListener (event) {
   target.setAttribute('data-x', x);
   target.setAttribute('data-y', y);
 
-  var intersection = document.getElementById('intersection');
-  // intersection.style.backgroundColor = "#B0948F";
-
   if (target.getAttribute('id') == 'drag-2') {
     blue_x1 = x + 200; // initial x offset
     blue_x2 = blue_x1 + 300; // width offset
@@ -85,29 +81,24 @@ function dragMoveListener (event) {
     intersect_x2 = intersect_x1
   } else {
     // intersection
-    old_intersect_x1 = intersect_x1;
     if (yellow_x1 > blue_x1 && yellow_x2 < blue_x2) {
       intersect_x1 = yellow_x1;
       intersect_x2 = yellow_x2;
     } else if (yellow_x2 > blue_x2) {
       intersect_x1 = yellow_x1;
       intersect_x2 = blue_x2;
-      intersection.style.width = intersect_x2 - intersect_x1;
-
+      $("#intersection").width(intersect_x2 - intersect_x1);
     } else if (blue_x2 > yellow_x2) {
       intersect_x1 = blue_x1;
       intersect_x2 = yellow_x2;
-      intersection.style.width = intersect_x2 - intersect_x1;
+      $("#intersection").width(intersect_x2 - intersect_x1);
     }
   }
-  intersection.style.position = "absolute";
-  intersection.style.left = intersect_x1;
+  $("#intersection").css("left", intersect_x1);
 }
 
-
-
-var mystery_x1 = 200; //205;
-var mystery_x2 = 500; // 405;
+var mystery_x1 = 200; 
+var mystery_x2 = 500; 
 var pink_x1 = 0;
 var pink_x2 = 200;
 
@@ -156,17 +147,14 @@ function dragMoveListenerMystery (event) {
     } else if (pink_x2 > mystery_x2) {
       intersect_x1_mystery = pink_x1;
       intersect_x2_mystery = mystery_x2;
-      intersection_mystery.style.width = intersect_x2_mystery - intersect_x1_mystery;
-
+      $("#intersection_mystery").width(intersect_x2_mystery - intersect_x1_mystery);
     } else if (mystery_x2 > pink_x2) {
       intersect_x1_mystery = mystery_x1;
       intersect_x2_mystery = pink_x2;
-      intersection_mystery.style.width = intersect_x2_mystery - intersect_x1_mystery;
+      $("#intersection_mystery").width(intersect_x2_mystery - intersect_x1_mystery);
     }
   }
-
-  intersection_mystery.style.position = "absolute";
-  intersection_mystery.style.left = intersect_x1_mystery;
+  $("#intersection_mystery").css("left", intersect_x1_mystery);
 }
 
 function showPicker() {
@@ -175,47 +163,35 @@ function showPicker() {
     
 var attempts = 0;
 var mystery_attempts = 0;
-var color1 = "rgb(61, 198, 160)";
+var color1 = "rgb(255, 153, 102)";
 var color2;
 
 var intersection_color = "rgb(255, 192, 203)";
-function updateCirc2(jscolor) {
-  color2 = jscolor.toRGBString();
-  // // 'jscolor' instance can be used as a string
-
-  updateMixedColor(jscolor, intersection=false);
-  attempts += 1;
-  document.getElementById('attempts').innerHTML = "# of Attempt(s): " + attempts;
-  document.getElementById('match').style.backgroundColor = (attempts % 2 == 0) ? '#808080' : '#787878';
-}
 
 function updateIntersection(jscolor) { // mixing with pink
   color2 = jscolor.toRGBString();
   // // 'jscolor' instance can be used as a string
   document.getElementById('drag-4').style.backgroundColor = '#' + jscolor;
-
-  updateMixedColor(jscolor, intersection=true);
+  $("#drag-4").css("border", "none");
+  updateMixedColor(jscolor);
 
   mystery_attempts += 1;
   document.getElementById('attempts_mystery').innerHTML = "# of Attempt(s): " + mystery_attempts;
   document.getElementById('match_mystery').style.backgroundColor = (mystery_attempts % 2 == 0) ? '#808080' : '#787878';
 }
 
-function updateMixedColor(jscolor, intersection) {
-  cmyk_color1 = intersection ? RGBtoCMYK(intersection_color) : RGBtoCMYK(color1);
+function updateMixedColor(jscolor) {
+  cmyk_color1 = RGBtoCMYK(color1);
   cmyk_color2 = RGBtoCMYK(color2);
 
   rgb_mixed_color = mixColors(cmyk_color1, cmyk_color2);
 
-  if (intersection) {
-    document.getElementById('intersection_mystery').style.backgroundColor = rgb_mixed_color;
-    document.getElementById('drag-4').style.backgroundColor = '+' + jscolor;  
-    document.getElementById('mystery_result').innerHTML = 'Mixed Color: ' + rgbToHex(rgb_mixed_color);
-  } else {
-    document.getElementById('mixed_color').style.backgroundColor = rgb_mixed_color; 
-  }
+  document.getElementById('intersection_mystery').style.backgroundColor = rgb_mixed_color;
+  document.getElementById('drag-4').style.backgroundColor = '+' + jscolor;  
+  document.getElementById('mystery_result').innerHTML = 'Mixed Color: ' + rgbToHex(rgb_mixed_color);
 }
 
+// COLOR MANIPULATION
 function RGBtoCMYK(color) {
   rgb = color.substring(4, color.length-1)
           .replace(/ /g, '')

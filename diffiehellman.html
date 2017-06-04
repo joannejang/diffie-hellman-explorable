@@ -22,6 +22,7 @@
    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 		<link rel="stylesheet" type="text/css" href="diffiehellman.css">
+		<link rel="stylesheet" type="text/css" href="paintmix.css">
 		<script src="paintmix.js"></script>
 	</head>
 	<body>
@@ -45,7 +46,7 @@
 		</div>
 		<div class = "container-fluid question">
 			<div class = "container">
-				But how can we create something <i>secret</i> when everything passed between the two people <i>isn’t a secret</i>?
+				But how can we create something <i>secret</i> when everything passed between the two people <i>isn’t</i> a secret?
 			</div>
 		</div>
 		<div class = "container">
@@ -63,11 +64,43 @@
 
 				<div id="visual_box">
 					<div id="drag-1" class="draggable" style="background-color: #66AB8C;"> </div>
-
 					<div id="drag-2" class="draggable" style="background-color: #F97C92;"> </div>
-
 					<div id="intersection" style="background-color: #B0948F;"></div>
+				</div>
 
+				<p>
+					<b>However, unmixing paint is hard.</b> If you were given the mixed color and one of the ingredient colors, it would be <i>nearly impossible</i> to find the other ingredient color.
+				</p>
+				<p>
+					<b>Try finding the other ingredient color that makes up this mix.</b> You'll find that it's really difficult to find the exact color you're looking for!
+				</p>
+
+				<div class="interactive">
+					<div id="goal_mystery">
+							<p><b>GOAL COLOR</b><br>#99B2B2<br><br></p>
+							<p id="goal_color_mystery"></p>
+					</div>
+					<div id = "info">
+						<div id="mystery_result">
+							Mixed Color: N/A
+						</div>
+						<div id="match_mystery">
+							NOT A MATCH
+						</div>
+						<div id="attempts_mystery">
+							# of Attempt(s): 0
+						</div>
+					</div>
+
+					<div id="visual_box-2">
+						<div id="drag-3" class="draggable-2" style="background-color: #FF9966;"></div>
+
+						<div id="drag-4" class="draggable-2" style="background-color: white; font-size: 100px; text-align: center;"> ?
+									<input id="color_input_mystery" class="jscolor {position: 'bottom', shadow: 'false', shadowBlur: '0', smartPosition: 'false'}" onchange="updateIntersection(this.jscolor)" style="font-size:0px;"/>
+						</div>
+						<div id="intersection_mystery" style="background-color: #FF9966;"></div>
+					</div>
+					
 				</div>
 			</div>
 

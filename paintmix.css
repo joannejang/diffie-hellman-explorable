@@ -1,0 +1,134 @@
+/*MIXING*/
+#visual_box{
+	background-color: #fff;
+	border: 1px solid gray;
+	margin: 30px auto;
+	height: 200px;
+	position: relative;
+}
+#drag-1 {
+  width: 200px;
+  height: 100%;
+
+  background-color: #29e;
+  display: inline-block;
+  float: left;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  border-radius: 10px;
+}
+#drag-2 {
+  width: 300px;
+  height: 100%;
+  margin: 0%;
+
+  background-color: #29e;
+  display: inline-block;
+  float: left;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+   border-radius: 10px;
+}
+#intersection {
+	height: 100%;
+	display: inline-block;
+	border-radius: 10px;
+	position: absolute;
+}
+
+/*UNMIXING*/
+#visual_box-2 {
+	background-color: #fff;
+	border: 1px solid gray;
+	margin: 30px auto;
+	height: 200px; /* 30%; */
+	position: relative;
+}
+#drag-3 {
+  width: 200px;
+  height: 100%;
+
+  background-color: #29e;
+  color: white;
+
+  display: inline-block;
+  float: left;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  border-radius: 10px;
+}
+#drag-4 {
+  width: 300px;
+  height: 100%;
+  border: 1px dashed black;
+
+  background-color: #29e;
+  display: inline-block;
+  float: left;
+
+  line-height: 200%;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+   border-radius: 10px;
+   position: relative;
+   color: #444;
+}
+#intersection_mystery {
+	width: 0%;
+	height: 200px;
+	display: inline-block;
+	border-radius: 10px;
+	z-index: 5;
+	float: left;
+	position: absolute;
+	left: 0px;
+}
+#color_input_mystery {
+	width: 100%;
+	position: absolute;
+	z-index: 3;
+	left: 0px;
+	opacity: 0;
+}
+#goal_color_mystery{
+	border-radius: 50%;
+	width: 100px;
+	height: 100px; 
+	margin: auto;
+	border:1px solid gray; 
+	background-color: #99B2B2; 
+	margin-top: 20px;
+	font-size: 20px;
+}
+#goal_mystery {
+	padding-top: 20px;
+	margin: auto;
+	text-align: center;
+	padding-bottom: 50px;
+}
+#goal_mystery p {
+	display: inline-block;
+	margin: 0 20px;
+}
+#mystery_result {
+	margin: auto;
+	text-align: center;
+}
+#attempts_mystery {
+	text-align: center;
+}
+#match_mystery {
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	background-color: gray;
+	/*display: block;*/
+	font-size: 30px;
+}
+#info {
+	display: inline;
+}
