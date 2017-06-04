@@ -187,8 +187,9 @@ function updateMixedColor(jscolor) {
   rgb_mixed_color = mixColors(cmyk_color1, cmyk_color2);
 
   document.getElementById('intersection_mystery').style.backgroundColor = rgb_mixed_color;
+  document.getElementById('mixed_color_mystery').style.backgroundColor = rgb_mixed_color;
   document.getElementById('drag-4').style.backgroundColor = '+' + jscolor;  
-  document.getElementById('mystery_result').innerHTML = 'Mixed Color: ' + rgbToHex(rgb_mixed_color);
+  document.getElementById('mystery_result').innerHTML = '<b>Mixed Color</b><br>' + rgbToHex(rgb_mixed_color) + '<br><br>';
 }
 
 // COLOR MANIPULATION

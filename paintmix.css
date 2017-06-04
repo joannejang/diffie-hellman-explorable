@@ -2,7 +2,7 @@
 #visual_box{
 	background-color: #fff;
 	border: 1px solid gray;
-	margin: 30px auto;
+	margin: 70px auto;
 	height: 200px;
 	position: relative;
 }
@@ -79,7 +79,7 @@
 }
 #intersection_mystery {
 	width: 0%;
-	height: 200px;
+	height: 198px;
 	display: inline-block;
 	border-radius: 10px;
 	z-index: 5;
@@ -104,31 +104,44 @@
 	margin-top: 20px;
 	font-size: 20px;
 }
-#goal_mystery {
-	padding-top: 20px;
+#mixed_color_mystery {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px; 
 	margin: auto;
-	text-align: center;
-	padding-bottom: 50px;
+	border:1px solid gray; 
+	margin-top: 20px;
+	font-size: 20px;
+}
+#goal_mystery {
+	margin: auto;
 }
 #goal_mystery p {
 	display: inline-block;
 	margin: 0 20px;
 }
-#mystery_result {
-	margin: auto;
-	text-align: center;
-}
-#attempts_mystery {
-	text-align: center;
+#result_mystery p {
+	display: inline-block;
+	margin: 0 20px;
 }
 #match_mystery {
 	margin: 0 auto;
 	text-align: center;
 	color: white;
 	background-color: gray;
-	/*display: block;*/
 	font-size: 30px;
 }
-#info {
-	display: inline;
+#info-table {
+	width: 100%;
+	text-align: center;
+	margin: 20px 0;
+}
+/*#info-table td {
+	width: 50%;
+}
+#info-table td p {
+	width: 25%;
+}*/
+#unmixing {
+	margin: 70px 0;
 }
