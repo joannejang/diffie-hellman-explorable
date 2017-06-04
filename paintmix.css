@@ -125,23 +125,29 @@
 	margin: 0 20px;
 }
 #match_mystery {
-	margin: 0 auto;
-	text-align: center;
-	color: white;
-	background-color: gray;
-	font-size: 30px;
+	margin: 20px;
 }
 #info-table {
 	width: 100%;
 	text-align: center;
-	margin: 20px 0;
 }
-/*#info-table td {
-	width: 50%;
-}
-#info-table td p {
-	width: 25%;
-}*/
 #unmixing {
 	margin: 70px 0;
+}
+#attempts {
+	font-size: 70px;
+	margin-bottom: -20px;
+}
+#ismatch {
+	background-color: #fc9c9c;
+	color: #ce4848;
+	font-size: 15px;
+	padding: 7px;
+	border: 1px solid #ce4848;
+	border-radius: 3px;
+	margin: 0 auto;
+	width: 130px;
+	text-align: center;
+	margin-top: -30px;
+	display: none;
 }

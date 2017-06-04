@@ -15,11 +15,14 @@
 		<script src="http://cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js"></script>
 		<!-- JSCOLOR -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.js"></script>
+		<!-- JQUERY -->
+   		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<!-- BOOTSTRAP -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-   		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+   		<!-- ANIMATECSS -->
+   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 		<link rel="stylesheet" type="text/css" href="diffiehellman.css">
 		<link rel="stylesheet" type="text/css" href="paintmix.css">
@@ -80,23 +83,21 @@
 						<div id="drag-3" class="draggable-2" style="background-color: #FF9966;"></div>
 
 						<div id="drag-4" class="draggable-2" style="background-color: white; font-size: 100px; text-align: center;"> ?
-									<input id="color_input_mystery" class="jscolor {position: 'bottom', shadow: 'false', shadowBlur: '0', smartPosition: 'false'}" onchange="updateIntersection(this.jscolor)" style="font-size:0px;"/>
+									<input id="color_input_mystery" class="jscolor {position: 'right', padding: 0, shadow: false, smartPosition: false, insetColor:'#000'}" onchange="updateIntersection(this.jscolor)" style="font-size:0px;"/>
 						</div>
 						<div id="intersection_mystery" style="background-color: #FF9966;"></div>
 					</div>
 					<table id= "info-table">
 						<td>
 							<div id="goal_mystery">
-									<p><b>GOAL COLOR</b><br>#99B2B2<br><br></p>
-									<p id="goal_color_mystery"></p>
+								<p><b>GOAL COLOR</b><br>#99B2B2<br><br></p>
+								<p id="goal_color_mystery"></p>
 							</div>
 						</td>
 						<td>
-							<div id="match_mystery">
-								NOT A MATCH
-							</div>
-							<div id="attempts_mystery">
-								# of Attempt(s): 0
+							<div id = "match_mystery">
+								<div id = "attempts">0</div>
+								<div>ATTEMPTS</div><br>
 							</div>
 						</td>
 						<td>
@@ -106,6 +107,9 @@
 							</div>
 						</td>
 					</table>
+					<div id = "ismatch">
+						NOT A MATCH
+					</div>
 				</div>
 			</div>
 

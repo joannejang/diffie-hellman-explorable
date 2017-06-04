@@ -1,3 +1,4 @@
+  
   // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -176,8 +177,12 @@ function updateIntersection(jscolor) { // mixing with pink
   updateMixedColor(jscolor);
 
   mystery_attempts += 1;
-  document.getElementById('attempts_mystery').innerHTML = "# of Attempt(s): " + mystery_attempts;
-  document.getElementById('match_mystery').style.backgroundColor = (mystery_attempts % 2 == 0) ? '#808080' : '#787878';
+  document.getElementById('attempts').innerHTML = mystery_attempts;
+  $('#ismatch').css('display', 'block');
+  $('#ismatch').addClass('animated shake');
+  $('#ismatch').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    $(this).removeClass('animated shake');
+  });
 }
 
 function updateMixedColor(jscolor) {
@@ -189,7 +194,7 @@ function updateMixedColor(jscolor) {
   document.getElementById('intersection_mystery').style.backgroundColor = rgb_mixed_color;
   document.getElementById('mixed_color_mystery').style.backgroundColor = rgb_mixed_color;
   document.getElementById('drag-4').style.backgroundColor = '+' + jscolor;  
-  document.getElementById('mystery_result').innerHTML = '<b>Mixed Color</b><br>' + rgbToHex(rgb_mixed_color) + '<br><br>';
+  document.getElementById('mystery_result').innerHTML = '<b>MIXED COLOR</b><br>' + rgbToHex(rgb_mixed_color) + '<br><br>';
 }
 
 // COLOR MANIPULATION
