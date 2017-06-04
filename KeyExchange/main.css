@@ -153,8 +153,8 @@ img.color_mixer{
   -webkit-transform: translate(-20px, 130px);
 }
 
-#Combined-Shape {
- /* -webkit-transform: translate(0px, 0px);*/
+#mixer_intersection_svg {
+    transition: fill 0.3s;
 }
 
  

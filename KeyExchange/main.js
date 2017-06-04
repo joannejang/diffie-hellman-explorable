@@ -1,4 +1,6 @@
 var stage = 1;
+var showMix = false;
+var mixColor;
 
 function checkStage(){
 
@@ -10,6 +12,7 @@ function checkStage(){
   public_color = document.querySelector("#public_color");
   mixer1 = document.querySelector("#mixer1");
   mixer2 = document.querySelector("#mixer2");
+  mixer_intersection = document.querySelector("#mixer_intersection_svg");
   bank_mix_container = document.querySelector("#bank_mix_container");
   hacker_mix1_color = document.querySelector("#hacker_mix1_color");
   hacker_mix2_color = document.querySelector("#hacker_mix2_color");
@@ -43,6 +46,8 @@ function checkStage(){
       mixer1.classList.add('nondrop');
       mixer2.classList.add('drop');
       mixer2.classList.remove('nondrop');
+      showMix = true;
+      mixColor = "#354354"
       stage ++;
     }
   } else if (stage == 2) {
@@ -61,12 +66,14 @@ function checkStage(){
     user_mix_color.style.backgroundColor = "#354354";
     user_mix_color.classList.add('nondrag');
     user_mix_color.classList.remove('drag');
+
     public_color.classList.add('nondrag');
     public_color.classList.remove('drag');
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
     mixer1.style.backgroundColor = "#ccc";
     mixer2.style.backgroundColor = "#ccc";
+    mixer_intersection_svg.style.fill = "#ccc";
     mixer1.classList.add('drop');
     mixer1.classList.remove('nondrop');
     bank_private_color.classList.remove('nondrag');
@@ -93,6 +100,8 @@ function checkStage(){
     mixer1.classList.add('nondrop');
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
+    showMix = true;
+    mixColor = "#f3d2f3";
     stage ++;
     
   } else if (stage == 4) {
@@ -117,6 +126,7 @@ function checkStage(){
     mixer2.classList.remove('drop');
     mixer1.style.backgroundColor = "#ccc";
     mixer2.style.backgroundColor = "#ccc";
+    mixer_intersection_svg.style.fill = "#ccc";
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
     bank_mix_container.classList.add('drop')
@@ -180,6 +190,8 @@ function checkStage(){
     mixer1.classList.remove('drop');
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
+    showMix = true;
+    mixColor = "brown";
     stage ++;
 
   } else if (stage == 7) {
@@ -209,6 +221,7 @@ function checkStage(){
     mixer1.classList.remove('nondrop');
     mixer1.style.backgroundColor = "#ccc";
     mixer2.style.backgroundColor = "#ccc";
+    mixer_intersection_svg.style.fill = "#ccc";
 
     stage ++;
     
@@ -224,6 +237,8 @@ function checkStage(){
     mixer1.classList.remove('drop');
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
+    showMix = true;
+    mixColor = "brown";
 
     stage ++;
 
@@ -250,6 +265,7 @@ function checkStage(){
 
     mixer1.style.backgroundColor = "#ccc";
     mixer2.style.backgroundColor = "#ccc";
+    mixer_intersection_svg.style.fill = "#ccc";
     
     stage++;
 
@@ -417,6 +433,14 @@ interact('.drop').dropzone({
       var color = $(draggableElement).css("background-color");
       console.log(hexc(color));
       dropzoneElement.style.backgroundColor = hexc(color);
+      mixer_intersection_svg = document.querySelector("#mixer_intersection_svg");
+      if (!showMix) { // should replace w boolean testing for middle section
+          mixer_intersection_svg.style.fill = hexc(color);
+      } else {
+        console.log("show mix!");
+        mixer_intersection_svg.style.fill = mixColor;
+        showMix = false;
+      }
     }
   },
   ondragleave: function (event) {
