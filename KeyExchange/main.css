@@ -133,27 +133,24 @@ img.color_mixer{
   -webkit-transform: translate(80px, 80px) rotate(45deg);
 
   border-radius: 20px;
-  height: 250px;
+  height: 200px;
+  z-index: 2;
 
 }
 
 #mixer2 {
-  -webkit-transform: translate(-20px, 80px) rotate(45deg);
+  -webkit-transform: translate(-121px, 80px) rotate(45deg);
 
   border-radius: 20px;
-  height: 250px;
+  height: 200px;
+  z-index: 1;
 
 }
 
 #mixer_intersection {
-  background-color: #ccc;
-  border: solid 4px;
-/*  border-radius: 4px;*/
-/*  margin: 10px;
-  padding: 30px;*/
-/*  height: 20px;*/
+  z-index: 5;
   transition: background-color 0.3s;
-  -webkit-transform: translate(20px, 150px);
+  -webkit-transform: translate(-20px, 130px);
 }
 
 #Combined-Shape {
