@@ -132,7 +132,7 @@ img.color_mixer{
 }
 
 #mixer1{
-  -webkit-transform: translate(80px, 80px) rotate(45deg);
+  -webkit-transform: translate(-60px, 80px) rotate(45deg);
 
   border-radius: 20px;
   height: 200px;
@@ -141,7 +141,7 @@ img.color_mixer{
 }
 
 #mixer2 {
-  -webkit-transform: translate(-121px, 80px) rotate(45deg);
+  -webkit-transform: translate(20px, 80px) rotate(45deg);
 
   border-radius: 20px;
   height: 200px;
@@ -149,10 +149,20 @@ img.color_mixer{
 
 }
 
-#mixer_intersection {
+#mixer3_mod {
+
+  -webkit-transform: translate(80px, 80px);
+
+  border-radius: 20px;
+  height: 200px;
+  z-index: 1;
+
+}
+
+#mixer4_result {
   z-index: 5;
   transition: background-color 0.3s;
-  -webkit-transform: translate(-20px, 130px);
+  -webkit-transform: translate(120px, 80px);
 }
 
 #mixer_intersection_svg {
