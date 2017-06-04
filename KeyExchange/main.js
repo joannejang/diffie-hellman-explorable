@@ -14,8 +14,8 @@ function checkStage(){
   mixer2 = document.querySelector("#mixer2");
   mixer_intersection = document.querySelector("#mixer_intersection_svg");
   bank_mix_container = document.querySelector("#bank_mix_container");
-  hacker_mix1_color = document.querySelector("#hacker_mix1_color");
-  hacker_mix2_color = document.querySelector("#hacker_mix2_color");
+  hacker_mix_diamond_1 = document.querySelector("#hacker_mix_diamond_1");
+  hacker_mix_diamond_2 = document.querySelector("#hacker_mix_diamond_2");
   user_shared_color = document.querySelector("#user_shared_color");
   bank_shared_color = document.querySelector("#bank_shared_color");
   instructions =  document.querySelector("#instructions");
@@ -152,8 +152,8 @@ function checkStage(){
           stage++
     */
     instructions.innerHTML = "Mix your private color with the color you just received from the bank."
-    hacker_mix1_color.style.backgroundColor = "#354354";
-    hacker_mix2_color.style.backgroundColor = "#f3d2f3";   
+    hacker_mix_diamond_1.style.fill = "#354354";
+    hacker_mix_diamond_2.style.fill = "#f3d2f3";   
     user_private_color.classList.add('drag');
     user_private_color.classList.remove('nondrag');
     public_color.classList.add('nondrag');
@@ -293,8 +293,8 @@ function checkMixture(draggableElement) {
   mixer1 = document.querySelector("#mixer1");
   mixer2 = document.querySelector("#mixer2");
   bank_mix_container = document.querySelector("#bank_mix_container");
-  hacker_mix1_color = document.querySelector("#hacker_mix1_color");
-  hacker_mix2_color = document.querySelector("#hacker_mix2_color");
+  hacker_mix_diamond_1 = document.querySelector("#hacker_mix_diamond_1");
+  hacker_mix_diamond_2 = document.querySelector("#hacker_mix_diamond_2");
   user_shared_color = document.querySelector("#user_shared_color");
   bank_shared_color = document.querySelector("#bank_shared_color");
   instructions =  document.querySelector("#instructions");
