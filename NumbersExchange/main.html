@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Diffie-Hellman Key Exchange Protocol</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src="js/interact.min.js"></script>
+
+<!--     <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js"></script> -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <div class="interaction_container">
+      <div id="instructions">Mix your private color with the public color.</div>
+      <div class="row">x
+      <!-- public color -->
+        <div class="col-md-5"></div>
+        <div class="col-md-2 character_color">
+          <div>
+
+            <svg id="public_color" class="nondrag color_dragger" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" color="#F97C92">
+              <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Group" transform="translate(-1.000000, -1.000000)">
+                      <rect id="Rectangle" fill="#F97C92" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                      <text id="Public-Color" font-family="Helvetica" font-size="3" font-weight="normal" fill="#000000">
+                          <tspan x="5.97004782" y="9">Public</tspan>
+                          <tspan x="6.47102439" y="13">Color</tspan>
+                      </text>
+                  </g>
+              </g>
+          </svg>
+          </div>
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+      <div class="row">
+        <!-- three people -->
+        <div class="col-md-4 character_container" id="user_container">
+          <!-- first character -->
+          <div class="row character_image_row" id="user_image">
+            <!-- image -->
+            <img src="img/user_image.png" alt="User" class="character_image">
+          </div>
+          <div class="row color_pallete" id="user_pallete">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 character_color">
+              <div>
+            
+            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger drag" id="user_private_color" color="#6EC4DB">
+             
+              <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Group" transform="translate(-2.000000, -1.000000)">
+                      <rect id="Rectangle" fill="#6EC4DB" transform="translate(11.000000, 10.000000) rotate(45.000000) translate(-11.000000, -10.000000) " x="4.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                      <text id="18" font-family="Helvetica" font-size="5" font-weight="normal" fill="#FFFFFF">
+                          <tspan x="7.77473532" y="11">18</tspan>
+                      </text>
+                  </g>
+              </g>
+          </svg>
+
+               
+              </div>
+                          <p> Private </p>
+            </div>
+            <div class="col-md-3 character_color">
+              <div>
+
+              <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger" id="user_mix_color" color="#f3d2f3">
+                <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group" transform="translate(-1.000000, -1.000000)">
+                        <rect id="user_mix_color_diamond" fill="#" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                        <text id="user_mix_color_text" font-family="Helvetica" font-size="5" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="7.27473532" y="11" id="user_mix_number">19</tspan>
+                        </text>
+                    </g>
+                </g>
+            </svg>
+              </div>
+              <p> Mix </p>
+            </div>
+            <div class="col-md-3 character_color" id="user_shared_container">
+              <div>
+
+            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger" id="user_shared_color" color="">
+
+              <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Group" transform="translate(-1.000000, -1.000000)">
+                      <rect id="user_shared_color_diamond" fill="#" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                      <text id="user_shared_color_text" font-family="Helvetica" font-size="5" font-weight="normal" fill="#FFFFFF">
+                          <tspan x="8.66511618" y="11">7</tspan>
+                      </text>
+                  </g>
+              </g>
+          </svg>
+              </div>
+               <p> Shared </p>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 character_container" id="hacker_container">
+          <!-- first character -->
+          <div class="row character_image_row" id="hacker_image">
+            <!-- image -->
+            <img src="img/hacker_image.png" alt="hacker" class="character_image">
+          </div>
+          <div class="row color_pallete" id="user_pallete">
+            <div class="col-md-1"></div>
+            <div>
+             
+            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="col-md-3 character_color" id="hacker_mix1_color">
+                <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group" transform="translate(-1.000000, -1.000000)" fill="">
+                        <rect id="hacker_mix_diamond_1" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                    </g>
+                </g>
+            </svg>
+            </div>
+            <div>
+                <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="col-md-3 character_color" id="hacker_mix2_color">
+                <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group" transform="translate(-1.000000, -1.000000)" fill="">
+                        <rect id="hacker_mix_diamond_2" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                    </g>
+                </g>
+            </svg>
+            </div>
+            <!-- <div class="col-md-3 character_color" id="hacker_mix3_color">
+            </div> -->
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 character_container" id="bank_container">
+          <!-- first character -->
+          <div class="row character_image_row" id="user_image">
+            <!-- image -->
+            <img src="img/bank_image.png" alt="User" class="character_image">
+          </div>
+          <div class="row color_pallete" id="user_pallete">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 character_color">
+              <div>
+
+              <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger nondrag" id="bank_private_color" color="#66AB8C">
+                <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group" transform="translate(-1.000000, -1.000000)">
+                        <rect id="Rectangle" fill="#66AB8C" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                        <text id="34" font-family="Helvetica" font-size="5" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="7.27473532" y="12">34</tspan>
+                        </text>
+                    </g>
+                </g>
+            </svg>
+              </div>
+                          <p> Private </p>
+            </div>
+            <div class="col-md-3 character_color" id="bank_mix_container">
+              <div>
+
+                <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger" id="bank_mix_color" color="#354354">
+
+                <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group" transform="translate(-1.000000, -1.000000)">
+                        <rect id="bank_mix_color_diamond" fill="#" transform="translate(10.476190, 10.000000) rotate(45.000000) translate(-10.476190, -10.000000) " x="3.3976834" y="3.24324324" width="14.1570142" height="13.5135135" rx="2"></rect>
+                        <text id="bank_mix_color_text" font-family="Helvetica" font-size="5" font-weight="normal" fill="#FFF">
+                            <tspan x="7.75356852" y="11" id="bank_mix_number">13</tspan>
+                        </text>
+                    </g>
+                </g>
+            </svg>
+              </div>
+              <p> Mix </p>
+            </div>
+            <div class="col-md-3 character_color">
+              <div>
+                
+              <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger" id="bank_shared_color" color=""> <!-- #BA7FA4-->
+              
+              <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Group" transform="translate(-1.000000, -1.000000)">
+                      <rect id="bank_shared_color_diamond" fill="#" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                      <text id="bank_shared_color_text" font-family="Helvetica" font-size="5" font-weight="normal" fill="#FFFFFF">
+                          <tspan x="8.66511618" y="11">7</tspan>
+                      </text>
+                  </g>
+              </g>
+          </svg>
+              </div>
+              <p> Shared </p>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <!-- mixing tool -->
+          <div class="col-md-3"></div>
+          <div class="col-md-2 color_mixer drop" id="mixer1">
+
+
+          </div>
+          <div class="col-md-2" style="z-index: 5;"> <!--  id="mixer_intersection" -->
+
+            <svg width="74px" height="100px" viewBox="0 0 94 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="mixer_intersection">
+                <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.834380661">
+                    <path d="M11.8914607,15.128702 L73.8870965,15.128702 C78.3077848,15.128702 81.8914607,18.7123561 81.8914607,23.1330663 L81.8914607,85.128702 L19.895825,85.128702 C15.4751366,85.128702 11.8914607,81.545048 11.8914607,77.1243378 L11.8914607,15.128702 Z" id="mixer_intersection_svg" fill="#ccc" transform="translate(46.891461, 50.128702) rotate(45.000000) translate(-46.891461, -50.128702) " style="z-index: 7;"></path>
+                </g>
+            </svg>
+          </div>
+          <div class="col-md-2 color_mixer nondrop" id="mixer2">
+            <!-- <img src="img/empty_color.png" alt="color" class="color_mixer"> -->
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>

@@ -1,0 +1,160 @@
+
+.drop {
+  border-color: #fff;
+  border-style: solid;
+}
+
+.drag {
+  border-color: #fff;
+  border-style: solid;
+}
+
+.nondrop {
+  border-style: none;
+}
+
+.nondrag {
+  border-style: none;
+}
+
+.interaction_container{
+	text-align: center;
+}
+
+.character_color {
+	background-color: white;
+/*	border-width: 1px;
+	border-color: gray;
+	border-style: dashed;*/
+	padding: 10px;
+	margin: 10px;
+  margin-bottom: 20px;
+  height: 80px;
+}
+
+p{
+  height: 80px;
+  vertical-align: middle;
+}
+
+.color_dragger {
+  width: 100%;
+  height: 100%;
+}
+
+#user_private_color {
+/*	background-color: #6EC4DB;*/
+}
+
+#bank_private_color {
+/*	background-color: #66AB8C;*/
+}
+
+#public_color {
+/*	background-color: #F97C92;*/
+}
+
+img.character_image{
+	text-align: center;
+/*    max-width:160px;  you can use % 
+    max-height: 140px;*/
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+
+.character_image_row{
+	height: 200px;
+}
+
+img.color_image{
+	text-align: center;
+/*    max-width:160px;  you can use % 
+    max-height: 140px;*/
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+img.color_mixer{
+	text-align: center;
+    display: block;
+    margin: auto;
+    height: 80%;
+    width: auto;
+
+}
+
+.mixing_tool_row {
+	margin-top: 100px;
+	height: 50px;
+	text-align: center;
+}
+
+.color_mixer {
+  background-color: #ccc;
+  border: dashed 4px transparent;
+/*  border-radius: 4px;*/
+/*  margin: 10px;
+  padding: 30px;*/
+ /* width: 80%;*/
+/*  height: 300px;*/
+
+  transition: background-color 0.3s;
+}
+
+.drop-active {
+  border-color: #aaa;
+}
+
+.drop-target {
+  border-color: #fff;
+  border-style: solid;
+}
+
+.drag-drop {
+  display: inline-block;
+  min-width: 40px;
+  padding: 2em 0.5em;
+
+  color: #fff;
+  border: solid 2px #fff;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+
+  transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+  color: #000;
+  background-color: #4e4;
+}
+
+#mixer1{
+  -webkit-transform: translate(80px, 80px) rotate(45deg);
+
+  border-radius: 20px;
+  height: 200px;
+  z-index: 2;
+
+}
+
+#mixer2 {
+  -webkit-transform: translate(-121px, 80px) rotate(45deg);
+
+  border-radius: 20px;
+  height: 200px;
+  z-index: 1;
+
+}
+
+#mixer_intersection {
+  z-index: 5;
+  transition: background-color 0.3s;
+  -webkit-transform: translate(-20px, 130px);
+}
+
+#mixer_intersection_svg {
+    transition: fill 0.3s;
+}
