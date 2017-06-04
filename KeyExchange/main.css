@@ -23,11 +23,12 @@
 
 .character_color {
 	background-color: white;
-	border-width: 1px;
+/*	border-width: 1px;
 	border-color: gray;
-	border-style: dashed;
+	border-style: dashed;*/
 	padding: 10px;
 	margin: 10px;
+  margin-bottom: 20px;
   height: 80px;
 }
 
@@ -98,6 +99,7 @@ img.color_mixer{
   padding: 30px;*/
  /* width: 80%;*/
 /*  height: 300px;*/
+
   transition: background-color 0.3s;
 }
 

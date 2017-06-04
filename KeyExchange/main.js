@@ -194,7 +194,7 @@ function checkStage(){
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
     showMix = true;
-    mixColor = "brown";
+    mixColor = "#BA7FA4";
     stage ++;
 
   } else if (stage == 7) {
@@ -213,7 +213,7 @@ function checkStage(){
       */
     instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
     // need to set delay here
-    user_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
+    user_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
     user_mix_color.classList.add('nondrag');
@@ -241,7 +241,7 @@ function checkStage(){
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
     showMix = true;
-    mixColor = "brown";
+    mixColor = "#BA7FA4";
 
     stage ++;
 
@@ -259,7 +259,7 @@ function checkStage(){
 
 */
     instructions.innerHTML = "You and the bank now have a shared secret color!"
-    bank_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
+    bank_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
     bank_mix_color.classList.add('nondrag');
     bank_mix_color.classList.remove('drag');
 
@@ -275,7 +275,7 @@ function checkStage(){
 
   } else if (stage == 10) {
     instructions.innerHTML = "You and the bank now have a shared secret color!"
-    bank_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
+    bank_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
 
   }
 }
