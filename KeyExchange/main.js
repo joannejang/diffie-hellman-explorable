@@ -63,8 +63,8 @@ function checkStage(){
            set bank private to drag
     */
     instructions.innerHTML = "Mix the bank's private color with the public color."
-    document.getElementById("mix_color_diamond").style.fill = "#354354";
-    document.getElementById("mix_color_text").style.fill = "#FFF";
+    document.getElementById("user_mix_color_diamond").style.fill = "#354354";
+    document.getElementById("user_mix_color_text").style.fill = "#FFF";
     user_mix_color.classList.add('nondrag');
     user_mix_color.classList.remove('drag');
 
@@ -118,7 +118,9 @@ function checkStage(){
            set bank private to drag
     */
     instructions.innerHTML = "Exchange your mixed color with the bank's mixed color."
-    bank_mix_color.style.backgroundColor = "#f3d2f3";
+    document.getElementById("bank_mix_color_diamond").style.fill = "#f3d2f3";
+
+    // bank_mix_color.style.backgroundColor = "#f3d2f3";
     bank_mix_color.classList.add('nondrag');
     bank_mix_color.classList.remove('drag');
     public_color.classList.add('nondrag');
@@ -425,10 +427,12 @@ interact('.drop').dropzone({
       dropzoneElement.classList.add('drop-target');
       draggableElement.classList.add('can-drop');
       bank_mix_color = document.querySelector("#bank_mix_color");
-      var color1 = $(bank_mix_color).css("background-color");
-      var color2 = $(draggableElement).css("background-color");
-      draggableElement.style.backgroundColor = hexc(color1);
-      bank_mix_color.style.backgroundColor = hexc(color2);
+      var color1 = $(bank_mix_color_diamond).css("fill");
+      var color2 = $(user_mix_color_diamond).css("fill");
+      user_mix_color_diamond.style.fill = hexc(color1);
+      bank_mix_color_diamond.style.fill = hexc(color2);
+      user_mix_color_text.style.fill = "#000";
+      bank_mix_color_text.style.fill = "#fff";
     } else {
       // feedback the possibility of a drop
       var color = $(draggableElement).css("color");
