@@ -63,7 +63,8 @@ function checkStage(){
            set bank private to drag
     */
     instructions.innerHTML = "Mix the bank's private color with the public color."
-    user_mix_color.style.backgroundColor = "#354354";
+    document.getElementById("mix_color_diamond").style.fill = "#354354";
+    document.getElementById("mix_color_text").style.fill = "#FFF";
     user_mix_color.classList.add('nondrag');
     user_mix_color.classList.remove('drag');
 
@@ -430,7 +431,7 @@ interact('.drop').dropzone({
       bank_mix_color.style.backgroundColor = hexc(color2);
     } else {
       // feedback the possibility of a drop
-      var color = $(draggableElement).css("background-color");
+      var color = $(draggableElement).css("color");
       console.log(hexc(color));
       dropzoneElement.style.backgroundColor = hexc(color);
       mixer_intersection_svg = document.querySelector("#mixer_intersection_svg");
