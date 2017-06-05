@@ -203,6 +203,7 @@ interact('.draggable-2')
 
 
   function dragMoveListener (event) {
+  	  console.log(mixColors(RGBtoCMYK("rgb(249,124,146)"), RGBtoCMYK("rgb(110,196,219)")));
 
     var target = event.target,
         // keep the dragged position in the data-x/data-y attributes
@@ -281,6 +282,8 @@ interact('.draggable-2')
   var old_intersect_x1_mystery = 0;
 
   var mystery_initial_color = "pink";
+
+
 
 
   function dragMoveListenerMystery (event) {
@@ -399,6 +402,7 @@ interact('.draggable-2')
 			cmyk_color2 = RGBtoCMYK(color2);
 
 			rgb_mixed_color = mixColors(cmyk_color1, cmyk_color2);
+
 
 			if (intersection) {
 				document.getElementById('intersection_mystery').style.backgroundColor = rgb_mixed_color;
