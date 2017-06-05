@@ -220,7 +220,7 @@ function checkStage(){
           drop: color mix 1
           stage++
       */
-    instructions.innerHTML = "Now mix the banks newly, recieved mix with its private color "
+    instructions.innerHTML = "Now mix the banks newly received mix with its private color."
     // need to set delay here
     user_shared_color_diamond.style.fill = FINAL_COLOR; // CHANGE THIS TO FINAL COLOR!!!
     mixer2.classList.add('nondrop');
