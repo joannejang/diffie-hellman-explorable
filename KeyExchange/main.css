@@ -3,7 +3,7 @@
   text-align: center;
   font-family: 'Cabin', sans-serif;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 40px;
   padding-top: 10px;
   width: 100%;
   height: 160px;
@@ -179,4 +179,16 @@ img.color_mixer{
 
 #mixer_intersection {
     transition: fill 0.3s;
+}
+
+svg#hacker_mix1_color {
+    -webkit-transform: translate(-29px, 00px);
+}
+
+svg#hacker_mix2_color {
+    -webkit-transform: translate(-29px, 00px);
+}
+
+svg#public_color {
+    -webkit-transform: translate(29px, 00px);
 }

@@ -1,9 +1,11 @@
 body {
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
+	font-family: 'Old Standard TT', serif;
 	font-size: 18px;
 }
 h1 {
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
+	font-family: 'Cabin', sans-serif;
 	font-size: 48px;
 	padding: 0px;
 	margin: 0px;
@@ -15,7 +17,8 @@ h2 {
 	font-size: 26px
 }
 h3 {
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
+	font-family: 'Cabin', sans-serif;
 	margin-bottom: 25px;
 	text-align: center;
 }
@@ -36,7 +39,8 @@ h3 {
 }
 .question {
 	font-size: 32px;
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
+	font-family: 'Cabin', sans-serif;
 	line-height: 50px;
 	color: white;
 	padding: 100px 0;
@@ -65,25 +69,29 @@ img {
 	width: 35px;
 	font-size: 40px;
 	text-align: center;
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
+	font-family: 'Cabin', sans-serif;
 	color: #6EC4DB;
 }
 .solve #guess2 {
 	font-size: 20px;
 	width: 40px;
 	text-align: center;
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
+	font-family: 'Cabin', sans-serif;
 	color: #6EC4DB;
 }
 .math {
 	font-size: 40px;
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
+	font-family: 'Cabin', sans-serif;
 	color: #6EC4DB;
 	margin: 0 auto;
 	float: center;
 	text-align: center;
 }
 .modanswer {
+	font-family: 'Cabin', sans-serif;
 	background-color: white;
 	color: white;
 	font-size: 15px;
@@ -103,6 +111,7 @@ img {
 	margin: auto 0;
 }
 #answer2attempts {
+
 	font-size: 70px;
 	margin-bottom: -20px;
 }
@@ -132,4 +141,7 @@ img {
 	font-size: 20px;
 	line-height: 30px;
 	margin-left: 40px;
+}
+.answer2response {
+	font-family: 'Cabin', sans-serif;
 }
