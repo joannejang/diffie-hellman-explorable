@@ -44,8 +44,7 @@ h3 {
 } 
 .question p {
 	font-size: 20px;
-	font-family: 'Roboto', sans-serif;
-	line-height: 20px;
+	line-height: 25px;
 }
 .red {
 	background-color: #F97C92;
