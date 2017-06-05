@@ -244,7 +244,6 @@ function checkStage(){
     mixer2.classList.remove('nondrop');
     showMix = true;
     mixColor = FINAL_COLOR;
-
     stage ++;
 
   } else if (stage == 9) {
