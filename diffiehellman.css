@@ -109,7 +109,7 @@ img {
 #showmore {
 	font-size: 15px;
 	padding: 7px;
-	height: 30px;
+	height: 40px;
 	border-radius: 3px;
 	margin: 0 auto;
 	width: 130px;
@@ -122,4 +122,14 @@ img {
 .button-container {
 	width: 100%;
 	background-color: red;
+}
+#introimg {
+	width: 100%;
+	margin-bottom: 30px;
+}
+.conclusion ol {
+	text-align: left;
+	font-size: 20px;
+	line-height: 30px;
+	margin-left: 40px;
 }

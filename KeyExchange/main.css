@@ -40,7 +40,7 @@
 }
 
 .character_color {
-	background-color: white;
+	background-color: none;
 /*	border-width: 1px;
 	border-color: gray;
 	border-style: dashed;*/
@@ -82,11 +82,11 @@ img.character_image{
     max-height: 140px;*/
     display: block;
     margin: auto;
-    width: 40%;
+    width: 30%;
 }
 
 .character_image_row{
-	height: 180px;
+	height: 100px;
 }
 
 img.color_image{
@@ -154,29 +154,29 @@ img.color_mixer{
 }
 
 #mixer1{
-  -webkit-transform: translate(80px, 0px) rotate(45deg);
+  -webkit-transform: translate(107px, 0px) rotate(45deg);
 
   border-radius: 20px;
-  height: 200px;
+  height: 100px;
   z-index: 2;
 
 }
 
 #mixer2 {
-  -webkit-transform: translate(-121px, 00px) rotate(45deg);
+  -webkit-transform: translate(-29px, 00px) rotate(45deg);
 
   border-radius: 20px;
-  height: 200px;
+  height: 100px;
   z-index: 1;
 
 }
 
-#mixer_intersection {
+#mixer_intersection_div {
   z-index: 5;
   transition: background-color 0.3s;
-  -webkit-transform: translate(-20px, 50px);
+  -webkit-transform: translate(37px, 0px);
 }
 
-#mixer_intersection_svg {
+#mixer_intersection {
     transition: fill 0.3s;
 }
