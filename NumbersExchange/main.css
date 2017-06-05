@@ -41,7 +41,7 @@
 }
 
 .character_color {
-	background-color: white;
+	background-color: none;
 /*	border-width: 1px;
 	border-color: gray;
 	border-style: dashed;*/
@@ -74,25 +74,29 @@ p{
 /*	background-color: #F97C92;*/
 }
 
-img.character_image{
-	text-align: center;
-/*    max-width:160px;  you can use % 
-    max-height: 140px;*/
-    display: block;
-    margin: auto;
-    width: 40%;
-}
-
-.character_image_row{
-	height: 200px;
-}
-
 .mix_text{
   font-size: 30px;
 }
 
+.public_color_row {
+  height: 140px;
+}
+
+img.character_image{
+  text-align: center;
+/*    max-width:160px;  you can use % 
+    max-height: 140px;*/
+    display: block;
+    margin: auto;
+    width: 30%;
+}
+
+.character_image_row{
+  height: 100px;
+}
+
 img.color_image{
-	text-align: center;
+  text-align: center;
 /*    max-width:160px;  you can use % 
     max-height: 140px;*/
     display: block;
@@ -156,7 +160,7 @@ img.color_image{
 }
 
 #mixer1{
-  -webkit-transform: translate(50px, 80px) rotate(45deg);
+  -webkit-transform: translate(50px, 40px) rotate(45deg);
 
   border-radius: 20px;
   height: 75px;
@@ -165,7 +169,7 @@ img.color_image{
 }
 
 #mixer2 {
-  -webkit-transform: translate(-40px, 80px) rotate(45deg);
+  -webkit-transform: translate(-40px, 40px) rotate(45deg);
 
   border-radius: 20px;
   height: 75px;
@@ -175,7 +179,7 @@ img.color_image{
 
 #mixer3_mod {
 
-  -webkit-transform: translate(-100px, 80px);
+  -webkit-transform: translate(-100px, 40px);
 
   border-radius: 20px;
   height: 100px;
@@ -186,7 +190,7 @@ img.color_image{
 #mixer4_result_svg {
   z-index: 5;
   transition: background-color 0.3s;
-  -webkit-transform: translate(-250px, 80px);
+  -webkit-transform: translate(-250px, 40px);
 }
 
 #mixer_intersection_svg {
@@ -196,4 +200,8 @@ img.color_image{
 #base_text, #exp_text, #solution_text {
   color: white;
   font-size: 25px;
+}
+
+#public_container {
+    -webkit-transform: translate(29px, 00px);
 }
