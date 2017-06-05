@@ -162,7 +162,7 @@ img.color_image{
 #mixer1{
   -webkit-transform: translate(50px, 40px) rotate(45deg);
 
-  border-radius: 20px;
+  border-radius: 10px;
   height: 75px;
   z-index: 2;
 
@@ -171,7 +171,7 @@ img.color_image{
 #mixer2 {
   -webkit-transform: translate(-40px, 40px) rotate(45deg);
 
-  border-radius: 20px;
+  border-radius: 10px;
   height: 75px;
   z-index: 1;
 

@@ -139,3 +139,7 @@ img {
 .answer2response {
 	font-family: 'Cabin', sans-serif;
 }
+
+iframe {
+	overflow: hidden;
+}

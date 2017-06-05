@@ -156,7 +156,7 @@ img.color_mixer{
 #mixer1{
   -webkit-transform: translate(107px, 0px) rotate(45deg);
 
-  border-radius: 20px;
+  border-radius: 10px;
   height: 100px;
   z-index: 2;
 
@@ -165,7 +165,7 @@ img.color_mixer{
 #mixer2 {
   -webkit-transform: translate(-29px, 00px) rotate(45deg);
 
-  border-radius: 20px;
+  border-radius: 10px;
   height: 100px;
   z-index: 1;
 
