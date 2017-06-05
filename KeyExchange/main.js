@@ -18,7 +18,7 @@ function checkStage(){
   hacker_mix_diamond_2 = document.querySelector("#hacker_mix_diamond_2");
   user_shared_color = document.querySelector("#user_shared_color");
   bank_shared_color = document.querySelector("#bank_shared_color");
-  instructions =  document.querySelector("#instructions");
+  instructions =  document.querySelector("#instruction_text");
 
   //Start with public color and 2 private colors
 
@@ -37,7 +37,7 @@ function checkStage(){
     */
 
     if (true) {
-      instructions.innerHTML = "Mix your private color with the public color."
+      instructions.innerHTML = "In the first stage of a Diffie Helman Key Exchange, both you and the bank have your own private color. These colors will never be seen by anyone besides the owners. Begin by mixing your color with the public color by dragging both colors into the mixing tool."
       user_private_color.classList.remove('drag');
       user_private_color.classList.add('nondrag');
       public_color.classList.add('drag');
@@ -62,7 +62,7 @@ function checkStage(){
            set color mix 1 to drop
            set bank private to drag
     */
-    instructions.innerHTML = "Mix the bank's private color with the public color."
+    instructions.innerHTML = "Now you have created a mixture of your private color and the public color. Repeat the same steps for the bank."
     document.getElementById("user_mix_color_diamond").style.fill = "#354354";
     document.getElementById("user_mix_color_text").style.fill = "#FFF";
     user_mix_color.classList.add('nondrag');
@@ -92,7 +92,7 @@ function checkStage(){
            set mixer 2 to droppable
            stage++
     */
-    instructions.innerHTML = "Mix the bank's private color with the public color."
+    // instructions.innerHTML = "Mix the bank's private color with the public color."
     bank_private_color.classList.remove('drag');
     bank_private_color.classList.add('nondrag');
     public_color.classList.add('drag');
@@ -117,7 +117,7 @@ function checkStage(){
            set color mix 1 to drop
            set bank private to drag
     */
-    instructions.innerHTML = "Exchange your mixed color with the bank's mixed color."
+    instructions.innerHTML = "Nice job! You and the bank have your own mixed colors. Since mixing colors is a one-way function, you can safely send your mixture to the bank without the risk of giving away your private color. In return, the bank will give you its mixture."
     document.getElementById("bank_mix_color_diamond").style.fill = "#f3d2f3";
 
     // bank_mix_color.style.backgroundColor = "#f3d2f3";
@@ -151,7 +151,7 @@ function checkStage(){
             drag: private color
           stage++
     */
-    instructions.innerHTML = "Mix your private color with the color you just received from the bank."
+    instructions.innerHTML = "Looks like the hacker was able to intercept your mixed colors. Fortunately, it will be nearly impossible for the hacker to guess the private colors, which will be used to create the final shared color. Mix your newly recieved mix with your private color."
     hacker_mix_diamond_1.style.fill = "#354354";
     hacker_mix_diamond_2.style.fill = "#f3d2f3";   
     user_private_color.classList.add('drag');
@@ -182,7 +182,6 @@ function checkStage(){
           drag: user-mix-color
           stage++
   */
-    instructions.innerHTML = "Mix your private color with the color you just received from the bank."
     user_private_color.classList.add('drag');
     user_private_color.classList.remove('nondrag');
     public_color.classList.add('nondrag');
@@ -211,7 +210,7 @@ function checkStage(){
           drop: color mix 1
           stage++
       */
-    instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
+    instructions.innerHTML = "Now mix the banks newly, recieved mix with its private color "
     // need to set delay here
     user_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
     mixer2.classList.add('nondrop');
@@ -229,7 +228,6 @@ function checkStage(){
     stage ++;
     
   } else if (stage == 8) {
-    instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
     bank_mix_color.classList.add('drag');
@@ -258,7 +256,7 @@ function checkStage(){
           stage++
 
 */
-    instructions.innerHTML = "You and the bank now have a shared secret color!"
+    instructions.innerHTML = "Nice job! You and the bank have created a shared color. This shared color is the same because the combined mixture is your private color, the bank's private color, and the public color. Since the hacker has neither private color, it is nearly impossible for him to guess the shared color."
     bank_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
     bank_mix_color.classList.add('nondrag');
     bank_mix_color.classList.remove('drag');

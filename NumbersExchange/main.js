@@ -17,7 +17,7 @@ function checkStage(){
   hacker_mix_diamond_2 = document.querySelector("#hacker_mix_diamond_2");
   user_shared_color = document.querySelector("#user_shared_color");
   bank_shared_color = document.querySelector("#bank_shared_color");
-  instructions =  document.querySelector("#instructions");
+  instructions =  document.querySelector("#instruction_text");
 
   //Start with public color and 2 private colors
 
@@ -36,7 +36,6 @@ function checkStage(){
     */
 
     if (true) {
-      instructions.innerHTML = "Mix your private color with the public color."
       user_private_color.classList.remove('drag');
       user_private_color.classList.add('nondrag');
       public_color_base.classList.add('drag');

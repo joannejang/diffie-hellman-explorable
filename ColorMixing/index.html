@@ -2,6 +2,10 @@
 	<title> Diffie-Hellman Key Exchange: An Explorable </title>
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<!-- Plus by arjuazka from the Noun Project -->
 	<!-- Equal by Eagle Eye from the Noun Project -->
 </head>
@@ -24,7 +28,15 @@
 
 	<div class="chapter">
 		<h2> Introduction </h2>
-		<p> This lesson hopes to explain the process of a Diffie-Hellman key exchange. For starters, a key exchange is a method of transporting a secret code from one individual to another, so that both individuals have the same secret code.</p>
+		<div class="row">
+			<p> This lesson hopes to explain the process of a Diffie Hellman key exchange. For starters, a key exchange is a method of transporting a secret code from one individual to another, so that both individuals have the same secret code. The issue is that we cannot send a randomly generated code because someone could intercept it.</p>
+		</div>
+		<div class="row" style="text-align: center; width: 100%;">
+			<img src="./img/intro_image.png">
+		</div>
+		<div class="row">
+			<p> For example, let’s imagine that you open up a new bank account online and your bank wants to send you your account number over the internet. Assuming that you understand the basics of encryption, you and your bank must have a shared key that the bank can use to encrypt the account number into a message and you can use to decrypt the account number from that message. The key exchange process is used to give you and your bank that shared key that no one else knows.</p>
+		</div>
 	</div>
 
 	<div class="chapter">
@@ -98,17 +110,34 @@
 	<br/>
 
 	<div class="chapter">
-		<iframe src="../KeyExchange/main.html" style="width: 150%; height: 100%; margin-left: -200px; border: 1 px dashed gray;" frameborder="1" marginwidth="0"></iframe>
+		<h2> Diffie Hellman Color Exchange </h2>
+		<div class="row">
+			<p> Let’s now circle back to the example of you and your bank coming up with a shared key to encrypt your account information. Imagine that the shared key is a color. How can you and your bank come up with a shared color that is nearly impossible to figure out based on the colors you send back and forth?  </p>
+		</div>
+		<div class="row" style="text-align: center; width: 100%;">
+			<img src="./img/color_exchange_image.png">
+		</div>
+		<div class="row">
+			<p> Let’s assume that any information that you and your bank transfer back and forth will be intercepted by an online hacker.</p>
+		</div>
+	</div>
+	<div class="chapter">
+		<iframe src="../KeyExchange/main.html" style="width: 150%; height: 140%; margin-left: -200px;" frameborder="0" marginwidth="0"></iframe>
 	</div>
 
 
-
 	<div class="chapter">
-		<iframe src="../NumbersExchange/main.html" style="width: 150%; height: 100%; margin-left: -200px; border: 1 px dashed gray;" frameborder="1" marginwidth="0"></iframe>
+		<h2> Let’s Try with Numbers</h2>
+		<div class="row">
+			<p>Congratulations! You have successfully created a shared color with your bank by using the one-way function of mixing. Now let’s see if you can do the same by using numbers and a different one-way function instead of colors.</p>
+		</div>
+	</div>
+	<div class="chapter">
+		<iframe src="../NumbersExchange/main.html" style="width: 150%; height: 140%; margin-left: -200px; border: 1 px dashed gray;" frameborder="0" marginwidth="0"></iframe>
 	</div>
 
 	<div class="chapter">
-		<iframe src="../Modulo/modulo.html" style="width: 100%; height: 200%; border: 0;" frameborder="0" marginwidth="0"></iframe>
+		<iframe src="../Modulo/modulo.html" style="width: 100%; height: 300%; border: 0;" frameborder="0" marginwidth="0"></iframe>
 	</div>
 
 

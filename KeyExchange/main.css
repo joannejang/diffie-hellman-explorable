@@ -1,4 +1,22 @@
 
+#instructions {
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 100%;
+  height: 160px;
+  padding-bottom: 20px;
+  border-width: 5px;
+  border-color: #ccc;
+  border-style: solid;
+}
+
+#instruction_text{
+  text-align: center;
+}
+
 .drop {
   border-color: #fff;
   border-style: solid;
@@ -29,11 +47,11 @@
 	padding: 10px;
 	margin: 10px;
   margin-bottom: 20px;
-  height: 80px;
+  height: 88px;
+  width: 88px
 }
 
 p{
-  height: 80px;
   vertical-align: middle;
 }
 
@@ -54,6 +72,10 @@ p{
 /*	background-color: #F97C92;*/
 }
 
+.public_color_row {
+  height: 120px;
+}
+
 img.character_image{
 	text-align: center;
 /*    max-width:160px;  you can use % 
@@ -64,7 +86,7 @@ img.character_image{
 }
 
 .character_image_row{
-	height: 200px;
+	height: 180px;
 }
 
 img.color_image{

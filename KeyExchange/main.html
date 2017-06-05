@@ -31,8 +31,12 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
     <div class="interaction_container">
-      <div id="instructions">Mix your private color with the public color.</div>
-      <div class="row">x
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="instructions"><p id="instruction_text">In the first stage of a Diffie Helman Key Exchange, both you and the bank have your own private color. These colors will never be seen by anyone besides the owners. Begin by mixing your color with the public color by dragging both colors into the mixing tool.</p></div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="public_color_row row">
       <!-- public color -->
         <div class="col-md-5"></div>
         <div class="col-md-2 character_color">
@@ -70,20 +74,20 @@
               <div>
             
 
-            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger drag" id="user_private_color" color="#6EC4DB">
-                <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
-                <desc>Created with Sketch.</desc>
-                <defs></defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="Group" transform="translate(-1.000000, -1.000000)">
-                        <rect id="Rectangle" fill="#6EC4DB" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
-                        <text id="Private-Color" font-family="Helvetica" font-size="3" font-weight="normal" fill="#000000">
-                            <tspan x="5.38704001" y="9">Private</tspan>
-                            <tspan x="6.47102439" y="13">Color</tspan>
-                        </text>
+                <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="color_dragger drag" id="user_private_color" color="#6EC4DB">
+                    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group" transform="translate(-1.000000, -1.000000)">
+                            <rect id="Rectangle" fill="#6EC4DB" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " x="3.24324324" y="3.24324324" width="13.5135135" height="13.5135135" rx="2"></rect>
+                            <text id="Private-Color" font-family="Helvetica" font-size="3" font-weight="normal" fill="#000000">
+                                <tspan x="5.38704001" y="9">Private</tspan>
+                                <tspan x="6.47102439" y="13">Color</tspan>
+                            </text>
+                        </g>
                     </g>
-                </g>
-            </svg>
+                </svg>
                
               </div>
             </div>
@@ -136,10 +140,10 @@
             <img src="img/hacker_image.png" alt="hacker" class="character_image">
           </div>
           <div class="row color_pallete" id="user_pallete">
-            <div class="col-md-1"></div>
-            <div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
              
-            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="col-md-3 character_color" id="hacker_mix1_color">
+            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="character_color" id="hacker_mix1_color">
                 <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
                 <defs></defs>
@@ -150,8 +154,8 @@
                 </g>
             </svg>
             </div>
-            <div>
-                <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="col-md-3 character_color" id="hacker_mix2_color">
+            <div class="col-md-3">
+                <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="character_color" id="hacker_mix2_color">
                 <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
                 <defs></defs>
@@ -164,7 +168,7 @@
             </div>
             <!-- <div class="col-md-3 character_color" id="hacker_mix3_color">
             </div> -->
-            <div class="col-md-1"></div>
+            <div class="col-md-3"></div>
           </div>
         </div>
 
