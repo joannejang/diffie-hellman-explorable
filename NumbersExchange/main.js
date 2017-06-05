@@ -2,6 +2,12 @@ var stage = 1;
 var showMix = false;
 var mixColor;
 
+function delay(delayMillis){
+  setTimeout(function() {
+    //your code to be executed after 1 second
+  }, delayMillis);
+}
+
 function checkStage(){
 
   user_private_color = document.querySelector("#user_private_color");
@@ -70,9 +76,11 @@ function checkStage(){
     public_color_base.classList.remove('drag');
     mixer1.classList.add('nondrop');
     mixer1.classList.remove('drop');
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+    setTimeout(function() {
+      mixer1.style.backgroundColor = "#ccc";
+      mixer2.style.backgroundColor = "#ccc";
+      mixer_intersection_svg.style.fill = "#ccc";
+    }, 1000);
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
     bank_private_color.classList.remove('nondrag');
@@ -125,9 +133,11 @@ function checkStage(){
     public_color_base.classList.remove('drag');
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+    setTimeout(function() {
+      mixer1.style.backgroundColor = "#ccc";
+      mixer2.style.backgroundColor = "#ccc";
+      mixer_intersection_svg.style.fill = "#ccc";
+    }, 1000);
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
     bank_mix_container.classList.add('drop')
