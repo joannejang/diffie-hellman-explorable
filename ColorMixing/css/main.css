@@ -267,8 +267,6 @@ img{
 
 }
 
-
-
 #visual_box-2 {
 	background-color: #fff;
 	/*padding: 20px;*/
@@ -278,8 +276,6 @@ img{
 	height: 200px; /* 30%; */
 	position: relative;
 }
-
-
 
 #drag-3 {
   width: 200px;
@@ -331,13 +327,10 @@ img{
 	float: left;
 	position: absolute;
 	left: 0px;
-
 }
 
 #color_input_mystery {
 	width: 100%;
-	height: 100%;
-/*	margin-top: 40px;*/
 	position: absolute;
 	z-index: 3;
 	left: 0px;
@@ -349,7 +342,6 @@ img{
 	width: 50px;
 	height: 50px; 
 	margin: auto;
-
 }
 
 #goal_mystery {
@@ -366,7 +358,6 @@ img{
 	padding-bottom: 50px;
 }
 
-
 #attempts_mystery {
 	font-size: 17px;
 	text-align: center;
@@ -377,7 +368,6 @@ img{
 	text-align: center;
 	color: white;
 	background-color: gray;
-/*	float: center;*/
 	display: block;
 	font-size: 30px;
 }
