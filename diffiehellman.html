@@ -203,13 +203,13 @@
 					This is because the Diffie-Hellman Equation, when applied twice with different exponents (like our secret colors), always ends up to be the same result, <b>regardless of the order in which they are applied</b>. Kind of like mixing paint!
 				</p>
 				<div class = "math">
-					(BASE <sup class="A">A</sup> mod MOD)<sup class="B">B</sup> mod MOD
+					(BASE <sup class="A">A</sup> % MOD)<sup class="B">B</sup> % MOD
 				</div>
 				<div class = "math">
 				 = 
 				</div>
 				<div class = "math">
-				(BASE <sup class="B">B</sup> mod MOD)<sup class="A">A</sup> mod MOD)
+				(BASE <sup class="B">B</sup> % MOD)<sup class="A">A</sup> % MOD
 				</div>
 				<p>
 					With <span class="A">A</span> and <span class="B">B</span> as the two private numbers, the modulus as a one-way function prevents a peeker from getting their component numbers, but allows for them to always "mix" the same result.
