@@ -123,3 +123,13 @@ img {
 	width: 100%;
 	background-color: red;
 }
+#introimg {
+	width: 100%;
+	margin-bottom: 30px;
+}
+.conclusion ol {
+	text-align: left;
+	font-size: 20px;
+	line-height: 30px;
+	margin-left: 40px;
+}

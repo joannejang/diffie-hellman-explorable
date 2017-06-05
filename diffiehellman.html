@@ -131,13 +131,14 @@
 		<div class = "container">
 			<div class = "chapter">
 				<h3>Imagine that you open up a new bank account online.</h3>
+				<img id = "introimg" src = "./ColorMixing/img/intro_image.png">
 				<p> Your bank wants to send you your account number over the internet. Assuming that you understand the basics of encryption, you and your bank must have a shared key that the bank can use to encrypt the account number into a message and you can use to decrypt the account number from that message. The key exchange process is used to give you and your bank that shared key that no one else knows.</p>
 				<iframe src="./KeyExchange/main.html" style="width: 150%; height: 1000px; margin-left: -200px;" frameborder="0" marginwidth="0"></iframe>
 			</div>
 		</div>
 		<div class = "container-fluid question green">
 			<div class = "container">
-				Let's try this again with numbers.
+				Let's try the key exchange process with numbers - how it's done in real life!
 			</div>
 		</div>
 		<div class = "container">
@@ -147,7 +148,7 @@
 		</div>
 		<div class = "container-fluid question red">
 			<div class = "container">
-				How did we get these numbers? 
+				Why are these numbers hard to <i>"unmix"</i>?
 			</div>
 		</div>
 		<div class = "container">
@@ -182,7 +183,7 @@
 				</div>
 			</div>
 			<div class="chapter"> 
-				<h3>You might think the answer is {{guess2}} but it really could be any of these numbers:</h3>
+				<h3>Your guess is <span class = "math">{{guess2}}</span>, but you might also guess any of these numbers:</h3>
 				<div class = "math">
 					<div class="possibles" ng-repeat="num in possible">{{num}}</div>
 				</div>
@@ -194,7 +195,18 @@
 				<p>Without knowing which specific one was used, it would take a very long time to <b>brute force</b> through all of these possibilities and test if they were the right one.</p> 
 				<h3>The actual number was <b class="math">602</b>.</h3>
 				<p><b>Really, try it out in the previous equation!</b> Knowing the actual number that was used in the modulo one-way function makes it easy to solve. Like paint, without it, it would take a lot of time to brute-force to hit the right answer. This makes modulo a one-way function. With enormous numbers like those actually used in Diffie-Hellman key exchange, it would take a really long time.</p> 
+			</div>
+		</div>
+		<div class = "container-fluid question blue">
+			<div class = "container conclusion">
+				What do we know? 
+				<ol>
+					<li>One-way functions are hard to reverse.</li>
+					<li>Modulus is a one-way function.</li>
+					<li>Diffie-Hellman Key exchange uses two one-way functions to create a shared secret key.</li>
+				</ol>
 
+				<p>Using the secret shared key created through Diffie-Hellman Key Exchange, two users can use an algorithm such as AES or Blowfish to encrypt their message. Without the key, it would take an intruder a very long time to be able to intercept and read their message.</p>
 			</div>
 		</div>
 	</body>
