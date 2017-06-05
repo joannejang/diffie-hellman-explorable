@@ -197,13 +197,15 @@
 				<h3> Are all one-way functions with modulus operators equal?
 				</h3>
 				<p>
-					No, it turns out that some are superior to others. Having a <b>prime number</b> as the base (called "generator") makes the solution uniformly distributed across all possible numbers. In the example above, we gave you two numbers: 3 as the base, and 5 as the modulus. If we raise 3 to any exponent X, the solution is equally likely to be any integer in the interval [0, 5). Since this concept makes it harder for a hacker to guess the solution (imagine an extremely large prime modulus!), it is widely used in encryption involving modulus functions.
+					No, it turns out that some are superior to others. Having a <b>prime number</b> as the base (called "generator") makes the solution uniformly distributed across all possible numbers. In the example above, we gave you two numbers: 3 as the base, and 5 as the modulus. If we raise 3 to any exponent X, the solution is equally likely to be any integer in the interval [0, 5). Since this concept makes it harder for a hacker to guess the solution (imagine an extremely large prime modulus!), it is widely used in encryption involving modulus functions. </p>
+
+				<p>This is also why we gave you 5 as the base and 23 as the modulus in the numbers exchange interaction above. Any other pair of prime numbers as the public base and modulus would work!
 				</p>
 			</div>
 			<div class="chapter"> 
 				<h3>Let's look back at the Diffie-Hellman process as a whole and its modulus function.</h3>
 				<p>
-					This is because the Diffie-Hellman Equation, when applied twice with different exponents (like our secret colors), always ends up to be the same result, <b>regardless of the order in which they are applied</b>. Kind of like mixing paint!
+					The Diffie-Hellman Equation, when applied twice with different exponents (like our secret colors), always ends up to be the same result, <b>regardless of the order in which they are applied</b>. Kind of like mixing paint!
 				</p>
 				<div class = "math">
 					(BASE <sup class="A">A</sup> % MOD)<sup class="B">B</sup> % MOD
