@@ -119,10 +119,11 @@ function checkStage(){
     public_color_base.classList.remove('nondrag');
     mixer2.classList.remove('drop');
     mixer2.classList.add('nondrop');
-    mixer1.classList.add('drop');
-    mixer1.classList.remove('nondrop');
+    // mixer1.classList.add('drop');
+    // mixer1.classList.remove('nondrop');
     showMix = true;
     mixColor = BANK_MIX;
+    exp_text.innerHTML = "15";
     stage ++;
     
   } else if (stage == 4) {
@@ -147,6 +148,9 @@ function checkStage(){
     public_color_base.classList.remove('drag');
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
+    user_mix_color.classList.remove('nondrag');
+    user_mix_color.classList.add('drag');
+    bank_mix_container.classList.add('drop');
     setTimeout(function() {
       mixer1.style.backgroundColor = "#ccc";
       mixer2.style.backgroundColor = "#ccc";
@@ -155,9 +159,9 @@ function checkStage(){
       exp_text.innerHTML = "";
       solution_text.innerHTML = "";
     }, 1000);
-    user_mix_color.classList.remove('nondrag');
-    user_mix_color.classList.add('drag');
-    bank_mix_container.classList.add('drop')
+
+    base_text.innerHTML = "5";
+    solution_text.innerHTML = "19";
     stage++;
     
   } else if (stage == 5) {
@@ -220,6 +224,7 @@ function checkStage(){
     user_mix_color.classList.add('drag');
     showMix = true;
     mixColor = FINAL_COLOR;
+    exp_text.innerHTML = "6";
     stage ++;
 
   } else if (stage == 7) {
@@ -255,6 +260,8 @@ function checkStage(){
         exp_text.innerHTML = "";
         solution_text.innerHTML = "";
       }, 1000);
+    base_text.innerHTML = "19";
+    solution_text.innerHTML = "2";
 
     stage ++;
     
