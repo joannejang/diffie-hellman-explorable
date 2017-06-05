@@ -133,7 +133,7 @@
 			<div class = "chapter">
 				<h3>Imagine that you open up a new bank account online.</h3>
 				<img id = "introimg" src = "./ColorMixing/img/intro_image.png">
-				<p> Your bank wants to send you your account number over the internet. Assuming that you understand the basics of encryption, you and your bank must have a shared key that the bank can use to encrypt the account number into a message and you can use to decrypt the account number from that message. The key exchange process is used to give you and your bank that shared key that no one else knows.</p>
+				<p> Your bank wants to send you your account number over the internet. Assuming that you understand the basics of encryption, you and your bank must have a shared key that the bank can use to encrypt the account number into a message and you can use to decrypt the account number from that message. The key exchange process is used to give you and your bank that shared key that no one else knows.</p><br><br><br><br>
 				<iframe src="./KeyExchange/main.html" style="width: 150%; height: 700px; margin-left: -200px;" frameborder="0" marginwidth="0" scrolling="no"></iframe>
 			</div>
 		</div>
@@ -144,11 +144,7 @@
 		</div>
 		<div class = "container">
 			<div class = "chapter">
-<<<<<<< HEAD
 				<iframe src="./NumbersExchange/main.html" style="width: 150%; height: 700px; margin-left: -200px; border: 1 px dashed gray;" frameborder="0" marginwidth="0" scrolling="no"></iframe>
-=======
-				<iframe src="./NumbersExchange/main.html" style="width: 150%; height: 850px; margin-left: -200px; border: 1 px dashed gray;" frameborder="0" marginwidth="0"></iframe>
->>>>>>> 180260d8e8fe6c1eaaa880daa115eb6b3f841877
 			</div>
 		</div>
 		<div class = "container-fluid question red">
@@ -162,18 +158,14 @@
 				<p>
 					Just like mixing paint, the modulo is much harder to reverse than it is to solve. <b>It is also the one-way function that is used
 					in Diffie-Hellman Key Exchange.</b> We can understand this the same way we understood paint as a one-way function.
-				</p>
-			</div>
-			<div class = "chapter">
+				</p><br>
 				<h3>Solving an equation with a modulo is easy.</h3>
 				<div class = "solve">
 					<div class="math"> 
 						3<sup>2</sup> mod 5 = <input id="guess1" type="text" ng-model="guess1" ng-change="checkAnswer1()" ng-model-options="{debounce: 700}">
 					</div>
 					<div class="modanswer" id="answer1">{{answer1}}</div>
-				</div>
-			</div>
-			<div class="chapter"> 
+				</div><br>
 				<h3>However, reversing an equation with a modulo is really hard.</h3>
 				<p>No really, it is! Given the following equation, can you solve for the specific exponent that was used to create the end result? It's easy for you to provide an answer that solves to produce the same result, but we're looking for the <b>specific number we used</b> to produce this result.</p>
 				<div class = "solve">
@@ -185,9 +177,7 @@
 					<div class="modanswer" id="answer2">
 						{{answer2}}
 					</div> 
-				</div>
-			</div>
-			<div class="chapter"> 
+				</div><br>
 				<h3>Your guess is <span class = "math">{{guess2}}</span>, but you might also guess any of these numbers:</h3>
 				<div class = "math">
 					<div class="possibles" ng-repeat="num in possible">{{num}}</div>
