@@ -197,6 +197,27 @@
 				<h3>The actual number was <b class="math">602</b>.</h3>
 				<p><b>Really, try it out in the previous equation!</b> Knowing the actual number that was used in the modulo one-way function makes it easy to solve. Like paint, without it, it would take a lot of time to brute-force to hit the right answer. This makes modulo a one-way function. With enormous numbers like those actually used in Diffie-Hellman key exchange, it would take a really long time.</p> 
 			</div>
+			<div class="chapter"> 
+				<h3>Let's look back at the Diffie Hellman process as a whole and it's modulus function.</h3>
+				<p>
+					This is because the Diffie-Hellman Equation, when applied twice with different exponents (like our secret colors), always ends up to be the same result, <b>regardless of the order in which they are applied</b>. Kind of like mixing paint!
+				</p>
+				<div class = "math">
+					(BASE <sup class="A">A</sup> mod MOD)<sup class="B">B</sup> mod MOD
+				</div>
+				<div class = "math">
+				 = 
+				</div>
+				<div class = "math">
+				(BASE <sup class="B">B</sup> mod MOD)<sup class="A">A</sup> mod MOD)
+				</div>
+				<p>
+					With <span class="A">A</span> and <span class="B">B</span> as the two private numbers, the modulus as a one-way function prevents a peeker from getting their component numbers, but allows for them to always "mix" the same result.
+				</p>
+				<p>
+					These 2 equations always will be the same, but it is impossible for a peeker to figure out without brute forcing through all of the options. With a large enough modulus, it would take an extreme amount of time to test each possible one.
+				</p>
+			</div>
 		</div>
 		<div class = "container-fluid question blue">
 			<div class = "container conclusion">
