@@ -9,7 +9,8 @@
 #drag-1 {
   width: 200px;
   height: 100%;
-
+  text-align: center;
+  line-height: 200px;
   background-color: #29e;
   display: inline-block;
   float: left;
@@ -17,12 +18,18 @@
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
   border-radius: 10px;
+  font-family: 'Cabin', sans-serif;
+}
+#drag-1 p {
+	opacity: 0.1;
+  	color: black;
 }
 #drag-2 {
   width: 300px;
   height: 100%;
   margin: 0%;
-
+  text-align: center;
+  line-height: 200px;
   background-color: #29e;
   display: inline-block;
   float: left;
@@ -30,6 +37,11 @@
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
    border-radius: 10px;
+   font-family: 'Cabin', sans-serif;
+}
+#drag-2 p {
+	opacity: 0.2;
+  	color: black;
 }
 #intersection {
 	height: 100%;
@@ -59,6 +71,7 @@
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
   border-radius: 10px;
+  font-family: 'Cabin', sans-serif;
 }
 #drag-4 {
   width: 300px;
@@ -77,6 +90,10 @@
    position: relative;
    color: #444;
    font-family: 'Cabin', sans-serif;
+}
+#drag-4 p {
+	opacity: 0.2;
+  	color: black;
 }
 #intersection_mystery {
 	width: 0%;

@@ -134,11 +134,20 @@ img {
 	font-size: 20px;
 	line-height: 30px;
 	margin-left: 40px;
+	font-family: 'Old Standard TT', sans-serif;
+}
+.conclusion p {
+	font-family: 'Old Standard TT', sans-serif;
+}
+.interested a {
+	color: #992727;
+}
+.interested a:hover {
+	color: #7a2121;
 }
 .answer2response {
 	font-family: 'Cabin', sans-serif;
 }
-
 iframe {
 	overflow: hidden;
 }

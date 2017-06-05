@@ -58,6 +58,9 @@ function dragMoveListener (event) {
   x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
   y = (parseFloat(target.getAttribute('data-y')) || 0);
 
+  $('#drag-1').text('');
+  $('#drag-2').text('');
+  
   // translate the element
   target.style.webkitTransform = 
   target.style.transform =
