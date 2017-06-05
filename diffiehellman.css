@@ -104,7 +104,6 @@ img {
 	margin: auto 0;
 }
 #answer2attempts {
-
 	font-size: 70px;
 	margin-bottom: -20px;
 }
@@ -142,4 +141,10 @@ img {
 
 iframe {
 	overflow: hidden;
+}
+.A {
+	color: #F97C92;
+}
+.B {
+	color: #66AB8C;
 }
