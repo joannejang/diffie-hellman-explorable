@@ -190,9 +190,14 @@
 				<p>Without knowing which specific one was used, it would take a very long time to <b>brute force</b> through all of these possibilities and test if they were the right one.</p> 
 				<h3>The actual number was <b class="math">602</b>.</h3>
 				<p><b>Really, try it out in the previous equation!</b> Knowing the actual number that was used in the modulo one-way function makes it easy to solve. Like paint, without it, it would take a lot of time to brute-force to hit the right answer. This makes modulo a one-way function. With enormous numbers like those actually used in Diffie-Hellman key exchange, it would take a really long time.</p> 
+				<h3> Are all one-way functions with modulus operators equal?
+				</h3>
+				<p>
+					No, it turns out that some are superior to others. Having a <b>prime number</b> as the base (called "generator") makes the solution uniformly distributed across all possible numbers. In the example above, we gave you two numbers: 3 as the base, and 5 as the modulus. If we raise 3 to any exponent X, the solution is equally likely to be any integer in the interval [0, 5). Since this concept makes it harder for a hacker to guess the solution (imagine an extremely large prime modulus!), it is widely used in encryption involving modulus functions.
+				</p>
 			</div>
 			<div class="chapter"> 
-				<h3>Let's look back at the Diffie-Hellman process as a whole and it's modulus function.</h3>
+				<h3>Let's look back at the Diffie-Hellman process as a whole and its modulus function.</h3>
 				<p>
 					This is because the Diffie-Hellman Equation, when applied twice with different exponents (like our secret colors), always ends up to be the same result, <b>regardless of the order in which they are applied</b>. Kind of like mixing paint!
 				</p>

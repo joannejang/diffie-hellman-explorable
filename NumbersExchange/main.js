@@ -151,7 +151,6 @@ function checkStage(){
     mixer2.classList.remove('drop');
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
-    $(user_mix_color_diamond).style.border = "2px dashed gray";
     bank_mix_container.classList.add('drop');
     setTimeout(function() {
       mixer1.style.backgroundColor = "#ccc";
