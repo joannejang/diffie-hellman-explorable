@@ -36,10 +36,10 @@
         <div class="col-md-6" id="instructions"><p id="instruction_text">First, begin by mixing your private number with the public number. This is done by using the public number as the base and your private number as the exponent in the given one-way function.</p></div>
         <div class="col-md-3"></div>
       </div>
-      <div class="row">
+      <div class="row public_color_row">
       <!-- public color -->
         <div class="col-md-5"></div>
-        <div class="col-md-1 character_color">
+        <div class="col-md-1 character_color" id="public_container">
           <div>
 
             <svg id="public_color_base" class="nondrag color_dragger" width="18px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" color="#F97C92">
@@ -57,7 +57,7 @@
                 </g>
             </svg>
           </div>
-          <p> Base </p>
+          <p> Public </p>
         </div>
 
         <div class="col-md-5"></div>
@@ -261,25 +261,25 @@
         <div class="row">
           <!-- mixing tool -->
           <div class="col-md-2"></div>
-          <div class="col-md-2">
+          <div class="col-md-2" style="-webkit-transform: translate(60px,0px);">
             <div class="col-md-5"></div>
             <div class="col-md-5 color_mixer nondrop" id="mixer1">
               <p class="mix_text" id="base_text" style="-webkit-transform: translate(0px,15px) rotate(315deg);">  </p>
             </div>
-            <div class="col-md-2" style="height: 100%; -webkit-transform: translate(115px,-20px)"><p style="font-size: 60px;">^</p></div>
+            <div class="col-md-2" style="height: 100%; -webkit-transform: translate(115px,-60px)"><p style="font-size: 60px;">^</p></div>
             <!-- <div class="col-md-3"></div> -->
           </div>
 
          
-          <div class="col-md-2">
+          <div class="col-md-2" style="-webkit-transform: translate(60px,0px);">
             <div class="col-md-5"></div>
             <div class="col-md-5 color_mixer drop" id="mixer2">
               <p class="mix_text" id="exp_text" style="-webkit-transform: translate(0px,15px) rotate(315deg);">  </p>
             </div>
-            <div class="col-md-2" style="height: 100%; -webkit-transform: translate(50px,50px)"><p style="font-size: 30px;">mod</p></div>
+            <div class="col-md-2" style="height: 100%; -webkit-transform: translate(40px,10px)"><p style="font-size: 40px;">mod</p></div>
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-2" style="-webkit-transform: translate(60px,0px);">
             <svg id="mixer3_mod"  width="91px" height="92px" viewBox="0 0 91 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  color="#F97C92">
                 <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
@@ -295,8 +295,8 @@
             </svg>
           </div>
 
-           <div class="col-md-1" style="height: 100%; -webkit-transform: translate(-180px,100px)"><p style="font-size: 50px;">=</p></div>
-           <div class="col-md-2" style="z-index: 5;"> <!--  id="mixer_intersection" -->
+           <div class="col-md-1" style="height: 100%; -webkit-transform: translate(-120px,50px)"><p style="font-size: 50px;">=</p></div>
+           <div class="col-md-2" style="z-index: 5; -webkit-transform: translate(60px,0px);"> <!--  id="mixer_intersection" -->
 
 
             <svg id="mixer4_result_svg"  width="91px" height="92px" viewBox="0 0 91 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" color="#">
@@ -307,7 +307,7 @@
                     <g id="Group" transform="translate(-4.000000, -1.000000)">
                         <rect id="mixer4_result" fill="#fff" transform="translate(49.415993, 47.000000) rotate(45.000000) translate(-49.415993, -47.000000) " x="16.0268085" y="15.2432432" width="66.7783687" height="63.5135135" rx="8"></rect>
                         <text id="23" font-family="Helvetica" font-size="25" font-weight="normal" fill="#FFFFFF">
-                            <tspan x="35.7864284" y="54"id="solution_text"></tspan>
+                            <tspan x="35.7864284" y="54" id="solution_text"></tspan>
                         </text>
                     </g>
                 </g>
