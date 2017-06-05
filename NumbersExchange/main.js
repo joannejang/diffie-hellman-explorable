@@ -119,8 +119,8 @@ function checkStage(){
     public_color_base.classList.remove('nondrag');
     mixer2.classList.remove('drop');
     mixer2.classList.add('nondrop');
-    // mixer1.classList.add('drop');
-    // mixer1.classList.remove('nondrop');
+    mixer1.classList.add('drop');
+    mixer1.classList.remove('nondrop');
     showMix = true;
     mixColor = BANK_MIX;
     exp_text.innerHTML = "15";
@@ -146,6 +146,8 @@ function checkStage(){
     bank_mix_color.classList.remove('drag');
     public_color_base.classList.add('nondrag');
     public_color_base.classList.remove('drag');
+    mixer1.classList.add('nondrop');
+    mixer1.classList.remove('drop');
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
     user_mix_color.classList.remove('nondrag');
@@ -279,6 +281,7 @@ function checkStage(){
     mixer1.classList.remove('nondrop');
     showMix = true;
     mixColor = FINAL_COLOR;
+    exp_text.innerHTML = "15";
 
     stage ++;
 
@@ -302,6 +305,9 @@ function checkStage(){
 
     mixer1.classList.add('nondrop');
     mixer1.classList.remove('drop');
+
+    base_text.innerHTML = "8";
+    solution_text.innerHTML = "2";
 
     setTimeout(function() {
           mixer1.style.backgroundColor = "#ccc";
