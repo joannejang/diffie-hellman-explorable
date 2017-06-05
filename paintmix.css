@@ -76,6 +76,7 @@
    border-radius: 10px;
    position: relative;
    color: #444;
+   font-family: 'Cabin', sans-serif;
 }
 #intersection_mystery {
 	width: 0%;
@@ -114,6 +115,7 @@
 	font-size: 20px;
 }
 #goal_mystery {
+	font-family: 'Cabin', sans-serif;
 	margin: auto;
 }
 #goal_mystery p {
@@ -122,10 +124,12 @@
 }
 #result_mystery p {
 	display: inline-block;
+	font-family: 'Cabin', sans-serif;
 	margin: 0 20px;
 }
 #match_mystery {
 	margin: 20px;
+	font-family: 'Cabin', sans-serif;
 }
 #info-table {
 	width: 100%;
@@ -139,6 +143,7 @@
 	margin-bottom: -20px;
 }
 #ismatch {
+	font-family: 'Cabin', sans-serif;
 	background-color: #fc9c9c;
 	color: #ce4848;
 	font-size: 15px;
