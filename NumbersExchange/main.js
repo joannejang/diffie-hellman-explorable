@@ -18,6 +18,7 @@ function checkStage(){
   mixer1 = document.querySelector("#mixer1");
   mixer2 = document.querySelector("#mixer2");
   mixer_intersection = document.querySelector("#mixer_intersection_svg");
+  mixer4_result = document.querySelector("#mixer4_result");
   bank_mix_container = document.querySelector("#bank_mix_container");
   hacker_mix_diamond_1 = document.querySelector("#hacker_mix_diamond_1");
   hacker_mix_diamond_2 = document.querySelector("#hacker_mix_diamond_2");
@@ -82,7 +83,7 @@ function checkStage(){
     setTimeout(function() {
       mixer1.style.backgroundColor = "#ccc";
       mixer2.style.backgroundColor = "#ccc";
-      mixer_intersection_svg.style.fill = "#ccc";
+      mixer4_result.style.fill = "#ccc";
     }, 1000);
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
@@ -139,7 +140,7 @@ function checkStage(){
     setTimeout(function() {
       mixer1.style.backgroundColor = "#ccc";
       mixer2.style.backgroundColor = "#ccc";
-      mixer_intersection_svg.style.fill = "#ccc";
+      mixer4_result.style.fill = "#ccc";
     }, 1000);
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
@@ -235,7 +236,7 @@ function checkStage(){
     mixer2.classList.remove('nondrop');
     mixer1.style.backgroundColor = "#ccc";
     mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+    mixer4_result.style.fill = "#ccc";
 
     stage ++;
     
@@ -279,7 +280,7 @@ function checkStage(){
 
     mixer1.style.backgroundColor = "#ccc";
     mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+    mixer4_result.style.fill = "#ccc";
     
     stage++;
 
@@ -453,12 +454,12 @@ interact('.drop').dropzone({
       var color = $(draggableElement).css("color");
       console.log(hexc(color));
       dropzoneElement.style.backgroundColor = hexc(color);
-      mixer_intersection_svg = document.querySelector("#mixer_intersection_svg");
+      mixer4_result = document.querySelector("#mixer4_result");
       if (!showMix) { // should replace w boolean testing for middle section
-          mixer_intersection_svg.style.fill = hexc(color);
+          mixer4_result.style.fill = hexc(color);
       } else {
         console.log("show mix!");
-        mixer_intersection_svg.style.fill = mixColor;
+        mixer4_result.style.fill = mixColor;
         showMix = false;
       }
     }

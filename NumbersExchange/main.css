@@ -183,7 +183,7 @@ img.color_image{
 
 }
 
-#mixer4_result {
+#mixer4_result_svg {
   z-index: 5;
   transition: background-color 0.3s;
   -webkit-transform: translate(-250px, 80px);
