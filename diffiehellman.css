@@ -16,6 +16,8 @@ h2 {
 }
 h3 {
 	font-family: 'Lora', serif;
+	margin-bottom: 25px;
+	text-align: center;
 }
 .header {
 	text-align: center;
@@ -33,14 +35,37 @@ h3 {
 	margin: 30px 0;
 }
 .question {
-	background-color: #F97C92;
-	font-size: 36px;
+	font-size: 32px;
 	font-family: 'Lora', serif;
 	line-height: 50px;
 	color: white;
 	padding: 100px 0;
 	text-align: center;
 } 
+.red {
+	background-color: #F97C92;
+}
+.green {
+	background-color: #66AB8C;
+}
+.blue {
+	background-color: #6EC4DB;
+}
 img {
 	padding-top: 20px;
+}
+.solve {
+	text-align: center;
+}
+.solve input {
+	width: 60px;
+	font-size: 30px;
+}
+.math {
+	font-size: 40px;
+	color: #999;
+}
+.response {
+	padding-top: 20px;
+	color: #F97C92;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="diffieHellmanApp" ng-controller="ModuloController">
 	<head>
 		<title>Diffie Hellman Key Exchange</title>
 
@@ -27,6 +27,7 @@
 		<link rel="stylesheet" type="text/css" href="diffiehellman.css">
 		<link rel="stylesheet" type="text/css" href="paintmix.css">
 		<script src="paintmix.js"></script>
+		<script src="modulo.js"></script>
 	</head>
 	<body>
 		<div class = "header">
@@ -47,9 +48,9 @@
 				</p>
 			</div>
 		</div>
-		<div class = "container-fluid question">
+		<div class = "container-fluid question red">
 			<div class = "container">
-				But how can we create something <i>secret</i> when everything passed between the two people <i>isn’t</i> a secret?
+				But how can we create something <i>secret</i> when everything passed between the two people <i>isn’t a secret</i>?
 			</div>
 		</div>
 		<div class = "container">
@@ -59,10 +60,17 @@
 					A <b>one-way function</b> is a function that is significantly easier to compute in one direction than in the opposite direction.
 				</p>
 			</div>
+		</div>
+		<div class = "container-fluid question green">
+			<div class = "container">
+				Paint mixing is a <i>real life</i> one-way function.
+			</div>
+		</div>
+		<div class = "container">
 			<div class = "chapter">
-				<h3>Paint is a one-way function.</h3>
+				<h3>Mixing paint is easy.</h3>
 				<p>
-					<b>Mixing paint is easy.</b> As you can see, we can use two colors to create a third color simply by mixing the two.
+					As you can see, we can use two colors to create a third color simply by mixing the two.
 				</p>
 
 				<div id="visual_box">
@@ -70,9 +78,9 @@
 					<div id="drag-2" class="draggable" style="background-color: #F97C92;"> </div>
 					<div id="intersection" style="background-color: #B0948F;"></div>
 				</div>
-
+				<h3>However, unmixing paint is hard.</h3>
 				<p>
-					<b>However, unmixing paint is hard.</b> If you were given the mixed color and one of the ingredient colors, it would be <i>nearly impossible</i> to find the other ingredient color.
+					If you were given the mixed color and one of the ingredient colors, it would be <i>nearly impossible</i> to find the other ingredient color.
 				</p>
 				<p>
 					<b>Try finding the other ingredient color that makes up this mix.</b> You'll find that it's really difficult to find the exact color you're looking for!
@@ -111,8 +119,75 @@
 						NOT A MATCH
 					</div>
 				</div>
+				<p>
+					The only way for someone to find the exact paint mix would be to <b>brute force</b> them, mixing each of the <b>millions of the distinct possible colors</b> and checking to see if it’s a match. Even then, it would take an advance knowledge of color theory, and a <b>lot of time spent guessing</b>.
+				</p>
 			</div>
+		</div>
+		<div class = "container-fluid question blue">
+			<div class = "container">
+			<p>
+				Knowing that paint mixing is a one-way function, do you think two people communicating on an insecure line can create a <i>secret color</i>? 
+			</p>
+			</div>
+		</div>
+		<div class = "container">
+			<div class = "chapter">
+				<h3>Key exchange protocol.</h3>
+				<p>
+					It goes right here!
+				</p>
+			</div>
+		</div>
+		<div class = "container-fluid question red">
+			<div class = "container">
+			<p>
+				How did we get these numbers? 
+			</p>
+			</div>
+		</div>
+		<div class = "container">
+			<div class = "chapter">
+				<h3>The modulo operator is also a one-way function.</h3>
+				<p>
+					Just like mixing paint, the modulo is much harder to reverse than it is to solve. It is also the one-way function that is used
+					in Diffie-Hellman Key Exchange. We can understand this the same way we understood paint as a one-way function.
+				</p>
+			</div>
+			<div class = "chapter">
+				<h3>Solving an equation with a modulo is easy.</h3>
+				<p>
+					Try solving this equation with a modulo. It should be fairly straightforward.
+				</p>
+				<div class = "solve">
+					<div class="math"> 
+						3<sup>2</sup> mod 5 = <input type="text" ng-model="guess1" ng-change="checkAnswer1()" ng-model-options="{debounce: 700}"> 
+					</div>
+					<div class="response">{{answer1}}</div>
+				</div>
+			</div>
+			<div class="chapter"> 
+				<h3>However, reversing an equation with a modulo is really hard.</h3>
+				<p>No really, it is! Given the following equation, can you solve for the specific exponent that was used to create the end result?</p>
 
+				<div class = "math">3<sup><input type="text" ng-model="guess2" ng-change="checkAnswer2()" ng-model-options="{debounce: 700}"></sup>mod 5 = 4</div>
+				<div class="response">
+					{{answer2}}
+				</div> 
+				<div class="response">
+					{{attempts}} Attempts
+				</div>
+			</div>
+			<div class="chapter"> 
+				<h2>You might think the answer is {{guess2}} but it really could be any of these numbers:</h2>
+				<div class = "math nums">
+					<div class="possible" ng-repeat="num in possible">{{num}}</div>
+				</div>
+				<div class="response">
+					<button ng-click="showMore()">Show More</button>
+				</div>
+				<p>Without knowing which specific one I used, it would take a very long time to brute force through all of these possibilities and test if they were the right one.</p>
+			</div>
 		</div>
 	</body>
 	
