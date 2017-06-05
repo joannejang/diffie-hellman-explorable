@@ -41,7 +41,7 @@ function checkStage(){
     */
 
     if (true) {
-      instructions.innerHTML = "In the first stage of a Diffie Hellman Key Exchange, both you and the bank have your own private color. These colors will never be seen by anyone besides the owners. Begin by mixing your color with the public color by dragging both colors into the mixing tool."
+      instructions.innerHTML = "In the first stage of a Diffie-Hellman Key Exchange, both you and the bank have your own private color. These colors will never be seen by anyone besides the owners. Begin by mixing your color with the public color by dragging both colors into the mixing palette."
       user_private_color.classList.remove('drag');
       user_private_color.classList.add('nondrag');
       public_color.classList.add('drag');
