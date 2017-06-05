@@ -53,19 +53,20 @@
 				But how can we create something <i>secret</i> when everything passed between the two people <i>isn’t a secret</i>?
 			</div>
 		</div>
-		<div class = "container">
-			<div class = "chapter">
+		<div class = "container-fluid question green">
+			<div class = "container">
 				<h3>A one-way function might help.</h3>
 				<p>
 					A <b>one-way function</b> is a function that is significantly easier to compute in one direction than in the opposite direction.
-				</p>
+				</p> <br>
+				<h3>Paint mixing is a <i>real life</i> one-way function.</h3>
 			</div>
 		</div>
-		<div class = "container-fluid question green">
+<!-- 		<div class = "container-fluid question green">
 			<div class = "container">
 				Paint mixing is a <i>real life</i> one-way function.
 			</div>
-		</div>
+		</div> -->
 		<div class = "container">
 			<div class = "chapter">
 				<h3>Mixing paint is easy.</h3>
@@ -150,43 +151,41 @@
 			<div class = "chapter">
 				<h3>The modulo operator is also a one-way function.</h3>
 				<p>
-					Just like mixing paint, the modulo is much harder to reverse than it is to solve. It is also the one-way function that is used
-					in Diffie-Hellman Key Exchange. We can understand this the same way we understood paint as a one-way function.
+					Just like mixing paint, the modulo is much harder to reverse than it is to solve. <b>It is also the one-way function that is used
+					in Diffie-Hellman Key Exchange.</b> We can understand this the same way we understood paint as a one-way function.
 				</p>
 			</div>
 			<div class = "chapter">
 				<h3>Solving an equation with a modulo is easy.</h3>
-				<p>
-					Try solving this equation with a modulo. It should be fairly straightforward.
-				</p>
 				<div class = "solve">
 					<div class="math"> 
-						3<sup>2</sup> mod 5 = <input type="text" ng-model="guess1" ng-change="checkAnswer1()" ng-model-options="{debounce: 700}"> 
+						3<sup>2</sup> mod 5 = <input id="guess1" type="text" ng-model="guess1" ng-change="checkAnswer1()" ng-model-options="{debounce: 700}">
 					</div>
-					<div class="response">{{answer1}}</div>
+					<div class="modanswer" id="answer1">{{answer1}}</div>
 				</div>
 			</div>
 			<div class="chapter"> 
 				<h3>However, reversing an equation with a modulo is really hard.</h3>
-				<p>No really, it is! Given the following equation, can you solve for the specific exponent that was used to create the end result?</p>
-
-				<div class = "math">3<sup><input type="text" ng-model="guess2" ng-change="checkAnswer2()" ng-model-options="{debounce: 700}"></sup>mod 5 = 4</div>
-				<div class="response">
-					{{answer2}}
-				</div> 
-				<div class="response">
-					{{attempts}} Attempts
+				<p>No really, it is! Given the following equation, can you solve for the specific exponent that was used to create the end result? It's easy for you to provide an answer that solves to produce the same result, but we're looking for the <b>specific number we used</b> to produce this result.</p>
+				<div class = "solve">
+					<div class = "math">3<sup><input id="guess2" type="text" ng-model="guess2" ng-change="checkAnswer2()" ng-model-options="{debounce: 700}"></sup>mod 5 = 4</div>
+					<div class="answer2response">
+						<div id = "answer2attempts">{{attempts}} </div>
+						<div>ATTEMPTS</div>
+					</div>
+					<div class="modanswer" id="answer2">
+						{{answer2}}
+					</div> 
 				</div>
 			</div>
 			<div class="chapter"> 
-				<h2>You might think the answer is {{guess2}} but it really could be any of these numbers:</h2>
-				<div class = "math nums">
-					<div class="possible" ng-repeat="num in possible">{{num}}</div>
+				<h3>You might think the answer is {{guess2}} but it really could be any of these numbers:</h3>
+				<div class = "math">
+					<div class="possibles" ng-repeat="num in possible">{{num}}</div>
 				</div>
-				<div class="response">
-					<button ng-click="showMore()">Show More</button>
-				</div>
-				<p>Without knowing which specific one I used, it would take a very long time to brute force through all of these possibilities and test if they were the right one.</p>
+			
+				<p>Without knowing which specific one was used, it would take a very long time to <b>brute force</b> through all of these possibilities and test if they were the right one.</p> 
+				<div id ="showmore" ng-click="showMore()">Show More</div>
 			</div>
 		</div>
 	</body>

@@ -42,6 +42,11 @@ h3 {
 	padding: 100px 0;
 	text-align: center;
 } 
+.question p {
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	line-height: 20px;
+}
 .red {
 	background-color: #F97C92;
 }
@@ -57,15 +62,60 @@ img {
 .solve {
 	text-align: center;
 }
-.solve input {
-	width: 60px;
-	font-size: 30px;
+.solve #guess1 {
+	width: 35px;
+	font-size: 40px;
+	text-align: center;
+	font-family: 'Lora', serif;
+	color: #6EC4DB;
+}
+.solve #guess2 {
+	font-size: 20px;
+	width: 40px;
+	text-align: center;
+	font-family: 'Lora', serif;
+	color: #6EC4DB;
 }
 .math {
 	font-size: 40px;
-	color: #999;
+	font-family: 'Lora', serif;
+	color: #6EC4DB;
 }
-.response {
-	padding-top: 20px;
-	color: #F97C92;
+.modanswer {
+	background-color: white;
+	color: white;
+	font-size: 15px;
+	padding: 7px;
+	border-radius: 3px;
+	margin: 0 auto;
+	width: 130px;
+	text-align: center;
+	margin-top: 20px;
+}
+.possibles {
+	width: 25%;
+	float: left;
+	display: inline-block;
+	padding: 20px 0;
+	text-align: center;
+}
+#answer2attempts {
+	font-size: 70px;
+	margin-bottom: -20px;
+}
+#showmore {
+	font-size: 15px;
+	padding: 7px;
+	border-radius: 3px;
+	margin: 0 auto;
+	width: 130px;
+	text-align: center;
+	margin-top: 20px;
+	border: 1px solid #666;
+	background-color: #bbb;
+	color: white;
+}
+.button-container {
+	width: 100%;
+	background-color: red;
 }
