@@ -195,4 +195,5 @@ img.color_image{
 
 #base_text, #exp_text, #solution_text {
   color: white;
+  font-size: 25px;
 }

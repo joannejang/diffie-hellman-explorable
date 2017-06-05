@@ -68,7 +68,7 @@ function checkStage(){
     */
     instructions.innerHTML = "Now you have created a mixture of your private color and the public color. Repeat the same steps for the bank."
     document.getElementById("user_mix_color_diamond").style.fill = USER_MIX;
-    document.getElementById("user_mix_color_text").style.fill = "#FFF";
+    document.getElementById("user_mix_color_text").style.fill = "#000";
     user_mix_color.classList.add('nondrag');
     user_mix_color.classList.remove('drag');
 
@@ -432,8 +432,8 @@ interact('.drop').dropzone({
       var color2 = $(user_mix_color_diamond).css("fill");
       user_mix_color_diamond.style.fill = hexc(color1);
       bank_mix_color_diamond.style.fill = hexc(color2);
-      user_mix_color_text.style.fill = "#000";
-      bank_mix_color_text.style.fill = "#fff";
+      // user_mix_color_text.style.fill = "#000";
+      // bank_mix_color_text.style.fill = "#000";
       user_mix_color.style.color = BANK_MIX;
       bank_mix_color.style.color = USER_MIX;
 
