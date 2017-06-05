@@ -76,9 +76,13 @@ function checkStage(){
     public_color.classList.remove('drag');
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+
+    setTimeout(function() {
+      mixer1.style.backgroundColor = "#ccc";
+      mixer2.style.backgroundColor = "#ccc";
+      mixer_intersection_svg.style.fill = "#ccc";
+    }, 1000);
+    
     mixer1.classList.add('drop');
     mixer1.classList.remove('nondrop');
     bank_private_color.classList.remove('nondrag');
@@ -131,9 +135,11 @@ function checkStage(){
     public_color.classList.remove('drag');
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+    setTimeout(function() {
+      mixer1.style.backgroundColor = "#ccc";
+      mixer2.style.backgroundColor = "#ccc";
+      mixer_intersection_svg.style.fill = "#ccc";
+    }, 1000);
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
     bank_mix_container.classList.add('drop')
@@ -225,9 +231,11 @@ function checkStage(){
     bank_private_color.classList.remove('nondrag');
     mixer1.classList.add('drop');
     mixer1.classList.remove('nondrop');
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+    setTimeout(function() {
+      mixer1.style.backgroundColor = "#ccc";
+      mixer2.style.backgroundColor = "#ccc";
+      mixer_intersection_svg.style.fill = "#ccc";
+    }, 1000);
 
     stage ++;
     
@@ -267,9 +275,11 @@ function checkStage(){
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
 
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer_intersection_svg.style.fill = "#ccc";
+    setTimeout(function() {
+      mixer1.style.backgroundColor = "#ccc";
+      mixer2.style.backgroundColor = "#ccc";
+      mixer_intersection_svg.style.fill = "#ccc";
+    }, 1000);
     
     stage++;
 
