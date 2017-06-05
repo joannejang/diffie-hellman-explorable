@@ -20,6 +20,7 @@ function checkStage(){
   //Start with public color and 2 private colors
 
   console.log("STAGE: " + stage);
+  console.log(hasDropped);
   if (stage == 1) {
     /*
     Stage 1
@@ -150,6 +151,7 @@ function checkStage(){
     mixer2.classList.add('nondrop');
     mixer1.classList.add('drop');
     mixer1.classList.remove('nondrop');
+    bank_mix_container.classList.remove('drop')
     stage ++;
 
 
@@ -220,6 +222,8 @@ function checkStage(){
     bank_private_color.classList.remove('drag');
     mixer1.classList.add('nondrop');
     mixer1.classList.remove('drop');
+    mixer2.classList.add('drop');
+    mixer2.classList.remove('nondrop');
 
     stage ++;
 
@@ -237,19 +241,22 @@ function checkStage(){
 
 */
     instructions.innerHTML = "You and the bank now have a shared secret color!"
+    bank_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
     bank_mix_color.classList.add('nondrag');
     bank_mix_color.classList.remove('drag');
 
     mixer2.classList.add('nondrop');
     mixer2.classList.remove('drop');
+
+    mixer1.style.backgroundColor = "#ccc";
+    mixer2.style.backgroundColor = "#ccc";
+    
     stage++;
 
 
   } else if (stage == 10) {
     instructions.innerHTML = "You and the bank now have a shared secret color!"
     bank_shared_color.style.backgroundColor = "brown"; // CHANGE THIS TO FINAL COLOR!!!
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
 
   }
 }
