@@ -1,4 +1,5 @@
 
+
 #instructions {
   text-align: center;
   font-family: 'Cabin', sans-serif;
@@ -52,6 +53,7 @@
 }
 
 p{
+  /*height: 80px;*/
   vertical-align: middle;
 }
 
@@ -72,10 +74,6 @@ p{
 /*	background-color: #F97C92;*/
 }
 
-.public_color_row {
-  height: 120px;
-}
-
 img.character_image{
 	text-align: center;
 /*    max-width:160px;  you can use % 
@@ -86,7 +84,11 @@ img.character_image{
 }
 
 .character_image_row{
-	height: 180px;
+	height: 200px;
+}
+
+.mix_text{
+  font-size: 30px;
 }
 
 img.color_image{
@@ -98,14 +100,14 @@ img.color_image{
     width: 80%;
 }
 
-img.color_mixer{
+/*img.color_mixer{
 	text-align: center;
     display: block;
     margin: auto;
     height: 80%;
     width: auto;
 
-}
+}*/
 
 .mixing_tool_row {
 	margin-top: 100px;
@@ -154,27 +156,37 @@ img.color_mixer{
 }
 
 #mixer1{
-  -webkit-transform: translate(80px, 80px) rotate(45deg);
+  -webkit-transform: translate(50px, 80px) rotate(45deg);
 
   border-radius: 20px;
-  height: 200px;
+  height: 75px;
   z-index: 2;
 
 }
 
 #mixer2 {
-  -webkit-transform: translate(-121px, 80px) rotate(45deg);
+  -webkit-transform: translate(-40px, 80px) rotate(45deg);
 
   border-radius: 20px;
-  height: 200px;
+  height: 75px;
   z-index: 1;
 
 }
 
-#mixer_intersection {
+#mixer3_mod {
+
+  -webkit-transform: translate(-100px, 80px);
+
+  border-radius: 20px;
+  height: 100px;
+  z-index: 1;
+
+}
+
+#mixer4_result_svg {
   z-index: 5;
   transition: background-color 0.3s;
-  -webkit-transform: translate(-20px, 130px);
+  -webkit-transform: translate(-250px, 80px);
 }
 
 #mixer_intersection_svg {
