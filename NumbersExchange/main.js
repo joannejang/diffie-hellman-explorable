@@ -447,8 +447,8 @@ interact('.drop').dropzone({
       bank_mix_color_diamond.style.fill = hexc(color2);
       // user_mix_color_text.style.fill = "#000";
       // bank_mix_color_text.style.fill = "#fff";
-      bank_mix_number.innerHTML = "19";
-      user_mix_number.innerHTML = "13";
+      bank_mix_number.innerHTML = "8";
+      user_mix_number.innerHTML = "19";
     } else {
       // feedback the possibility of a drop
       var color = $(draggableElement).css("color");
