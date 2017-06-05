@@ -75,7 +75,7 @@ function checkStage(){
            set color mix 1 to drop
            set bank private to drag
     */
-    instructions.innerHTML = "Mix the bank's private color with the public color."
+    instructions.innerHTML = "The mix you have just created is the result of a one-way function. It is nearly impossible to find your private number based off of the mix so you can safely transfer this number. Go ahead and create a mix for the bank by using the bank's private number and the public number.";
     document.getElementById("user_mix_color_diamond").style.fill = USER_MIX;
     document.getElementById("user_mix_color_text").style.fill = "#FFF";
     user_mix_color.classList.add('nondrag');
@@ -112,7 +112,6 @@ function checkStage(){
            set mixer 2 to droppable
            stage++
     */
-    instructions.innerHTML = "Mix the bank's private color with the public color."
     bank_private_color.classList.remove('drag');
     bank_private_color.classList.add('nondrag');
     public_color_base.classList.add('drag');
@@ -138,7 +137,7 @@ function checkStage(){
            set color mix 1 to drop
            set bank private to drag
     */
-    instructions.innerHTML = "Exchange your mixed color with the bank's mixed color."
+    instructions.innerHTML = "Now that you and the bank have mixed numbers. Go ahead and swap your mixed number with the bank."
     document.getElementById("bank_mix_color_diamond").style.fill = BANK_MIX;
 
     // bank_mix_color.style.backgroundColor = "#f3d2f3";
@@ -182,7 +181,7 @@ function checkStage(){
             drag: private color
           stage++
     */
-    instructions.innerHTML = "Mix your private color with the color you just received from the bank."
+    instructions.innerHTML = "Looks like the hacker has intercepted the mixed numbers while you and your bank were swapping them. Luckily, it is nearly impossible to guess a private numbers from a mix. Next, use your newly, received mix as the base with your private number as the exponent to create a shared number."
     hacker_mix_diamond_1.style.fill = USER_MIX;
     hacker_mix_diamond_2.style.fill = BANK_MIX;   
     user_private_color.classList.add('drag');
@@ -213,7 +212,6 @@ function checkStage(){
           drag: user-mix-color
           stage++
   */
-    instructions.innerHTML = "Mix your private color with the color you just received from the bank."
     user_private_color.classList.add('drag');
     user_private_color.classList.remove('nondrag');
     public_color_base.classList.add('nondrag');
@@ -243,7 +241,7 @@ function checkStage(){
           drop: color mix 1
           stage++
       */
-    instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
+    instructions.innerHTML = "Repeat the same steps for the bank. Use the mix number that the bank just received as the base and bank's private number as the exponent."
     // need to set delay here
     user_shared_color_diamond.style.fill = FINAL_COLOR; // CHANGE THIS TO FINAL COLOR!!!
     mixer1.classList.add('nondrop');
@@ -268,7 +266,6 @@ function checkStage(){
     stage ++;
     
   } else if (stage == 8) {
-    instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
     mixer1.classList.add('drop');
     mixer1.classList.remove('nondrop');
     bank_mix_color.classList.add('drag');
@@ -298,7 +295,7 @@ function checkStage(){
           stage++
 
 */
-    instructions.innerHTML = "You and the bank now have a shared secret color!"
+    instructions.innerHTML = "Nice work! You and the bank have generated a shared key that can never be cracked by the hacker. The hacker would need access to either of the private keys to generate the shared key. Since you used a one-way function, it is impossible to find private numbers from the mixes."
     bank_shared_color_diamond.style.fill = FINAL_COLOR; // CHANGE THIS TO FINAL COLOR!!!
     bank_mix_color.classList.add('nondrag');
     bank_mix_color.classList.remove('drag');
@@ -322,7 +319,7 @@ function checkStage(){
 
 
   } else if (stage == 10) {
-    instructions.innerHTML = "You and the bank now have a shared secret color!"
+    instructions.innerHTML = "Nice work! You and the bank have generated a shared key that can never be cracked by the hacker. The hacker would need access to either of the private keys to generate the shared key. Since you used a one-way function, it is impossible to find private numbers from the mixes."
     bank_shared_color_diamond.style.fill = FINAL_COLOR; // CHANGE THIS TO FINAL COLOR!!!
 
   }

@@ -1,0 +1,11 @@
+1) First, begin by mixing your private number with the public number. This is done by using the public number as the base and your private number as the exponent in the given one-way function.
+
+2) The mix you have just created is the result of a one-way function. It is nearly impossible to find your private number based off of the mix so you can safely transfer this number. Go ahead and create a mix for the bank by using the bank's private and public number.
+
+3) Now that you and the bank have the mixed numbers. Go ahead and swap your mixed number with the bank.
+
+4) Looks like the hacker has intercepted the mixed numbers while you and your bank were swapping them. Luckily, it is nearly impossible to guess the private numbers from the mix. Next, use your newly, received mix as the base with your private number as the exponent to create a shared number.
+
+5) Repeat the same steps for the bank. Use the mix number that the bank just received as the base and bank's private number as the exponent.
+
+6) Nice work! You and the bank have generated a shared key that can never be cracked by the hacker. The hacker would need access to either of the private keys to generate the shared key. Since you used a one-way function, it is impossible to find private numbers from the mixes.
