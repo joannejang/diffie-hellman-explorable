@@ -1,0 +1,121 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+}
+h1 {
+	font-family: 'Lora', serif;
+	font-size: 48px;
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 20px;
+}
+h2 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 26px
+}
+h3 {
+	font-family: 'Lora', serif;
+	margin-bottom: 25px;
+	text-align: center;
+}
+.header {
+	text-align: center;
+	background-color: #6EC4DB;
+	padding: 60px 0 80px 0;
+	color: white;
+}
+@media (min-width: 900px) {
+    .container{
+        max-width: 800px;
+    }
+}
+.chapter { 
+	padding: 40px 0;
+	margin: 30px 0;
+}
+.question {
+	font-size: 32px;
+	font-family: 'Lora', serif;
+	line-height: 50px;
+	color: white;
+	padding: 100px 0;
+	text-align: center;
+} 
+.question p {
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	line-height: 20px;
+}
+.red {
+	background-color: #F97C92;
+}
+.green {
+	background-color: #66AB8C;
+}
+.blue {
+	background-color: #6EC4DB;
+}
+img {
+	padding-top: 20px;
+}
+.solve {
+	text-align: center;
+}
+.solve #guess1 {
+	width: 35px;
+	font-size: 40px;
+	text-align: center;
+	font-family: 'Lora', serif;
+	color: #6EC4DB;
+}
+.solve #guess2 {
+	font-size: 20px;
+	width: 40px;
+	text-align: center;
+	font-family: 'Lora', serif;
+	color: #6EC4DB;
+}
+.math {
+	font-size: 40px;
+	font-family: 'Lora', serif;
+	color: #6EC4DB;
+}
+.modanswer {
+	background-color: white;
+	color: white;
+	font-size: 15px;
+	padding: 7px;
+	border-radius: 3px;
+	margin: 0 auto;
+	width: 130px;
+	text-align: center;
+	margin-top: 20px;
+}
+.possibles {
+	width: 25%;
+	float: left;
+	display: inline-block;
+	padding: 20px 0;
+	text-align: center;
+}
+#answer2attempts {
+	font-size: 70px;
+	margin-bottom: -20px;
+}
+#showmore {
+	font-size: 15px;
+	padding: 7px;
+	border-radius: 3px;
+	margin: 0 auto;
+	width: 130px;
+	text-align: center;
+	margin-top: 20px;
+	border: 1px solid #666;
+	background-color: #bbb;
+	color: white;
+}
+.button-container {
+	width: 100%;
+	background-color: red;
+}
