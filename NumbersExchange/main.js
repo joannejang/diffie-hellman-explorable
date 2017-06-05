@@ -2,6 +2,10 @@ var stage = 1;
 var showMix = false;
 var mixColor;
 
+var USER_MIX = "#b4a0b7"
+var BANK_MIX = "#B0948F"
+var FINAL_COLOR = "#8facb5"
+
 function delay(delayMillis){
   setTimeout(function() {
     //your code to be executed after 1 second
@@ -55,8 +59,9 @@ function checkStage(){
       mixer1.classList.add('drop');
       mixer1.classList.remove('nondrop');
       showMix = true;
-      mixColor = "#354354"
+      mixColor = USER_MIX;
       stage ++;
+      exp_text.innerHTML = "6";
     }
   } else if (stage == 2) {
     /*
@@ -71,7 +76,7 @@ function checkStage(){
            set bank private to drag
     */
     instructions.innerHTML = "Mix the bank's private color with the public color."
-    document.getElementById("user_mix_color_diamond").style.fill = "#354354";
+    document.getElementById("user_mix_color_diamond").style.fill = USER_MIX;
     document.getElementById("user_mix_color_text").style.fill = "#FFF";
     user_mix_color.classList.add('nondrag');
     user_mix_color.classList.remove('drag');
@@ -83,12 +88,17 @@ function checkStage(){
     setTimeout(function() {
       mixer1.style.backgroundColor = "#ccc";
       mixer2.style.backgroundColor = "#ccc";
-      mixer4_result.style.fill = "#ccc";
+      mixer4_result.style.fill = "#fff";
+      base_text.innerHTML = "";
+      exp_text.innerHTML = "";
+      solution_text.innerHTML = "";
     }, 1000);
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
     bank_private_color.classList.remove('nondrag');
     bank_private_color.classList.add('drag');
+    base_text.innerHTML = "5";
+    solution_text.innerHTML = "8";
     stage++;
 
   } else if (stage == 3) {
@@ -112,7 +122,7 @@ function checkStage(){
     mixer1.classList.add('drop');
     mixer1.classList.remove('nondrop');
     showMix = true;
-    mixColor = "#f3d2f3";
+    mixColor = BANK_MIX;
     stage ++;
     
   } else if (stage == 4) {
@@ -128,7 +138,7 @@ function checkStage(){
            set bank private to drag
     */
     instructions.innerHTML = "Exchange your mixed color with the bank's mixed color."
-    document.getElementById("bank_mix_color_diamond").style.fill = "#f3d2f3";
+    document.getElementById("bank_mix_color_diamond").style.fill = BANK_MIX;
 
     // bank_mix_color.style.backgroundColor = "#f3d2f3";
     bank_mix_color.classList.add('nondrag');
@@ -140,7 +150,10 @@ function checkStage(){
     setTimeout(function() {
       mixer1.style.backgroundColor = "#ccc";
       mixer2.style.backgroundColor = "#ccc";
-      mixer4_result.style.fill = "#ccc";
+      mixer4_result.style.fill = "#fff";
+      base_text.innerHTML = "";
+      exp_text.innerHTML = "";
+      solution_text.innerHTML = "";
     }, 1000);
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
@@ -164,8 +177,8 @@ function checkStage(){
           stage++
     */
     instructions.innerHTML = "Mix your private color with the color you just received from the bank."
-    hacker_mix_diamond_1.style.fill = "#354354";
-    hacker_mix_diamond_2.style.fill = "#f3d2f3";   
+    hacker_mix_diamond_1.style.fill = USER_MIX;
+    hacker_mix_diamond_2.style.fill = BANK_MIX;   
     user_private_color.classList.add('drag');
     user_private_color.classList.remove('nondrag');
     public_color_base.classList.add('nondrag');
@@ -206,7 +219,7 @@ function checkStage(){
     user_mix_color.classList.remove('nondrag');
     user_mix_color.classList.add('drag');
     showMix = true;
-    mixColor = "#BA7FA4";
+    mixColor = FINAL_COLOR;
     stage ++;
 
   } else if (stage == 7) {
@@ -225,7 +238,7 @@ function checkStage(){
       */
     instructions.innerHTML = "Mix the bank's private color with the color it just received from you."
     // need to set delay here
-    user_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
+    user_shared_color_diamond.style.fill = FINAL_COLOR; // CHANGE THIS TO FINAL COLOR!!!
     mixer1.classList.add('nondrop');
     mixer1.classList.remove('drop');
     user_mix_color.classList.add('nondrag');
@@ -234,9 +247,14 @@ function checkStage(){
     bank_private_color.classList.remove('nondrag');
     mixer2.classList.add('drop');
     mixer2.classList.remove('nondrop');
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer4_result.style.fill = "#ccc";
+    setTimeout(function() {
+        mixer1.style.backgroundColor = "#ccc";
+        mixer2.style.backgroundColor = "#ccc";
+        mixer4_result.style.fill = "#fff";
+        base_text.innerHTML = "";
+        exp_text.innerHTML = "";
+        solution_text.innerHTML = "";
+      }, 1000);
 
     stage ++;
     
@@ -253,7 +271,7 @@ function checkStage(){
     mixer1.classList.add('drop');
     mixer1.classList.remove('nondrop');
     showMix = true;
-    mixColor = "#BA7FA4";
+    mixColor = FINAL_COLOR;
 
     stage ++;
 
@@ -271,23 +289,28 @@ function checkStage(){
 
 */
     instructions.innerHTML = "You and the bank now have a shared secret color!"
-    bank_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
+    bank_shared_color_diamond.style.fill = FINAL_COLOR; // CHANGE THIS TO FINAL COLOR!!!
     bank_mix_color.classList.add('nondrag');
     bank_mix_color.classList.remove('drag');
 
     mixer1.classList.add('nondrop');
     mixer1.classList.remove('drop');
 
-    mixer1.style.backgroundColor = "#ccc";
-    mixer2.style.backgroundColor = "#ccc";
-    mixer4_result.style.fill = "#ccc";
+    setTimeout(function() {
+          mixer1.style.backgroundColor = "#ccc";
+          mixer2.style.backgroundColor = "#ccc";
+          mixer4_result.style.fill = "#fff";
+          base_text.innerHTML = "";
+          exp_text.innerHTML = "";
+          solution_text.innerHTML = "";
+        }, 1000);
     
     stage++;
 
 
   } else if (stage == 10) {
     instructions.innerHTML = "You and the bank now have a shared secret color!"
-    bank_shared_color_diamond.style.fill = "#BA7FA4"; // CHANGE THIS TO FINAL COLOR!!!
+    bank_shared_color_diamond.style.fill = FINAL_COLOR; // CHANGE THIS TO FINAL COLOR!!!
 
   }
 }
@@ -447,6 +470,12 @@ interact('.drop').dropzone({
       bank_mix_color_diamond.style.fill = hexc(color2);
       // user_mix_color_text.style.fill = "#000";
       // bank_mix_color_text.style.fill = "#fff";
+      user_mix_color.style.color = BANK_MIX;
+      bank_mix_color.style.color = USER_MIX;
+      user_mix_number.x = "7.75356852";
+      user_mix_number.y = "11";
+      bank_mix_number.x = "8.60961914";
+      bank_mix_number.y = "11.5";
       bank_mix_number.innerHTML = "8";
       user_mix_number.innerHTML = "19";
     } else {
@@ -456,7 +485,7 @@ interact('.drop').dropzone({
       dropzoneElement.style.backgroundColor = hexc(color);
       mixer4_result = document.querySelector("#mixer4_result");
       if (!showMix) { // should replace w boolean testing for middle section
-          mixer4_result.style.fill = hexc(color);
+          mixer4_result.style.fill = "#fff";//hexc(color);
       } else {
         console.log("show mix!");
         mixer4_result.style.fill = mixColor;
