@@ -24,6 +24,9 @@ function checkStage(){
   user_shared_color = document.querySelector("#user_shared_color");
   bank_shared_color = document.querySelector("#bank_shared_color");
   instructions =  document.querySelector("#instruction_text");
+  base_text = document.querySelector("#base_text");
+  exp_text =  document.querySelector("#exp_text");
+  solution_text =  document.querySelector("#solution_text");
 
   //Start with public color and 2 private colors
 

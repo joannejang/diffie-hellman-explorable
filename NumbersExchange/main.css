@@ -87,6 +87,10 @@ img.character_image{
 	height: 200px;
 }
 
+.mix_text{
+  font-size: 30px;
+}
+
 img.color_image{
 	text-align: center;
 /*    max-width:160px;  you can use % 
